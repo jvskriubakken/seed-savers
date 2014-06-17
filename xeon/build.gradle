@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.enonic.modules.sample'
+version = '1.0.0'
+
+
+ext {
+    displaName = "disp name 222"
+    symbolicName = "$group.$name"
+}
+
+jar {
+    manifest {
+        attributes 'Bundle-ManifestVersion': '2',
+                   'Bundle-SymbolicName': symbolicName,
+                   'Bundle-Name': displaName,
+                   'Bundle-Version': version
+    }
+}
+
