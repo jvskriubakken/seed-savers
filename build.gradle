@@ -1,0 +1,25 @@
+allprojects {
+    apply plugin: 'base'
+
+    version = '0.0.1-SNAPSHOT'
+    group = 'com.enonic.wem.modules'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            mavenJava( MavenPublication ) {
+                from components.java
+            }
+        }
+        repositories {
+            maven {
+                url 'http://repo.enonic.net/artifactory/public'
+            }
+        }
+    }
+}

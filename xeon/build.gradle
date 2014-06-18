@@ -1,21 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'com.enonic.modules.sample'
-version = '1.0.0'
-
-
 ext {
-    displayName = "disp name"
-    symbolicName = "$group.$name"
+  displayName = 'Xeon Sample Module'
+  symbolicName = "$group.$name"
 }
 
 jar {
-    manifest {
-        attributes 'Bundle-ManifestVersion': '2',
-                   'Bundle-SymbolicName': symbolicName,
-                   'Bundle-Name': displayName,
-                   'Bundle-Version': version
-    }
+  manifest {
+    attributes 'Bundle-ManifestVersion': '2',
+                 'Bundle-SymbolicName': symbolicName,
+                 'Bundle-Name': displayName,
+                 'Bundle-Version': version
+  }
 }
-
