@@ -10,6 +10,8 @@ class ModuleExtension
 
     def displayName
 
+    def watchTask = 'install'
+
     ModuleExtension( final Project project )
     {
         this.name = "${project.group}.${project.name}"
