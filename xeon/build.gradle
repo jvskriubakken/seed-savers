@@ -6,7 +6,7 @@ version = '1.0.0'
 
 
 ext {
-    displaName = "disp name 222"
+    displayName = "disp name"
     symbolicName = "$group.$name"
 }
 
@@ -14,7 +14,7 @@ jar {
     manifest {
         attributes 'Bundle-ManifestVersion': '2',
                    'Bundle-SymbolicName': symbolicName,
-                   'Bundle-Name': displaName,
+                   'Bundle-Name': displayName,
                    'Bundle-Version': version
     }
 }
