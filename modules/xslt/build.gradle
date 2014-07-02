@@ -1,0 +1,5 @@
+apply plugin: 'module'
+
+module {
+    displayName = 'Xslt Sample Module'
+}

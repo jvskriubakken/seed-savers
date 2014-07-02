@@ -1,13 +1,5 @@
 apply plugin: 'module'
-apply plugin: 'watch'
 
 module {
     displayName = 'Xeon Sample Module'
-}
-
-watch {
-    resources {
-        files files( 'src/main/resources' )
-        tasks['install']
-    }
 }
