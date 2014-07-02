@@ -1,5 +1,4 @@
 var component = portal.component;
-var componentPath = component.path;
 var componentType = component.type;
 var imageUrl = component != null ? portal.url.createImageByIdUrl(component.image) : '';
 

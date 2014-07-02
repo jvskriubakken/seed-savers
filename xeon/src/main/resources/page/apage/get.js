@@ -3,7 +3,7 @@ var pageRegions = portal.pageRegions;
 var site = portal.siteContent;
 var editMode = portal.request.mode == 'edit';
 
-var contentData = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-0.0.1').getConfig();
+var contentData = portal.siteContent.site.moduleConfigs.get('xeon-1.0.0').getConfig();
 
 var params = {
 	context: portal,
