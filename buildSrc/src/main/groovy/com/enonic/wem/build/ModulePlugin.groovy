@@ -31,7 +31,7 @@ class ModulePlugin
                 manifest {
                     attributes 'Bundle-ManifestVersion': '2',
                                'Bundle-SymbolicName': this.ext.name,
-                               'Bundle-Version': this.project.version,
+                               'Bundle-Version': this.project.version.replace('-', '.'),
                                'Bundle-Name': this.ext.displayName
                 }
             }
