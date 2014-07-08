@@ -5,7 +5,7 @@ var site = portal.siteContent;
 var editMode = portal.request.mode == 'edit';
 var slides = page.config.dataSets("slide");
 
-var contentData = portal.siteContent.site.moduleConfigs.get('xeon-1.0.0').getConfig();
+var contentData = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
 
 var params = {
 	context: portal,
