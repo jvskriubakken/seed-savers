@@ -16,8 +16,9 @@ if (content.type == 'person') {
     }
 }
 
-if (personData) {
-    var imageContent = system.contentService.getContentById(personData.contentData.getProperty('image').getString());
+var imageProperty = personData.contentData.getProperty('image');
+if (personData && imageProperty) {
+    var imageContent = system.contentService.getContentById(imageProperty.getString());
     person = {
         name: personData.contentData.getProperty('first-name').getString() + ' ' + personData.contentData.getProperty('middle-name').getString() + ' ' + personData.contentData.getProperty('last-name').getString(),
         title: personData.contentData.getProperty('job-title').getString(),
