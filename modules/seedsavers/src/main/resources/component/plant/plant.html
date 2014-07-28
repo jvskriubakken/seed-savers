@@ -1,0 +1,10 @@
+<div data-th-attr="data-live-edit-type=${component.type}">
+
+    <h2 data-th-text="${content.displayName}">displayName</h2>
+    Binomial name: <span data-th-text="${contentData.binomialName[0]}"></span>
+    <h3>Norske navn</h3>
+    <span data-th-each="norwegianName,iterStat : ${contentData.norwegianNames}" th:inline="text">
+        [[${norwegianName}]][[${ not iterStat.last } ? ',' : '']]
+    </span>
+
+</div>

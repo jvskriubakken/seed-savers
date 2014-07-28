@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout-component>
+  <display-name>top-left-center-right</display-name>
+  <config/>
+  <regions>
+    <region name="top"/>
+    <region name="left"/>
+    <region name="center"/>
+    <region name="right"/>
+  </regions>
+</layout-component>

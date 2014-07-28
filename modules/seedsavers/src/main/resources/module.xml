@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <display-name>Seed Savers</display-name>
+  <info>Seed Savers module</info>
+  <url></url>
+  <vendor>
+    <name>Jørund Vier Skriubakken</name>
+    <url>http://www.skriubakken.com</url>
+  </vendor>
+  <dependencies system-min-version="5.0.0" system-max-version="5.0.0"/>
+  <form name="config">
+    <input type="SingleSelector" name="language">
+      <label>Language</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <custom-text/>
+      <help-text/>
+      <occurrences minimum="0" maximum="1"/>
+      <config>
+        <selector-type>DROPDOWN</selector-type>
+        <options>
+          <option>
+            <label>no</label>
+            <value>Norsk</value>
+          </option>
+          <option>
+            <label>en</label>
+            <value>English</value>
+          </option>
+        </options>
+      </config>
+    </input>
+  </form>
+</module>
