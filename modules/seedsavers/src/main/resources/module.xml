@@ -8,7 +8,7 @@
     <url>http://www.skriubakken.com</url>
   </vendor>
   <dependencies system-min-version="5.0.0" system-max-version="5.0.0"/>
-  <form name="config">
+  <config>
     <input type="SingleSelector" name="language">
       <label>Language</label>
       <immutable>false</immutable>
@@ -30,5 +30,5 @@
         </options>
       </config>
     </input>
-  </form>
+  </config>
 </module>

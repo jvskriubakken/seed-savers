@@ -8,5 +8,5 @@
     <url>http://www.enonic.com</url>
   </vendor>
   <dependencies system-min-version="5.0.0" system-max-version="6.0.0"/>
-  <form name="config"/>
+  <config/>
 </module>
