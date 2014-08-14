@@ -81,8 +81,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <span data-th-text="${contentData.getProperty('company')}? ${contentData.getProperty('company').getString()}">ShapeBootstrap.</span>
-                    <span data-th-text="${contentData.getProperty('copyright')}? ${contentData.getProperty('copyright').getString()}">All Rights Reserved.</span>
+                    &copy; 2013 <span data-th-text="${moduleConfig.getProperty('company')}? ${moduleConfig.getProperty('company').getString()}">ShapeBootstrap.</span>
+                    <span data-th-text="${moduleConfig.getProperty('copyright')}? ${moduleConfig.getProperty('copyright').getString()}">All Rights Reserved.</span>
                 </div>
                 <div class="col-sm-6">
                     <img class="pull-right" data-th-src="${context.url.createResourceUrl('images/shapebootstrap.png')}" src="../public/images/shapebootstrap.png" alt="ShapeBootstrap" title="ShapeBootstrap" />

@@ -3,7 +3,7 @@ var pageRegions = portal.pageRegions;
 var site = portal.siteContent;
 var editMode = portal.request.mode == 'edit';
 
-var contentData = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
+var xeonConfig = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
 
 var params = {
 	context: portal,
@@ -13,7 +13,7 @@ var params = {
 	editable: editMode,
 	banner: false,
     site: site,
-    contentData: contentData,
+    moduleConfig: xeonConfig,
     content: content,
     logoUrl: getLogoUrl()
 };
@@ -37,7 +37,7 @@ function getContentsWithoutImages() {
 
 function getLogoUrl() {
     var logoContent;
-    var logo = site.contentData.getProperty('logo');
+    var logo = xeonConfig.getProperty('logo');
     if (logo) {
         logoContent = system.contentService.getContentById(logo.getString());
     }
