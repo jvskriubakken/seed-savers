@@ -39,7 +39,10 @@ var params = {
     person: person
 };
 
-var body = system.thymeleaf.render('view/person.html', params);
+//var body = system.thymeleaf.render('view/person.html', params);
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('/view/person.html');
+var body = thymeleaf.render(view, params);
 
 portal.response.contentType = 'text/html';
 portal.response.body = body;

@@ -20,7 +20,10 @@ var params = {
 	text: text
 };
 
-var body = system.thymeleaf.render('view/header.html', params);
+//var body = system.thymeleaf.render('view/header.html', params);
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('/view/header.html');
+var body = thymeleaf.render(view, params);
 
 portal.response.contentType = 'text/html';
 portal.response.body = body;

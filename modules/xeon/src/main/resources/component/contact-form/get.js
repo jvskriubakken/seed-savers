@@ -26,7 +26,10 @@ var params = {
     data: data
 };
 
-var body = system.thymeleaf.render('view/contact-form.html', params);
+//var body = system.thymeleaf.render('view/contact-form.html', params);
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('/view/contact-form.html');
+var body = thymeleaf.render(view, params);
 
 portal.response.contentType = 'text/html';
 portal.response.body = body;
