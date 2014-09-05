@@ -9,6 +9,13 @@ subprojects {
     apply plugin: 'maven'
     apply plugin: 'maven-publish'
 
+    repositories {
+        mavenCentral()
+        maven {
+            url 'http://repo.enonic.net/public'
+        }
+    }
+
     publishing {
         publications {
             mavenJava( MavenPublication ) {

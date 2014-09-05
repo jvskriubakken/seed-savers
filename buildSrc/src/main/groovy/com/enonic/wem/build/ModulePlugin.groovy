@@ -1,5 +1,6 @@
 package com.enonic.wem.build
 
+import org.dm.gradle.plugins.bundle.BundlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPlugin
@@ -25,15 +26,15 @@ class ModulePlugin
     private void applyJavaSettings()
     {
         this.project.plugins.apply( JavaPlugin )
+        this.project.plugins.apply( BundlePlugin )
 
         this.project.afterEvaluate {
-            this.project.jar {
-                manifest {
-                    attributes 'Bundle-ManifestVersion': '2',
-                               'Bundle-SymbolicName': this.ext.name,
-                               'Bundle-Version': this.project.version.replace('-', '.'),
-                               'Bundle-Name': this.ext.displayName
-                }
+            this.project.bundle {
+
+                instruction 'Bundle-Name', this.ext.displayName
+                instruction 'Export-Package', ''
+                instruction 'Import-Package', '*;resolution:=optional'
+                instruction '-removeheaders', 'Require-Capability'
             }
         }
     }

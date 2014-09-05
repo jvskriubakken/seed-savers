@@ -12,4 +12,5 @@ repositories {
 dependencies {
     compile gradleApi()
     compile 'com.bluepapa32:gradle-watch-plugin:0.1.3'
+    compile 'org.dm.gradle:gradle-bundle-plugin:0.5'
 }
