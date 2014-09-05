@@ -20,7 +20,7 @@
           <help-text/>
           <occurrences minimum="1" maximum="1"/>
           <config>
-            <relationship-type>image</relationship-type>
+            <relationship-type>system-0.0.0:related-image</relationship-type>
           </config>
         </input>
         <input type="TextArea" name="description">

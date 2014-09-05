@@ -26,7 +26,7 @@
       <help-text/>
       <occurrences minimum="0" maximum="0"/>
       <config>
-        <relationship-type>person</relationship-type>
+        <relationship-type>com.enonic.wem.modules.xeon-1.0.0:related-person</relationship-type>
       </config>
     </input>
   </config>

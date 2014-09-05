@@ -1,10 +1,10 @@
 var component = portal.component;
 var content = portal.content;
 var page = portal.content.page;
-var relatedPerson = component.config.getProperty('person');
+var relatedPerson = component.config.getProperty('com.enonic.wem.modules.xeon-1.0.0:related-person');
 var person,personData;
 
-if (content.type == 'person') {
+if (content.type == 'com.enonic.wem.modules.xeon-1.0.0:person') {
     personData = content;
 } else {
     var personId;
