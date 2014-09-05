@@ -1,11 +1,12 @@
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('./plant.html');
 var params = {
-	context: portal,
-	component: portal.component,
+    context: portal,
+    component: portal.component,
     content: portal.content,
     contentData: portal.content.getContentData().toMap()
 };
-
-var body = system.thymeleaf.render('component/plant/plant.html', params);
+var body = thymeleaf.render(view, params);
 
 portal.response.contentType = 'text/html';
 portal.response.body = body;

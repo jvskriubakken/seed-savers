@@ -3,14 +3,19 @@ var editMode = portal.request.mode == 'edit';
 var component = portal.component;
 var layoutRegions = portal.layoutRegions;
 
-var body = system.thymeleaf.render('component/layout-top-left-center-right/layout-top-left-center-right.html', {
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('./layout-top-left-center-right.html');
+
+var params = {
     editable: editMode,
     component: component,
     topRegion: layoutRegions.getRegion("top"),
     leftRegion: layoutRegions.getRegion("left"),
     centerRegion: layoutRegions.getRegion("center"),
     rightRegion: layoutRegions.getRegion("right")
-});
+};
+
+var body = thymeleaf.render(view, params);
 
 
 portal.response.body = body;

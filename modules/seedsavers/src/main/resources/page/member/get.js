@@ -1,7 +1,8 @@
 var site = portal.siteContent;
 var editMode = portal.request.mode == 'edit';
 
-
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('./member.page.html');
 var params = {
 	context: portal,
     site: portal.siteContent,
@@ -11,8 +12,7 @@ var params = {
 	editable: editMode,
     from: "member"
 };
-
-var body = system.thymeleaf.render('page/member/member.page.html', params);
+var body = thymeleaf.render(view, params);
 
 portal.response.contentType = 'text/html';
 portal.response.body = body;

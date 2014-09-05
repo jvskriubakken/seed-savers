@@ -5,7 +5,9 @@ var params = {
     contentData: portal.content.getContentData().toMap()
 };
 
-var body = system.thymeleaf.render('component/member/member.html', params);
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('./member.html');
+var body = thymeleaf.render(view, params);
 
 portal.response.contentType = 'text/html';
 portal.response.body = body;

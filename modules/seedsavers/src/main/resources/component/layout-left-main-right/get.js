@@ -3,13 +3,18 @@ var editMode = portal.request.mode == 'edit';
 var component = portal.component;
 var layoutRegions = portal.layoutRegions;
 
-var body = system.thymeleaf.render('component/layout-left-main-right/left-main-right.layout.html', {
+var thymeleaf = require('view/thymeleaf');
+var view = resolve('./left-main-right.layout.html');
+
+var params = {
     editable: editMode,
     component: component,
     leftRegion: layoutRegions.getRegion("left"),
-    mainRegion: layoutRegions.getRegion("main"),
+    mainRegion: layoutRegions.getRegion("mbasdfasdfsdf" +
+                                        "ain"),
     rightRegion: layoutRegions.getRegion("right")
-});
+};
+var body = thymeleaf.render(view, params);
 
 
 portal.response.body = body;
