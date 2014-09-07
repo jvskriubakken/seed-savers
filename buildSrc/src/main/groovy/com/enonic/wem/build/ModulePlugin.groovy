@@ -1,5 +1,6 @@
 package com.enonic.wem.build
 
+import com.bluepapa32.gradle.plugins.watch.WatchPlugin
 import org.dm.gradle.plugins.bundle.BundlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -21,6 +22,7 @@ class ModulePlugin
 
         applyJavaSettings()
         applyMavenSettings()
+        applyWatchSettings()
     }
 
     private void applyJavaSettings()
@@ -30,7 +32,6 @@ class ModulePlugin
 
         this.project.afterEvaluate {
             this.project.bundle {
-
                 instruction 'Bundle-Name', this.ext.displayName
                 instruction 'Export-Package', ''
                 instruction 'Import-Package', '*;resolution:=optional'
@@ -42,5 +43,19 @@ class ModulePlugin
     private void applyMavenSettings()
     {
         this.project.plugins.apply( MavenPlugin )
+    }
+
+    private void applyWatchSettings()
+    {
+        this.project.plugins.apply( WatchPlugin )
+
+        this.project.afterEvaluate {
+            this.project.watch {
+                everything {
+                    files this.project.fileTree( dir: 'src', include: '**/*' )
+                    tasks this.ext.watchTask
+                }
+            }
+        }
     }
 }
