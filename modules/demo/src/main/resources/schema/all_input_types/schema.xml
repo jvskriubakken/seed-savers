@@ -7,44 +7,8 @@
   <is-built-in>false</is-built-in>
   <allow-child-content>true</allow-child-content>
   <form>
-    <input name="myColor" type="Color">
-      <label>My Color</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myDate" type="Date">
-      <label>My Date</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myDouble" type="Double">
-      <label>My Double</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myGeoPoint" type="GeoPoint">
-      <label>My GeoPoint</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myHtmlArea" type="HtmlArea">
-      <label>My HtmlArea</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myMoney" type="Money">
-      <label>Money</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myPhone" type="Phone">
-      <label>Phone</label>
+    <input name="myCheckbox" type="Checkbox">
+      <label>Checkbox</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
@@ -67,8 +31,62 @@
         </options>
       </config>
     </input>
-    <input name="mySingleSelector" type="SingleSelector">
-      <label>My SingleSelector</label>
+    <input name="myDate" type="Date">
+      <label>Date</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input name="myDateTime" type="DateTime">
+      <label>DateTime</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input name="myDouble" type="Double">
+      <label>Double</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input name="myGeoPoint" type="GeoPoint">
+      <label>GeoPoint</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input name="myImageSelector" type="ImageSelector">
+      <label>ImageSelector</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+      <config>
+        <relationship-type>system-0.0.0:related-image</relationship-type>
+      </config>
+    </input>
+    <input name="myHtmlArea" type="HtmlArea">
+      <label>HtmlArea</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input name="myLong" type="Long">
+      <label>Long</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input name="myRelationship" type="Relationship">
+      <label>Relationship (like)</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+      <config>
+        <relationship-type>system-0.0.0:like</relationship-type>
+      </config>
+    </input>
+    <input name="mySingleSelectorAsDropdown" type="SingleSelector">
+      <label>SingleSelector as Dropdown</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
@@ -86,53 +104,73 @@
         <selector-type>DROPDOWN</selector-type>
       </config>
     </input>
+    <input name="mySingleSelectorAsRadio" type="SingleSelector">
+      <label>SingleSelector as Radio</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+      <config>
+        <options>
+          <option>
+            <label>myOption 1</label>
+            <value>o1</value>
+          </option>
+          <option>
+            <label>myOption 2</label>
+            <value>o2</value>
+          </option>
+        </options>
+        <selector-type>RADIO</selector-type>
+      </config>
+    </input>
+    <input name="mySingleSelectorAsComboBox" type="SingleSelector">
+      <label>SingleSelector as ComboBox</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="0" maximum="0"/>
+      <config>
+        <options>
+          <option>
+            <label>myOption 1</label>
+            <value>o1</value>
+          </option>
+          <option>
+            <label>myOption 2</label>
+            <value>o2</value>
+          </option>
+        </options>
+        <selector-type>COMBOBOX</selector-type>
+      </config>
+    </input>
     <input name="myTag" type="Tag">
-      <label>My Tags</label>
+      <label>Tag</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
     </input>
     <input name="myTextLine" type="TextLine">
-      <label>My TextLine</label>
+      <label>TextLine</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
     </input>
     <input name="myTextArea" type="TextArea">
-      <label>My TextArea</label>
+      <label>TextArea</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
     </input>
-    <input name="myLong" type="Long">
-      <label>My Long</label>
+    <input name="myTime" type="Time">
+      <label>Time</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
     </input>
     <input name="myXml" type="Xml">
-      <label>My Xml</label>
+      <label>Xml</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
-    </input>
-    <input name="myRelationship" type="Relationship">
-      <label>My Relationship</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-      <config>
-        <relationship-type>system-0.0.0:like</relationship-type>
-      </config>
-    </input>
-    <input name="myImageSelector" type="ImageSelector">
-      <label>My ImageSelector</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-      <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
-      </config>
     </input>
   </form>
 </type>
