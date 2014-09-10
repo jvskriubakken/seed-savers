@@ -43,12 +43,6 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
     </input>
-    <input name="myDouble" type="Double">
-      <label>Double</label>
-      <immutable>false</immutable>
-      <indexed>false</indexed>
-      <occurrences minimum="0" maximum="0"/>
-    </input>
     <input name="myGeoPoint" type="GeoPoint">
       <label>GeoPoint</label>
       <immutable>false</immutable>
