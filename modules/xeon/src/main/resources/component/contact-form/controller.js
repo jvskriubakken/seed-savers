@@ -15,7 +15,7 @@ function handleGet(portal) {
         youtube: contentData.getProperty('youtube').getString()
     };
 
-    var addresses = site.contentData.dataSets('location');
+    var addresses = site.contentData.getDataSetsByName('location');
 
     var data = {
         social: social,

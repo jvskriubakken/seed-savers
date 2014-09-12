@@ -3,7 +3,7 @@ var contentService = require('contentService');
 
 function handleGet(portal) {
     var component = portal.component;
-    var relatedPersons = component.config.datas("person").toArray();
+    var relatedPersons = component.config.getDataByName("person").toArray();
     var persons = [];
 
     relatedPersons.forEach(function (element) {

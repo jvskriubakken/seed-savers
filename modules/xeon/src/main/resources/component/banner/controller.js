@@ -2,7 +2,7 @@ var thymeleaf = require('view/thymeleaf');
 
 function handleGet(portal) {
     var component = portal.component;
-    var slides = component.config.dataSets("slide");
+    var slides = component.config.getDataSetsByName("slide");
 
     var params = {
         context: portal,

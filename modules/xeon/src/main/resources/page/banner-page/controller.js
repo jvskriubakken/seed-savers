@@ -7,7 +7,7 @@ function handleGet(portal) {
     var pageRegions = portal.pageRegions;
     var site = portal.siteContent;
     var editMode = portal.request.mode == 'edit';
-    var slides = page ? page.config.dataSets("slide") : [];
+    var slides = page ? page.config.getDataSetsByName("slide") : [];
 
     var xeonConfig = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
 

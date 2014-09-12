@@ -51,7 +51,7 @@
                 <ul class="plan" data-th-class="(${slide.getProperty('featured').value.toString()} eq 'true')? 'plan featured' : 'plan'">
                     <li class="plan-name" data-th-text="${slide.getProperty('name').value}">Basic</li>
                     <li class="plan-price" data-th-text="${slide.getProperty('price').value}">$29</li>
-                    <li data-th-each="feature : ${slide.datas('features')}" data-th-text="${feature.value}">5GB Storage</li>
+                    <li data-th-each="feature : ${slide.getDataByName('features')}" data-th-text="${feature.value}">5GB Storage</li>
                     <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Signup</a></li>
                 </ul>
             </div><!--/.col-sm-4-->
