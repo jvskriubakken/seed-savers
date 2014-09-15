@@ -35,7 +35,7 @@ function handleGet(portal) {
 function getLogoUrl(portal, xeonConfig) {
     var logoContent;
     var logo = xeonConfig.getProperty('logo');
-    if (logo && logo.getString()) {
+    if (logo && !logo.hasNullValue()) {
         logoContent = contentService.getContentById(logo.getString());
     }
 
