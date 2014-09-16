@@ -2,7 +2,7 @@
 <type>
     <display-name>Plant</display-name>
     <content-display-name-script></content-display-name-script>
-    <super-type>system-0.0.0:structured</super-type>
+    <super-type>system:structured</super-type>
     <is-abstract>false</is-abstract>
     <is-final>true</is-final>
     <is-built-in>false</is-built-in>
@@ -108,7 +108,7 @@
             <custom-text></custom-text>
             <occurrences minimum="0" maximum="0"/>
             <config>
-                <relationship-type>system-0.0.0:image</relationship-type>
+                <relationship-type>system:image</relationship-type>
             </config>
             <help-text></help-text>
         </input>

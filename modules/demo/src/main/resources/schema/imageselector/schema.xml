@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <type>
   <display-name>Image selector</display-name>
-  <super-type>system-0.0.0:structured</super-type>
+  <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
   <is-final>true</is-final>
   <is-built-in>false</is-built-in>
@@ -13,7 +13,7 @@
       <indexed>true</indexed>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <relationship-type>system-0.0.0:related-image</relationship-type>
+        <relationship-type>system:related-image</relationship-type>
       </config>
     </input>
     <input name="imageselector_min1_max1" type="ImageSelector">
@@ -22,7 +22,7 @@
       <indexed>true</indexed>
       <occurrences minimum="1" maximum="1"/>
       <config>
-        <relationship-type>system-0.0.0:related-image</relationship-type>
+        <relationship-type>system:related-image</relationship-type>
       </config>
     </input>
     <input name="imageselector_min0_max0" type="ImageSelector">
@@ -31,7 +31,7 @@
       <indexed>true</indexed>
       <occurrences minimum="0" maximum="0"/>
       <config>
-        <relationship-type>system-0.0.0:related-image</relationship-type>
+        <relationship-type>system:related-image</relationship-type>
       </config>
     </input>
     <input name="imageselector_min2_max4" type="ImageSelector">
@@ -40,7 +40,7 @@
       <indexed>true</indexed>
       <occurrences minimum="2" maximum="4"/>
       <config>
-        <relationship-type>system-0.0.0:related-image</relationship-type>
+        <relationship-type>system:related-image</relationship-type>
       </config>
     </input>
   </form>

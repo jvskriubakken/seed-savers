@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <type>
   <display-name>Relationship</display-name>
-  <super-type>system-0.0.0:structured</super-type>
+  <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
   <is-final>true</is-final>
   <is-built-in>false</is-built-in>
@@ -13,7 +13,7 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
     <input name="myLikeRelation" type="Relationship">
@@ -22,7 +22,7 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <relationship-type>system-0.0.0:like</relationship-type>
+        <relationship-type>system:like</relationship-type>
       </config>
     </input>
     <input name="myUnrequiredUnlimitedRelationship" type="Relationship">
@@ -31,7 +31,7 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
     <input name="myUnrequiredMax3Relationship" type="Relationship">
@@ -40,7 +40,7 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="3"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
     <input name="myRequiredUnlimitedRelationship" type="Relationship">
@@ -49,7 +49,7 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="0"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
     <input name="myRequiredRelationship" type="Relationship">
@@ -58,7 +58,7 @@
       <indexed>false</indexed>
       <occurrences minimum="1" maximum="1"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
     <input name="myRequiredMax2Relationship" type="Relationship">
@@ -67,7 +67,7 @@
       <indexed>false</indexed>
       <occurrences minimum="1" maximum="2"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
     <input name="myRequiredMax3Relationship" type="Relationship">
@@ -76,7 +76,7 @@
       <indexed>false</indexed>
       <occurrences minimum="1" maximum="3"/>
       <config>
-        <relationship-type>system-0.0.0:default</relationship-type>
+        <relationship-type>system:default</relationship-type>
       </config>
     </input>
   </form>

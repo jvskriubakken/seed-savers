@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <type>
   <display-name>Labs Blog</display-name>
-  <super-type>system-0.0.0:structured</super-type>
+  <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
   <is-final>true</is-final>
   <is-built-in>false</is-built-in>
