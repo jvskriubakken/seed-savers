@@ -3,3 +3,7 @@ apply plugin: 'module'
 module {
     displayName = 'Seed Savers Module'
 }
+
+dependencies {
+    compile 'com.enonic.wem:wem-api:5.0.0-SNAPSHOT'
+}
