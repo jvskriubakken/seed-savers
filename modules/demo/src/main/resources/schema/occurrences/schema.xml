@@ -25,6 +25,18 @@
       <indexed>false</indexed>
       <occurrences minimum="1" maximum="0"/>
     </input>
+    <input name="dateRequired" type="Date">
+      <label>Date required</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="1" maximum="0"/>
+    </input>
+    <input name="longRequired" type="Long">
+      <label>Long required</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <occurrences minimum="1" maximum="0"/>
+    </input>
     <input name="textLineMin2Max4" type="TextLine">
       <label>TextLine with min 2 and max 4</label>
       <immutable>false</immutable>
@@ -53,11 +65,11 @@
     <form-item-set name="formItemSetRequiredAndMaxOneOccurrence">
       <label>Set with min 1 and max 1</label>
       <items>
-        <input name="myText" type="TextLine">
-          <label>My Text</label>
+        <input name="myRequiredText" type="TextLine">
+          <label>My required Text</label>
           <immutable>false</immutable>
           <indexed>false</indexed>
-          <occurrences minimum="0" maximum="1"/>
+          <occurrences minimum="1" maximum="1"/>
         </input>
         <input name="myOtherText" type="TextLine">
           <label>My other Text</label>
