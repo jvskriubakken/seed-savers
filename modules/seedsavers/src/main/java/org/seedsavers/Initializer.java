@@ -35,10 +35,6 @@ public class Initializer
 
     private ContentPath membersFolder = ContentPath.from( seedSaversFolder, "members" );
 
-    private Content familyFolder;
-
-    private Content genusFolder;
-
     private BlobService blobService;
 
     private ContentService contentService;
@@ -64,17 +60,17 @@ public class Initializer
                 parent( seedSaversFolder ).
                 displayName( "Members" ), context );
 
-            familyFolder = contentService.create( createFolder().
+            contentService.create( createFolder().
                 name( "families" ).
                 parent( seedSaversFolder ).
                 displayName( "Families" ), context );
 
-            genusFolder = contentService.create( createFolder().
+             contentService.create( createFolder().
                 name( "genus" ).
                 parent( seedSaversFolder ).
                 displayName( "Genus" ), context );
 
-            genusFolder = contentService.create( createFolder().
+            contentService.create( createFolder().
                 name( "varieties" ).
                 parent( seedSaversFolder ).
                 displayName( "Varieties" ), context );
