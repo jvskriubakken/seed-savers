@@ -106,10 +106,12 @@ public class Initializer
 
     private void createMembers()
     {
-        contentService.create( createMember( "stephen-barstow", "Stephen Barstow" ), context );
+        contentService.create( createMember( "aase-kaalrot", "Åse Kålrot" ), context );
+        contentService.create( createMember( "guri-gulrot", "Guri Gulrot" ), context );
+        contentService.create( createMember( "johan-stover", "Johan Støver" ), context );
         contentService.create( createMember( "joerund-vier-skriubakken", "Jørund Vier Skriubakken" ), context );
         contentService.create( createMember( "kari-korn", "Kari Korn" ), context );
-        contentService.create( createMember( "per-kal", "Per Kål" ), context );
+        contentService.create( createMember( "per-kaal", "Per Kål" ), context );
         contentService.create( createMember( "petter-skvaller", "Petter Skvaller" ), context );
     }
 
