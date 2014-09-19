@@ -56,8 +56,8 @@
                 <div class="item" data-th-each="slide, iterStat : ${slides}" data-th-class="${iterStat.index == 0}? 'item active' : 'item'">
                     <div class="container">
                         <div class="carousel-content">
-                            <h1 data-th-text="${slide.getProperty('header').value}">Free Onepage Theme</h1>
-                            <p class="lead" data-th-text="${slide.getProperty('subtitle').value}">Xeon is the best free onepage responsive theme available around the globe<br />Download it right now for free</p>
+                            <h1 data-th-text="${slide.header}">Free Onepage Theme</h1>
+                            <p class="lead" data-th-text="${slide.subtitle}">Xeon is the best free onepage responsive theme available around the globe<br />Download it right now for free</p>
                         </div>
                     </div>
                 </div><!--/.item-->
@@ -81,8 +81,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <span data-th-text="${moduleConfig.getProperty('company')}? ${moduleConfig.getProperty('company').getString()}">ShapeBootstrap.</span>
-                    <span data-th-text="${moduleConfig.getProperty('copyright')}? ${moduleConfig.getProperty('copyright').getString()}">All Rights Reserved.</span>
+                    &copy; 2013 <span data-th-text="${moduleConfig.company}? ${moduleConfig.company}">ShapeBootstrap.</span>
+                    <span data-th-text="${moduleConfig['copyright']}? ${moduleConfig['copyright']}">All Rights Reserved.</span>
                 </div>
                 <div class="col-sm-6">
                     <img class="pull-right" data-th-src="${context.url.createResourceUrl('images/shapebootstrap.png')}" src="../public/images/shapebootstrap.png" alt="ShapeBootstrap" title="ShapeBootstrap" />

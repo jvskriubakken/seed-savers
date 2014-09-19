@@ -3,19 +3,18 @@ var thymeleaf = require('view/thymeleaf');
 
 function handleGet(portal) {
     var content = portal.content;
-    var page = portal.content.page;
     var pageRegions = portal.pageRegions;
     var site = portal.siteContent;
     var editMode = portal.request.mode == 'edit';
-    var slides = page ? page.config.getDataSetsByName("slide") : [];
+    var slides = content.hasPage()? content.pageConfig["slide"] : [];
 
-    var xeonConfig = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
+    var xeonConfig = site.getModuleConfig('com.enonic.wem.modules.xeon');
 
     var params = {
         context: portal,
         pageRegions: pageRegions,
         mainRegion: pageRegions.getRegion("main"),
-        contents: contentService.getChildContent(site.path),
+        contents: contentService.getChildContents(site.path),
         editable: editMode,
         banner: true,
         slides: slides,
@@ -34,9 +33,9 @@ function handleGet(portal) {
 
 function getLogoUrl(portal, xeonConfig) {
     var logoContent;
-    var logo = xeonConfig.getProperty('logo');
-    if (logo && !logo.hasNullValue()) {
-        logoContent = contentService.getContentById(logo.getString());
+    var logo = xeonConfig['logo'];
+    if (logo) {
+        logoContent = contentService.getContentById(logo);
     }
 
     if (logoContent) {
