@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata>
+  <display-name>Menu</display-name>
+  <form>
+    <input name="showInMenu" type="Checkbox">
+      <label>Show in menu</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text/>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text/>
+    </input>
+    <input name="menuName" type="TextLine">
+      <label>Menu name</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text/>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text>Name to be used in menu</help-text>
+    </input>
+  </form>
+</metadata>
