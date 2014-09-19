@@ -10,7 +10,6 @@ function handleGet(portal) {
     var slides = page ? page.config.getDataSetsByName("slide") : [];
 
     var xeonConfig = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
-    var xeonConfig2 = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig().toMap();
 
     var params = {
         context: portal,
