@@ -16,7 +16,7 @@
       <help-text/>
       <occurrences minimum="1" maximum="0"/>
       <config>
-        <relationship-type>image</relationship-type>
+        <relationship-type>system:related-image</relationship-type>
       </config>
     </input>
     <input type="Relationship" name="accessories">
@@ -27,7 +27,7 @@
       <help-text/>
       <occurrences minimum="0" maximum="0"/>
       <config>
-        <relationship-type>like</relationship-type>
+        <relationship-type>system:like</relationship-type>
       </config>
     </input>
         <field-set name="variants">
@@ -72,7 +72,7 @@
               <help-text/>
               <occurrences minimum="1" maximum="1"/>
               <config>
-                <relationship-type>image</relationship-type>
+                <relationship-type>system:related-image</relationship-type>
               </config>
             </input>
           </items>
