@@ -2,13 +2,13 @@
 <metadata>
   <display-name>Menu</display-name>
   <form>
-    <input name="showInMenu" type="Checkbox">
-      <label>Show in menu</label>
+    <input name="menuItem" type="Checkbox">
+      <label>Menu Item</label>
       <immutable>false</immutable>
       <indexed>true</indexed>
       <custom-text/>
       <occurrences minimum="0" maximum="1"/>
-      <help-text/>
+      <help-text>Check this to include this Page in the menu</help-text>
     </input>
     <input name="menuName" type="TextLine">
       <label>Menu name</label>
