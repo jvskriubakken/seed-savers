@@ -33,7 +33,7 @@ public final class DemoInitializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( DemoInitializer.class );
 
-    private static final Context STAGE_CONTEXT = new Context( ContentConstants.WORKSPACE_STAGE );
+    private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
 
     private static final String[] FOLDER_IMAGES_POP =
         {"Pop_01.jpg", "Pop_02.jpg", "Pop_03.jpg", "Pop_04.jpg", "Pop_05.jpg", "Pop_06.jpg", "Pop_07.jpg", "Pop_08.jpg", "Pop-Black.jpg",

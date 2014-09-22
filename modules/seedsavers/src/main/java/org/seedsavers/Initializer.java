@@ -26,7 +26,7 @@ public class Initializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( Initializer.class );
 
-    private static final Context STAGE_CONTEXT = new Context( ContentConstants.WORKSPACE_STAGE );
+    private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
 
     private static final ContentTypeName MEMBER_CONTENT_TYPE_NAME =
         ContentTypeName.from( ModuleKey.from( "com.enonic.wem.modules.seedsavers-1.0.0" ), "member" );
