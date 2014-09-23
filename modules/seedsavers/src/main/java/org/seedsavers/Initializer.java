@@ -78,29 +78,9 @@ public final class Initializer
                 name( "caretakings" ).
                 parent( seedSaversFolder ).
                 displayName( "Caretakings" ), context );
+
+            createMembers();
         }
-
-        Thread t = new Thread( new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                while ( !contentTypeInstalled( MEMBER_CONTENT_TYPE_NAME ) )
-                {
-                    try
-                    {
-                        Thread.sleep( 1000 );
-                    }
-                    catch ( InterruptedException e )
-                    {
-                        // Ignore
-                    }
-                }
-                createMembers();
-            }
-        } );
-        t.start();
-
     }
 
     private void createMembers()
@@ -137,11 +117,6 @@ public final class Initializer
             form( memberForm ).
             contentType( contentType ).
             parent( this.membersFolder );
-    }
-
-    private boolean contentTypeInstalled( ContentTypeName name )
-    {
-        return getContentType( name ) != null;
     }
 
     private ContentType getContentType( ContentTypeName name )
