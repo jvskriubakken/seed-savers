@@ -3,7 +3,7 @@ var view = resolve('/view/trampoline-image.xsl');
 
 function handleGet(portal) {
 
-    var xml = <dummy/>;
+    var xml = '<dummy/>';
     var editMode = portal.request.mode == 'edit';
     var params = {
         editable: editMode,
@@ -12,7 +12,7 @@ function handleGet(portal) {
         imageUrl: portal.component.image != null ? portal.url.createImageByIdUrl(portal.component.image) : null
     };
 
-    var body = system.xslt.render(view, xml, params);
+    var body = xslt.render(view, xml, params);
 
     portal.response.contentType = 'text/html';
     portal.response.body = body;

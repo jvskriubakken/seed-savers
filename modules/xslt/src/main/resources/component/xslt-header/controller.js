@@ -2,7 +2,7 @@ var xslt = require('view/xslt');
 var view = resolve('/view/header-component.xsl');
 
 function handleGet(portal) {
-    var xml = <dummy/>;
+    var xml = '<dummy/>';
     var editMode = portal.request.mode == 'edit';
     var params = {
         title: portal.content.displayName,
