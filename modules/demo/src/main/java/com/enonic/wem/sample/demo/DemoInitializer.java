@@ -21,6 +21,7 @@ import com.enonic.wem.api.data.Property;
 import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.form.Input;
 import com.enonic.wem.api.form.inputtype.InputTypes;
+import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.schema.content.ContentType;
 import com.enonic.wem.api.schema.content.ContentTypeName;
 import com.enonic.wem.api.schema.content.ContentTypeNames;
@@ -30,6 +31,7 @@ import com.enonic.wem.api.schema.content.GetContentTypesParams;
 import static com.enonic.wem.api.content.attachment.Attachment.newAttachment;
 
 public final class DemoInitializer
+    implements DataInitializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( DemoInitializer.class );
 
@@ -60,6 +62,7 @@ public final class DemoInitializer
 
     private ContentTypeService contentTypeService;
 
+    @Override
     public void initialize()
         throws Exception
     {

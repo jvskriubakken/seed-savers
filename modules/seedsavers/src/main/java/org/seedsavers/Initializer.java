@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.enonic.wem.api.account.AccountKey;
-import com.enonic.wem.api.blob.BlobService;
-import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentConstants;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
@@ -14,6 +12,7 @@ import com.enonic.wem.api.content.data.ContentData;
 import com.enonic.wem.api.context.Context;
 import com.enonic.wem.api.data.Value;
 import com.enonic.wem.api.form.Form;
+import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.module.ModuleKey;
 import com.enonic.wem.api.schema.content.ContentType;
 import com.enonic.wem.api.schema.content.ContentTypeName;
@@ -22,7 +21,8 @@ import com.enonic.wem.api.schema.content.ContentTypeService;
 import com.enonic.wem.api.schema.content.GetContentTypesParams;
 
 @SuppressWarnings("UnusedDeclaration")
-public class Initializer
+public final class Initializer
+    implements DataInitializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( Initializer.class );
 
@@ -35,14 +35,13 @@ public class Initializer
 
     private ContentPath membersFolder = ContentPath.from( seedSaversFolder, "members" );
 
-    private BlobService blobService;
-
     private ContentService contentService;
 
     private ContentTypeService contentTypeService;
 
     private Context context = STAGE_CONTEXT;
 
+    @Override
     public void initialize()
         throws Exception
     {
@@ -65,7 +64,7 @@ public class Initializer
                 parent( seedSaversFolder ).
                 displayName( "Families" ), context );
 
-             contentService.create( createFolder().
+            contentService.create( createFolder().
                 name( "genus" ).
                 parent( seedSaversFolder ).
                 displayName( "Genus" ), context );
@@ -161,11 +160,6 @@ public class Initializer
         {
             return false;
         }
-    }
-
-    public void setBlobService( final BlobService blobService )
-    {
-        this.blobService = blobService;
     }
 
     public void setContentService( final ContentService contentService )
