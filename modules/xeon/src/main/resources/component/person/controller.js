@@ -2,32 +2,37 @@ var thymeleaf = require('view/thymeleaf');
 var contentService = require('contentService');
 
 function handleGet(portal) {
+
     var component = portal.component;
     var content = portal.content;
-    var page = portal.content.page;
-    var relatedPerson = component.config.getProperty('com.enonic.wem.modules.xeon-1.0.0:related-person');
-    var person, personData;
+    var person;
+    var personContent;
 
     if (content.type == 'com.enonic.wem.modules.xeon-1.0.0:person') {
-        personData = content;
+        personContent = content;
     } else {
         var personId;
+        var relatedPerson = component.config.getProperty('person');
         if (relatedPerson) {
             personId = relatedPerson.getString();
             if (personId) {
-                personData = contentService.getContentById(personId);
+                personContent = contentService.getContentById(personId);
             }
         }
     }
 
-    var imageProperty = personData.contentData.getProperty('image');
-    if (personData && imageProperty) {
+    var imageProperty = null;
+    if (personContent) {
+        imageProperty = personContent.contentData.getProperty('image');
+    }
+
+    if (personContent && imageProperty) {
         var imageContent = contentService.getContentById(imageProperty.getString());
         person = {
-            name: personData.contentData.getProperty('first-name').getString() + ' ' +
-                  personData.contentData.getProperty('middle-name').getString() + ' ' +
-                  personData.contentData.getProperty('last-name').getString(),
-            title: personData.contentData.getProperty('job-title').getString(),
+            name: personContent.contentData.getProperty('first-name').getString() + ' ' +
+                  personContent.contentData.getProperty('middle-name').getString() + ' ' +
+                  personContent.contentData.getProperty('last-name').getString(),
+            title: personContent.contentData.getProperty('job-title').getString(),
             image: portal.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
         };
     } else {
@@ -51,6 +56,10 @@ function handleGet(portal) {
 
     portal.response.contentType = 'text/html';
     portal.response.body = body;
+}
+
+function log(text) {
+    java.lang.System.out.println(text);
 }
 
 exports.get = handleGet;
