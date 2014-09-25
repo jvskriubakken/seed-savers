@@ -8,7 +8,7 @@ function handleGet(portal) {
     var person;
     var personContent;
 
-    if (content.type == 'com.enonic.wem.modules.xeon-1.0.0:person') {
+    if (content.type == 'com.enonic.wem.modules.xeon:person') {
         personContent = content;
     } else {
         var personId;

@@ -18,7 +18,7 @@
     </input>
 
     <mixin-reference name="address">
-      <reference>com.enonic.wem.modules.seedsavers-1.0.0:address</reference>
+      <reference>com.enonic.wem.modules.seedsavers:address</reference>
     </mixin-reference>
 
   </form>

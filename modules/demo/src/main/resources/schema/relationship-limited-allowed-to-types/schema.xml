@@ -13,7 +13,7 @@
       <indexed>false</indexed>
       <occurrences minimum="0" maximum="3"/>
       <config>
-        <relationship-type>com.enonic.wem.modules.demo-1.0.0:citation</relationship-type>
+        <relationship-type>com.enonic.wem.modules.demo:citation</relationship-type>
       </config>
     </input>
   </form>

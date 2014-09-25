@@ -8,7 +8,7 @@
   <allow-child-content>true</allow-child-content>
   <form>
     <mixin-reference name="address">
-      <reference>com.enonic.wem.modules.demo-1.0.0:address</reference>
+      <reference>com.enonic.wem.modules.demo:address</reference>
     </mixin-reference>
   </form>
 </type>

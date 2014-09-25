@@ -27,7 +27,7 @@
           <help-text/>
           <occurrences minimum="0" maximum="1"/>
           <config>
-            <relationship-type>com.enonic.wem.modules.seedsavers-1.0.0:genus-rel</relationship-type>
+            <relationship-type>com.enonic.wem.modules.seedsavers:genus-rel</relationship-type>
           </config>
         </input>
       </items>

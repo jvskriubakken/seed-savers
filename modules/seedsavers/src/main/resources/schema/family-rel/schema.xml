@@ -5,6 +5,6 @@
   <to-semantic>from family</to-semantic>
   <allowed-from-types/>
   <allowed-to-types>
-    <content-type>com.enonic.wem.modules.seedsavers-1.0.0:family</content-type>
+    <content-type>com.enonic.wem.modules.seedsavers:family</content-type>
   </allowed-to-types>
 </relationship-type>

@@ -5,6 +5,6 @@
   <to-semantic>from genus</to-semantic>
   <allowed-from-types/>
   <allowed-to-types>
-    <content-type>com.enonic.wem.modules.seedsavers-1.0.0:genus</content-type>
+    <content-type>com.enonic.wem.modules.seedsavers:genus</content-type>
   </allowed-to-types>
 </relationship-type>

@@ -16,7 +16,7 @@
       <help-text/>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <relationship-type>com.enonic.wem.modules.seedsavers-1.0.0:variety-rel</relationship-type>
+        <relationship-type>com.enonic.wem.modules.seedsavers:variety-rel</relationship-type>
       </config>
     </input>
     <input type="Relationship" name="caretaker">
@@ -27,7 +27,7 @@
       <help-text/>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <relationship-type>com.enonic.wem.modules.seedsavers-1.0.0:member-rel</relationship-type>
+        <relationship-type>com.enonic.wem.modules.seedsavers:member-rel</relationship-type>
       </config>
     </input>
     <input type="Relationship" name="origin">
@@ -38,7 +38,7 @@
       <help-text/>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <relationship-type>com.enonic.wem.modules.seedsavers-1.0.0:member-rel</relationship-type>
+        <relationship-type>com.enonic.wem.modules.seedsavers:member-rel</relationship-type>
       </config>
     </input>
     <input type="Date" name="since">

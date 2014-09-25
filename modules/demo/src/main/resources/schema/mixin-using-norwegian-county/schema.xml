@@ -8,7 +8,7 @@
   <allow-child-content>true</allow-child-content>
   <form>
     <mixin-reference name="norwegian-county">
-      <reference>com.enonic.wem.modules.demo-1.0.0:norwegian-county</reference>
+      <reference>com.enonic.wem.modules.demo:norwegian-county</reference>
     </mixin-reference>
   </form>
 </type>

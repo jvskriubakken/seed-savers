@@ -4,7 +4,7 @@ function handleGet(portal) {
     var component = portal.component;
     var site = portal.siteContent;
 
-    var contentData = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon-1.0.0').getConfig();
+    var contentData = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon').getConfig();
 
     var social = {
         facebook: contentData.getProperty('facebook').getString(),

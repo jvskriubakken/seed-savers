@@ -29,7 +29,7 @@ public final class Initializer
     private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
 
     private static final ContentTypeName MEMBER_CONTENT_TYPE_NAME =
-        ContentTypeName.from( ModuleKey.from( "com.enonic.wem.modules.seedsavers-1.0.0" ), "member" );
+        ContentTypeName.from( ModuleKey.from( "com.enonic.wem.modules.seedsavers" ), "member" );
 
     private ContentPath seedSaversFolder = ContentPath.from( "/seed-savers" );
 
