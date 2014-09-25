@@ -7,12 +7,20 @@
   <is-built-in>false</is-built-in>
   <allow-child-content>true</allow-child-content>
   <form>
-    <input name="Date" type="Date">
-      <label>select a date</label>
+    <input name="date" type="Date">
+      <label>Date</label>
       <immutable>false</immutable>
       <indexed>true</indexed>
       <custom-text>Custom text</custom-text>
-      <occurrences minimum="0" maximum="0"/>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text>..that's the question!</help-text>
+    </input>
+    <input name="requiredDate" type="Date">
+      <label>Required Date</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text>Custom text</custom-text>
+      <occurrences minimum="1" maximum="0"/>
       <help-text>..that's the question!</help-text>
     </input>
   </form>
