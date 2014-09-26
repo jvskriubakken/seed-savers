@@ -13,26 +13,26 @@ function handleGet(portal) {
         context: portal,
         pageRegions: pageRegions,
         mainRegion: pageRegions.getRegion("main"),
-        contents: getContentsWithoutImages(),
+        contents: getContentsWithoutImages(site),
         editable: editMode,
         banner: false,
         site: site,
         moduleConfig: xeonConfig,
         content: content,
-        logoUrl: getLogoUrl(portal)
+        logoUrl: getLogoUrl(portal, xeonConfig)
     };
 
     // var body = system.thymeleaf.render('view/page.html', params);
 
-    var view = resolve('view/page.html');
+    var view = resolve('../../view/page.html');
     var body = thymeleaf.render(view, params);
 
     portal.response.contentType = 'text/html';
     portal.response.body = body;
 }
 
-function getContentsWithoutImages() {
-    var contents = contentService.getChildContent(site.path).getList().toArray();
+function getContentsWithoutImages(site) {
+    var contents = Java.from(contentService.getChildContent(site.path).getSet());
     var noImagesContent = [];
     for (var i = 0; i <contents.length; i++) {
         if (contents[i].type.getContentTypeName() != "image") {
@@ -43,10 +43,10 @@ function getContentsWithoutImages() {
     return noImagesContent;
 }
 
-function getLogoUrl(portal) {
+function getLogoUrl(portal, xeonConfig) {
     var logoContent;
     var logo = xeonConfig.getProperty('logo');
-    if (logo) {
+    if (logo && !logo.hasNullValue()) {
         logoContent = contentService.getContentById(logo.getString());
     }
 
@@ -56,3 +56,5 @@ function getLogoUrl(portal) {
         return portal.url.createResourceUrl('images/logo.png');
     }
 }
+
+exports.get = handleGet;

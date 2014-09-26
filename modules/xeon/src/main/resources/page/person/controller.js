@@ -20,7 +20,7 @@ function handleGet(portal) {
         site: site,
         moduleConfig: xeonConfig,
         content: content,
-        logoUrl: getLogoUrl(portal)
+        logoUrl: getLogoUrl(portal, xeonConfig)
     };
 
     var view = resolve('/view/page.html');
@@ -30,10 +30,10 @@ function handleGet(portal) {
     portal.response.body = body;
 }
 
-function getLogoUrl(portal) {
+function getLogoUrl(portal, xeonConfig) {
     var logoContent;
     var logo = xeonConfig.getProperty('logo');
-    if (logo) {
+    if (logo && !logo.hasNullValue()) {
         logoContent = contentService.getContentById(logo.getString());
     }
 
@@ -44,3 +44,4 @@ function getLogoUrl(portal) {
     }
 }
 
+exports.get = handleGet;
