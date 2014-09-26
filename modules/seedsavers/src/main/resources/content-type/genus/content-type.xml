@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<type>
+<content-type>
   <display-name>Genus</display-name>
   <content-display-name-script/>
   <super-type>system:structured</super-type>
@@ -20,4 +20,4 @@
       </config>
     </input>
   </form>
-</type>
+</content-type>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<type>
+<content-type>
   <display-name>Medlem</display-name>
   <content-display-name-script>$('name')</content-display-name-script>
   <super-type>system:structured</super-type>
@@ -22,4 +22,4 @@
     </mixin-reference>
 
   </form>
-</type>
+</content-type>

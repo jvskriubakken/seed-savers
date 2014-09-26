@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<type>
+<content-type>
   <display-name>Using mixin: address</display-name>
   <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
@@ -11,4 +11,4 @@
       <reference>com.enonic.wem.modules.demo:address</reference>
     </mixin-reference>
   </form>
-</type>
+</content-type>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<type>
+<content-type>
     <display-name>Plant</display-name>
     <content-display-name-script></content-display-name-script>
     <super-type>system:structured</super-type>
@@ -113,4 +113,4 @@
             <help-text></help-text>
         </input>
     </form>
-</type>
+</content-type>

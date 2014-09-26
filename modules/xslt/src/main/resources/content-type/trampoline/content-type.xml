@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<type>
+<content-type>
   <display-name>Trampoline</display-name>
   <content-display-name-script>$('vendor') + ' - ' + $('name')</content-display-name-script>
   <super-type>system:structured</super-type>
@@ -122,4 +122,4 @@
       </items>
     </field-set>
   </form>
-</type>
+</content-type>

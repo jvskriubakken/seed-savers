@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<type>
+<content-type>
   <display-name>Content Display name script</display-name>
   <content-display-name-script>$('firstName', 'middleName', 'lastName')</content-display-name-script>
   <super-type>system:structured</super-type>
@@ -40,4 +40,4 @@
       <occurrences minimum="0" maximum="0"/>
     </form-item-set>
   </form>
-</type>
+</content-type>

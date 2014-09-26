@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<type>
+<content-type>
   <display-name>Text Area</display-name>
   <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
@@ -14,4 +14,4 @@
       <occurrences minimum="0" maximum="1"/>
     </input>
   </form>
-</type>
+</content-type>

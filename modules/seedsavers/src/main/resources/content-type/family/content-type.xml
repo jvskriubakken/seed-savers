@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<type>
+<content-type>
   <display-name>Family</display-name>
   <content-display-name-script/>
   <super-type>system:structured</super-type>
@@ -9,4 +9,4 @@
   <allow-child-content>true</allow-child-content>
   <form>
   </form>
-</type>
+</content-type>

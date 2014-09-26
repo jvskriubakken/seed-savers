@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<type>
+<content-type>
   <display-name>Ivaretakelse</display-name>
   <content-display-name-script/>
   <super-type>system:structured</super-type>
@@ -50,4 +50,4 @@
       <occurrences minimum="0" maximum="1"/>
     </input>
   </form>
-</type>
+</content-type>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<type>
+<content-type>
   <display-name>Text Line</display-name>
   <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
@@ -24,4 +24,4 @@
       <help-text>Some help text</help-text>
     </input>
   </form>
-</type>
+</content-type>

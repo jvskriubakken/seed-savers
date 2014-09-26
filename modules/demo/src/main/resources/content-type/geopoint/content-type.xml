@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<type>
+<content-type>
   <display-name>Geo Location</display-name>
   <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
@@ -16,4 +16,4 @@
       <help-text>..that's the question!</help-text>
     </input>
   </form>
-</type>
+</content-type>
