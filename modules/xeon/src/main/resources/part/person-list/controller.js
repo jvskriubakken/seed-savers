@@ -3,7 +3,7 @@ var contentService = require('contentService');
 
 function handleGet(portal) {
     var component = portal.component;
-    var relatedPersons = component.config.getDataByName("person").toArray();
+    var relatedPersons = Java.from(component.config.getDataByName("person"));
     var persons = [];
 
     relatedPersons.forEach(function (element) {
@@ -17,16 +17,11 @@ function handleGet(portal) {
             image: portal.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
         });
     });
-//for (var i in relatedPersons) {
-//    system.log(relatedPersons);
-//    //persons.push(system.contentService.getContentById();
-//}
-
 
     var data = {
         title: component.config.getProperty('title') ? component.config.getProperty('title').getString() : "Please configure",
         text: component.config.getProperty('text') ? component.config.getProperty('text').getString() : "",
-        persons: persons
+        persons: Java.to(persons, "java.util.Map[]")
     };
 
     var params = {
