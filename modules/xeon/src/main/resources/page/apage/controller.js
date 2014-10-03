@@ -40,7 +40,7 @@ function getContentsWithoutImages(site) {
         }
     }
 
-    return noImagesContent;
+    return Java.to(noImagesContent, "java.util.List");
 }
 
 function getLogoUrl(portal, xeonConfig) {
