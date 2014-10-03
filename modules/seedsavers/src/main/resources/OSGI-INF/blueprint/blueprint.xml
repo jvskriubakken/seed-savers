@@ -3,7 +3,6 @@
 
   <reference id="contentService" interface="com.enonic.wem.api.content.ContentService"/>
   <reference id="contentTypeService" interface="com.enonic.wem.api.schema.content.ContentTypeService"/>
-  <reference id="siteService" interface="com.enonic.wem.api.content.site.SiteService"/>
   <reference id="pageTemplateService" interface="com.enonic.wem.api.content.page.PageTemplateService"/>
   <reference id="pageService" interface="com.enonic.wem.api.content.page.PageService"/>
 
