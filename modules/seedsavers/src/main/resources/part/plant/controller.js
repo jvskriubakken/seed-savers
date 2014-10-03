@@ -7,7 +7,7 @@ function handleGet(portal) {
     if( portal.content.isPageTemplate() ) {
         plant = {
             binomialName : "Binomial name",
-            norwegianNames: ["navn1", "navn2", "navn3"]
+            norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")
         };
     }
     else {

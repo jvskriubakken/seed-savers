@@ -41,9 +41,9 @@ public final class Initializer
 
     private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
 
-    public static final ModuleKey THIS_MODULE_KEY = ModuleKey.from( "com.enonic.wem.modules.seedsavers" );
+    public static final ModuleKey THIS_MODULE = ModuleKey.from( Initializer.class );
 
-    private static final ContentTypeName MEMBER_CONTENT_TYPE_NAME = ContentTypeName.from( THIS_MODULE_KEY, "member" );
+    private static final ContentTypeName MEMBER_CONTENT_TYPE_NAME = ContentTypeName.from( THIS_MODULE, "member" );
 
     private ContentPath seedSaversFolder = ContentPath.from( "/seed-savers" );
 
@@ -66,7 +66,7 @@ public final class Initializer
         if ( !this.hasContent( ContentPath.from( "/seed-savers" ) ) )
         {
             final ModuleConfig moduleConfig = ModuleConfig.newModuleConfig().
-                module( THIS_MODULE_KEY ).
+                module( THIS_MODULE ).
                 config( new RootDataSet() ).
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
@@ -184,7 +184,7 @@ public final class Initializer
             site( sitePath ).
             name( "top-main" ).
             displayName( "Top and main" ).
-            controller( PageDescriptorKey.from( "com.enonic.wem.modules.seedsavers:top-main" ) ).
+            controller( PageDescriptorKey.from( THIS_MODULE, "top-main" ) ).
             supports( supports ).
             pageConfig( new RootDataSet() ).
             //pageRegions( PageRegions.newPageRegions().build() ).
@@ -199,19 +199,19 @@ public final class Initializer
 
     private Content createPageTemplateFamily( final ContentPath sitePath )
     {
-        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE_KEY, "family" ) );
+        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "family" ) );
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             name( "family" ).
             displayName( "Family" ).
-            controller( PageDescriptorKey.from( "com.enonic.wem.modules.seedsavers:family" ) ).
+            controller( PageDescriptorKey.from( THIS_MODULE, "family" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( ImageComponent.newImageComponent().name( "Image" ).build() ).
                     add( PartComponent.newPartComponent().
-                        name( "Family" ).descriptor( PartDescriptorKey.from( "com.enonic.wem.modules.seedsavers:family" ) ).
+                        name( "Family" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "family" ) ).
                         build() ).
                     build() ).
                 build() ).
@@ -220,19 +220,19 @@ public final class Initializer
 
     private Content createPageTemplatePlant( final ContentPath sitePath )
     {
-        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE_KEY, "plant" ) );
+        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "plant" ) );
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             name( "plant" ).
             displayName( "Plant" ).
-            controller( PageDescriptorKey.from( "com.enonic.wem.modules.seedsavers:plant" ) ).
+            controller( PageDescriptorKey.from( THIS_MODULE, "plant" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( ImageComponent.newImageComponent().name( "Image" ).build() ).
                     add( PartComponent.newPartComponent().
-                        name( "Plant" ).descriptor( PartDescriptorKey.from( "com.enonic.wem.modules.seedsavers:plant" ) ).
+                        name( "Plant" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "plant" ) ).
                         build() ).
                     build() ).
                 build() ).
@@ -241,18 +241,18 @@ public final class Initializer
 
     private Content createPageTemplateMember( final ContentPath sitePath )
     {
-        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE_KEY, "member" ) );
+        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "member" ) );
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             name( "member" ).
             displayName( "Member" ).
-            controller( PageDescriptorKey.from( "com.enonic.wem.modules.seedsavers:member" ) ).
+            controller( PageDescriptorKey.from( THIS_MODULE, "member" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( PartComponent.newPartComponent().
-                        name( "Member" ).descriptor( PartDescriptorKey.from( "com.enonic.wem.modules.seedsavers:member" ) ).
+                        name( "Member" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "member" ) ).
                         build() ).
                     build() ).
                 build() ).
