@@ -8,6 +8,14 @@
   <is-built-in>false</is-built-in>
   <allow-child-content>true</allow-child-content>
   <form>
+    <input type="TextLine" name="norwegianNames">
+      <label>Andre norske navn</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text/>
+      <help-text/>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
     <input type="Relationship" name="family">
       <label>Familie</label>
       <immutable>false</immutable>

@@ -109,7 +109,7 @@
       <help-text/>
       <occurrences minimum="0" maximum="0"/>
       <config>
-        <relationship-type>system:image</relationship-type>
+        <relationship-type>system:related-image</relationship-type>
       </config>
     </input>
   </form>

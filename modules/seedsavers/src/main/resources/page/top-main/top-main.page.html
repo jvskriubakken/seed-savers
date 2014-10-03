@@ -19,16 +19,19 @@
 <div id="topRegion"
      data-live-edit-type="region">
 
-    <div data-th-each="component : ${topRegion.components}" data-th-remove="tag">
-        <div data-wem-component="${component.path}" data-th-remove="tag"/>
+    <div data-th-if="${topRegion}" data-th-remove="tag">
+        <div data-th-each="component : ${topRegion.components}" data-th-remove="tag">
+            <div data-wem-component="${component.path}" data-th-remove="tag"/>
+        </div>
     </div>
 </div>
 <div id="mainRegion"
      data-live-edit-type="region">
 
-    <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
-        <div data-wem-component="${component.path}" data-th-remove="tag"/>
-    </div>
+        <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+            <div data-wem-component="${component.path}" data-th-remove="tag"/>
+        </div>
+
 </div>
 
 From: <span data-th-text="${from}">from</span>

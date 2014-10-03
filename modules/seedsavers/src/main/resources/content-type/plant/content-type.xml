@@ -1,116 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <content-type>
-    <display-name>Plant</display-name>
-    <content-display-name-script></content-display-name-script>
-    <super-type>system:structured</super-type>
-    <is-abstract>false</is-abstract>
-    <is-final>true</is-final>
-    <is-built-in>false</is-built-in>
-    <allow-child-content>true</allow-child-content>
-    <form>
-        <input name="binomialName" type="TextLine">
-            <label>Binomialt navn</label>
-            <immutable>false</immutable>
-            <indexed>true</indexed>
-            <custom-text></custom-text>
-            <occurrences minimum="0" maximum="1"/>
-            <help-text></help-text>
+  <display-name>Plant</display-name>
+  <content-display-name-script></content-display-name-script>
+  <super-type>system:structured</super-type>
+  <is-abstract>false</is-abstract>
+  <is-final>true</is-final>
+  <is-built-in>false</is-built-in>
+  <allow-child-content>true</allow-child-content>
+  <form>
+    <input name="binomialName" type="TextLine">
+      <label>Binomialt navn</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text></custom-text>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text></help-text>
+    </input>
+    <field-set name="scientificClassification">
+      <label>Klassifisering</label>
+      <items>
+        <input name="genus" type="Relationship">
+          <label>Slekt</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="1"/>
+          <config>
+            <relationship-type>com.enonic.wem.modules.seedsavers:genus-rel</relationship-type>
+          </config>
+          <help-text></help-text>
         </input>
-        <field-set name="scientificClassification">
-            <label>Klassifisering</label>
-            <items>
-                <input name="genus" type="Relationship">
-                    <label>Slekt</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="1"/>
-                    <config>
-                        <relationship-type>com.enonic.wem.modules.seedsavers:genus-rel</relationship-type>
-                    </config>
-                    <help-text></help-text>
-                </input>
-            </items>
-        </field-set>
-        <input name="norwegianNames" type="TextLine">
-            <label>Andre norske navn</label>
-            <immutable>false</immutable>
-            <indexed>true</indexed>
-            <custom-text></custom-text>
-            <occurrences minimum="0" maximum="0"/>
-            <help-text></help-text>
+      </items>
+    </field-set>
+    <input name="norwegianNames" type="TextLine">
+      <label>Andre norske navn</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text></custom-text>
+      <occurrences minimum="0" maximum="0"/>
+      <help-text></help-text>
+    </input>
+    <field-set name="namesInOtherLanguages">
+      <label>Navn på andre språk</label>
+      <items>
+        <input name="swedishNames" type="TextLine">
+          <label>Svenske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
         </input>
-        <field-set name="namesInOtherLanguages">
-            <label>Navn på andre språk</label>
-            <items>
-                <input name="swedishNames" type="TextLine">
-                    <label>Svenske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-                <input name="danishNames" type="TextLine">
-                    <label>Danske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-                <input name="finnishNames" type="TextLine">
-                    <label>Finske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-                <input name="englishNames" type="TextLine">
-                    <label>Engelske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-                <input name="germanNames" type="TextLine">
-                    <label>Tyske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-                <input name="frenchNames" type="TextLine">
-                    <label>Franske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-                <input name="spanishNames" type="TextLine">
-                    <label>Spanske navn</label>
-                    <immutable>false</immutable>
-                    <indexed>true</indexed>
-                    <custom-text></custom-text>
-                    <occurrences minimum="0" maximum="0"/>
-                    <help-text></help-text>
-                </input>
-            </items>
-        </field-set>
-        <input name="pictures" type="ImageSelector">
-            <label>Bilder</label>
-            <immutable>false</immutable>
-            <indexed>false</indexed>
-            <custom-text></custom-text>
-            <occurrences minimum="0" maximum="0"/>
-            <config>
-                <relationship-type>system:image</relationship-type>
-            </config>
-            <help-text></help-text>
+        <input name="danishNames" type="TextLine">
+          <label>Danske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
         </input>
-    </form>
+        <input name="finnishNames" type="TextLine">
+          <label>Finske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
+        </input>
+        <input name="englishNames" type="TextLine">
+          <label>Engelske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
+        </input>
+        <input name="germanNames" type="TextLine">
+          <label>Tyske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
+        </input>
+        <input name="frenchNames" type="TextLine">
+          <label>Franske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
+        </input>
+        <input name="spanishNames" type="TextLine">
+          <label>Spanske navn</label>
+          <immutable>false</immutable>
+          <indexed>true</indexed>
+          <custom-text></custom-text>
+          <occurrences minimum="0" maximum="0"/>
+          <help-text></help-text>
+        </input>
+      </items>
+    </field-set>
+    <input name="pictures" type="ImageSelector">
+      <label>Bilder</label>
+      <immutable>false</immutable>
+      <indexed>false</indexed>
+      <custom-text></custom-text>
+      <occurrences minimum="0" maximum="0"/>
+      <config>
+        <relationship-type>system:related-image</relationship-type>
+      </config>
+      <help-text></help-text>
+    </input>
+  </form>
 </content-type>
