@@ -21,6 +21,7 @@ import com.enonic.wem.api.content.page.region.Region;
 import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
+import com.enonic.wem.api.content.site.Site;
 import com.enonic.wem.api.context.Context;
 import com.enonic.wem.api.data.RootDataSet;
 import com.enonic.wem.api.data.Value;
@@ -71,7 +72,7 @@ public final class Initializer
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
-            final Content site =
+            final Site site =
                 contentService.create( createSiteContent( "Seed Savers", "A Site for seed savers.", moduleConfigs ), context );
 
             createPageTemplateTopMain( site.getPath() );
@@ -80,29 +81,24 @@ public final class Initializer
             createPageTemplateFamily( site.getPath() );
 
             contentService.create( createFolder().
-                name( "members" ).
                 parent( seedSaversFolder ).
                 displayName( "Members" ), context );
 
             final Content families = contentService.create( createFolder().
-                name( "families" ).
                 parent( seedSaversFolder ).
                 displayName( "Families" ), context );
 
             createFamilies( families.getPath() );
 
             contentService.create( createFolder().
-                name( "genus" ).
                 parent( seedSaversFolder ).
                 displayName( "Genus" ), context );
 
             contentService.create( createFolder().
-                name( "varieties" ).
                 parent( seedSaversFolder ).
                 displayName( "Varieties" ), context );
 
             contentService.create( createFolder().
-                name( "caretakings" ).
                 parent( seedSaversFolder ).
                 displayName( "Caretakings" ), context );
 
@@ -187,7 +183,6 @@ public final class Initializer
             controller( PageDescriptorKey.from( THIS_MODULE, "top-main" ) ).
             supports( supports ).
             pageConfig( new RootDataSet() ).
-            //pageRegions( PageRegions.newPageRegions().build() ).
                 pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "top" ).

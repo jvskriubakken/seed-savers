@@ -1,4 +1,4 @@
-package com.enonic.wem.modules.xeon;
+package com.enonic.wem.modules.xslt;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,13 +11,8 @@ import com.enonic.wem.api.content.page.CreatePageTemplateParams;
 import com.enonic.wem.api.content.page.PageDescriptorKey;
 import com.enonic.wem.api.content.page.PageRegions;
 import com.enonic.wem.api.content.page.PageTemplateService;
-import com.enonic.wem.api.content.page.image.ImageComponent;
-import com.enonic.wem.api.content.page.layout.LayoutComponent;
-import com.enonic.wem.api.content.page.layout.LayoutDescriptorKey;
-import com.enonic.wem.api.content.page.layout.LayoutRegions;
 import com.enonic.wem.api.content.page.part.PartComponent;
 import com.enonic.wem.api.content.page.region.Region;
-import com.enonic.wem.api.content.page.part.PartDescriptorKey;
 import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
@@ -40,7 +35,7 @@ public final class Initializer
 
     public static final ModuleKey THIS_MODULE = ModuleKey.from( Initializer.class );
 
-    private ContentPath xeonFolder = ContentPath.from( "/xeon" );
+    private ContentPath xsltSitePath = ContentPath.from( "/xslt" );
 
     private ContentService contentService;
 
@@ -56,7 +51,7 @@ public final class Initializer
     {
         LOG.info( "initialize...." );
 
-        if ( !this.hasContent( xeonFolder ) )
+        if ( !this.hasContent( xsltSitePath ) )
         {
             final ModuleConfig moduleConfig = ModuleConfig.newModuleConfig().
                 module( THIS_MODULE ).
@@ -64,11 +59,9 @@ public final class Initializer
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
-            final Site site = contentService.create( createSiteContent( "Xeon", "Xeon demo site.", moduleConfigs ), context );
+            final Site site = contentService.create( createSiteContent( "Xslt", "Xslt demo site.", moduleConfigs ), context );
 
             createPageTemplateHomePage( site.getPath() );
-            createPageTemplateBannerPage( site.getPath() );
-            createPageTemplatePresonPage( site.getPath() );
         }
     }
 
@@ -87,9 +80,9 @@ public final class Initializer
 
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
-            name( "home-page" ).
-            displayName( "Home page" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "apage" ) ).
+            name( "xslt-landing-page" ).
+            displayName( "XSLT Landing page" ).
+            controller( PageDescriptorKey.from( THIS_MODULE, "xslt-landing-page" ) ).
             supports( supports ).
             pageConfig( new RootDataSet() ).
             pageRegions( PageRegions.newPageRegions().
@@ -100,58 +93,6 @@ public final class Initializer
                 build() ), context );
     }
 
-    private Content createPageTemplateBannerPage( final ContentPath sitePath )
-    {
-        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.site() );
-
-        return pageTemplateService.create( new CreatePageTemplateParams().
-            site( sitePath ).
-            name( "banner-page" ).
-            displayName( "Banner" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "banner-page" ) ).
-            supports( supports ).
-            pageConfig( new RootDataSet() ).
-            pageRegions( PageRegions.newPageRegions().
-                add( Region.newRegion().
-                    name( "main" ).
-                    add( LayoutComponent.newLayoutComponent().name( "Layout-3-col" ).
-                        descriptor( LayoutDescriptorKey.from( THIS_MODULE, "layout-3-col" ) ).
-                        regions( LayoutRegions.newLayoutRegions().
-                            add( Region.newRegion().name( "left" ).
-                                add( ImageComponent.newImageComponent().name( "Image" ).build() ).
-                                build() ).
-                            add( Region.newRegion().name( "center" ).
-                                add( ImageComponent.newImageComponent().name( "Image" ).build() ).
-                                build() ).
-                            add( Region.newRegion().name( "right" ).
-                                add( ImageComponent.newImageComponent().name( "Image" ).build() ).
-                                build() ).
-                            build() ).
-                        build() ).
-                    add( PartComponent.newPartComponent().name( "mypart" ).build() ).
-                    build() ).
-                build() ), context );
-    }
-
-    private Content createPageTemplatePresonPage( final ContentPath sitePath )
-    {
-        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "person" ) );
-
-        return pageTemplateService.create( new CreatePageTemplateParams().
-            site( sitePath ).
-            name( "person-page" ).
-            displayName( "Person" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "person" ) ).
-            supports( supports ).
-            pageConfig( new RootDataSet() ).
-            pageRegions( PageRegions.newPageRegions().
-                add( Region.newRegion().
-                    name( "main" ).
-                    add( PartComponent.newPartComponent().name( "Person" ).descriptor(
-                        PartDescriptorKey.from( THIS_MODULE, "person" ) ).build() ).
-                    build() ).
-                build() ), context );
-    }
 
     private boolean hasContent( final ContentPath path )
     {

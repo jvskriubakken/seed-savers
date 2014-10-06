@@ -6,7 +6,7 @@
   <reference id="pageTemplateService" interface="com.enonic.wem.api.content.page.PageTemplateService"/>
 
   <service auto-export="interfaces">
-    <bean class="org.seedsavers.Initializer">
+    <bean class="com.enonic.wem.modules.xslt.Initializer">
       <property name="contentService" ref="contentService"/>
       <property name="contentTypeService" ref="contentTypeService"/>
       <property name="pageTemplateService" ref="pageTemplateService"/>
