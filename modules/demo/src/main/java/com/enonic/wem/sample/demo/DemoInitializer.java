@@ -10,6 +10,7 @@ import com.google.common.io.Resources;
 import com.enonic.wem.api.account.AccountKey;
 import com.enonic.wem.api.blob.Blob;
 import com.enonic.wem.api.blob.BlobService;
+import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentConstants;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
@@ -62,11 +63,14 @@ public final class DemoInitializer
 
     private ContentTypeService contentTypeService;
 
+    private final Context context = STAGE_CONTEXT;
+
     @Override
     public void initialize()
         throws Exception
     {
         createImages();
+        createLargeTree();
     }
 
     private boolean hasContent( final ContentPath path )
@@ -78,6 +82,34 @@ public final class DemoInitializer
         catch ( final Exception e )
         {
             return false;
+        }
+    }
+
+    private void createLargeTree()
+    {
+        final ContentPath largeTreePath = ContentPath.from( "large-tree" );
+        if ( !hasContent( largeTreePath ) )
+        {
+            contentService.create( createFolder().
+                name( "large-tree" ).
+                displayName( "Large tree" ).
+                parent( ContentPath.ROOT ), context );
+
+            for ( int i = 1; i <= 2; i++ )
+            {
+                Content parent = contentService.create( createFolder().
+                    displayName( "large-tree-node-" + i ).
+                    displayName( "Large tree node " + i ).
+                    parent( largeTreePath ), context );
+
+                for ( int j = 1; j <= 100; j++ )
+                {
+                    contentService.create( createFolder().
+                        displayName( "large-tree-node-" + i + "-" + j ).
+                        displayName( "Large tree node " + i + "-" + j ).
+                        parent( parent.getPath() ), context );
+                }
+            }
         }
     }
 
@@ -108,7 +140,6 @@ public final class DemoInitializer
     private void doCreateImages()
         throws Exception
     {
-        final Context context = STAGE_CONTEXT;
 
         final ContentPath imageArchivePath = contentService.create( createFolder().
             name( IMAGE_ARCHIVE_PATH_ELEMENT ).
