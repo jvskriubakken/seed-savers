@@ -6,7 +6,7 @@ function handleGet(portal) {
     var view = resolve('./family.page.html');
     var params = {
         context: portal,
-        site: portal.siteContent,
+        site: portal.site,
         content: portal.content,
         pageRegions: portal.pageRegions,
         mainRegion: portal.pageRegions.getRegion("main"),

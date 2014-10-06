@@ -9,7 +9,7 @@ function handleGet(portal) {
         maxCount = maxCountProperty.getLong();
     }
 
-    var membersContent = contentService.getChildContent(portal.siteContent.getPath() + "/members", maxCount);
+    var membersContent = contentService.getChildContent(portal.site.getPath() + "/members", maxCount);
 
     var params = {
         context: portal,

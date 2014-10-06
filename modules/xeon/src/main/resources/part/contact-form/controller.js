@@ -2,9 +2,9 @@ var thymeleaf = require('view/thymeleaf');
 
 function handleGet(portal) {
     var component = portal.component;
-    var site = portal.siteContent;
+    var site = portal.site;
 
-    var contentData = portal.siteContent.site.moduleConfigs.get('com.enonic.wem.modules.xeon').getConfig();
+    var contentData = portal.site.moduleConfigs.get('com.enonic.wem.modules.xeon').getConfig();
 
     var social = {
         facebook: contentData.getProperty('facebook').getString(),

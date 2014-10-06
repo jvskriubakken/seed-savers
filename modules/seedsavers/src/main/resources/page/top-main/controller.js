@@ -2,12 +2,11 @@ var thymeleaf = require('view/thymeleaf');
 
 function handleGet(portal) {
 
-    var site = portal.siteContent;
     var editMode = portal.request.mode == 'edit';
     var view = resolve('./top-main.page.html');
     var params = {
         context: portal,
-        site: portal.siteContent,
+        site: portal.site,
         content: portal.content,
         pageRegions: portal.pageRegions,
         topRegion: portal.pageRegions.getRegion("top"),
