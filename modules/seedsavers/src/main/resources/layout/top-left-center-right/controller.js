@@ -5,7 +5,7 @@ function handleGet(portal) {
     var editMode = portal.request.mode == 'edit';
     var component = portal.component;
     var layoutRegions = portal.layoutRegions;
-    var view = resolve('./layout-top-left-center-right.html');
+    var view = resolve('./top-left-center-right.html');
 
     var params = {
         editable: editMode,
