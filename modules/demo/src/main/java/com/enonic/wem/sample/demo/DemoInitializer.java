@@ -49,12 +49,6 @@ public final class DemoInitializer
 
     private static final String IMAGE_ARCHIVE_PATH_ELEMENT = "imagearchive";
 
-    private static final String TRAMPOLINE_PATH_ELEMENT = "trampoliner";
-
-    private static final String JUMPING_JACK_BIG_BOUNCE_PATH_ELEMENT = "jumping-jack-big-bounce";
-
-    private static final String JUMPING_JACK_POP_PATH_ELEMENT = "jumping-jack-pop";
-
     private BlobService blobService;
 
     private ContentService contentService;
@@ -138,32 +132,26 @@ public final class DemoInitializer
     {
 
         final ContentPath imageArchivePath = contentService.create( createFolder().
-            name( IMAGE_ARCHIVE_PATH_ELEMENT ).
             parent( ContentPath.ROOT ).
             displayName( "Image Archive" ) ).getPath();
 
         contentService.create( createFolder().
-            name( "misc" ).
             parent( imageArchivePath ).
             displayName( "Misc" ) );
 
         contentService.create( createFolder().
-            name( "people" ).
             parent( imageArchivePath ).
             displayName( "People" ) );
 
         ContentPath trampolinerPath = contentService.create( createFolder().
-            name( TRAMPOLINE_PATH_ELEMENT ).
             parent( imageArchivePath ).
             displayName( "Trampoliner" ) ).getPath();
 
         final ContentPath folderImagesBig = contentService.create( createFolder().
-            name( JUMPING_JACK_BIG_BOUNCE_PATH_ELEMENT ).
             parent( trampolinerPath ).
             displayName( "Jumping Jack - Big Bounce" ) ).getPath();
 
         final ContentPath folderImagesPop = contentService.create( createFolder().
-            name( JUMPING_JACK_POP_PATH_ELEMENT ).
             parent( trampolinerPath ).
             displayName( "Jumping Jack - Pop" ).
             contentType( ContentTypeName.folder() ) ).getPath();

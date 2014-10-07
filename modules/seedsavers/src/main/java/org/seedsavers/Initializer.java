@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import com.enonic.wem.api.account.AccountKey;
 import com.enonic.wem.api.content.Content;
-import com.enonic.wem.api.content.ContentConstants;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
@@ -22,7 +21,6 @@ import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
 import com.enonic.wem.api.content.site.Site;
-import com.enonic.wem.api.context.Context;
 import com.enonic.wem.api.data.RootDataSet;
 import com.enonic.wem.api.data.Value;
 import com.enonic.wem.api.form.Form;
@@ -103,13 +101,13 @@ public final class Initializer
 
     private void createMembers()
     {
-        contentService.create( createMember( "aase-kaalrot", "Åse Kålrot" ) );
-        contentService.create( createMember( "guri-gulrot", "Guri Gulrot" ) );
-        contentService.create( createMember( "johan-stover", "Johan Støver" ) );
-        contentService.create( createMember( "joerund-vier-skriubakken", "Jørund Vier Skriubakken" ) );
-        contentService.create( createMember( "kari-korn", "Kari Korn" ) );
-        contentService.create( createMember( "per-kaal", "Per Kål" ) );
-        contentService.create( createMember( "petter-skvaller", "Petter Skvaller" ) );
+        contentService.create( createMember( "Åse Kålrot" ) );
+        contentService.create( createMember( "Guri Gulrot" ) );
+        contentService.create( createMember( "Johan Støver" ) );
+        contentService.create( createMember( "Jørund Vier Skriubakken" ) );
+        contentService.create( createMember( "Kari Korn" ) );
+        contentService.create( createMember( "Per Kål" ) );
+        contentService.create( createMember( "Petter Skvaller" ) );
     }
 
     private CreateSiteParams createSiteContent( final String displayName, final String description, final ModuleConfigs moduleConfigs )
@@ -130,14 +128,13 @@ public final class Initializer
             contentType( ContentTypeName.folder() );
     }
 
-    private CreateContentParams createMember( final String name, final String displayName )
+    private CreateContentParams createMember( final String displayName )
     {
         final Form memberForm = this.getContentType( MEMBER_CONTENT_TYPE_NAME ).form();
         final ContentTypeName contentType = MEMBER_CONTENT_TYPE_NAME;
         final ContentData data = new ContentData();
-        data.setProperty( "name", Value.newString( name ) );
+        data.setProperty( "name", Value.newString( displayName ) );
         return new CreateContentParams().
-            name( name ).
             displayName( displayName ).
             owner( AccountKey.anonymous() ).
             contentData( data ).
