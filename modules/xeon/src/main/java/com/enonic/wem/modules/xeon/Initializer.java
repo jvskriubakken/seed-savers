@@ -36,8 +36,6 @@ public final class Initializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( Initializer.class );
 
-    private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
-
     public static final ModuleKey THIS_MODULE = ModuleKey.from( Initializer.class );
 
     private ContentPath xeonFolder = ContentPath.from( "/xeon" );
@@ -47,8 +45,6 @@ public final class Initializer
     private PageTemplateService pageTemplateService;
 
     private ContentTypeService contentTypeService;
-
-    private Context context = STAGE_CONTEXT;
 
     @Override
     public void initialize()
@@ -64,7 +60,7 @@ public final class Initializer
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
-            final Site site = contentService.create( createSiteContent( "Xeon", "Xeon demo site.", moduleConfigs ), context );
+            final Site site = contentService.create( createSiteContent( "Xeon", "Xeon demo site.", moduleConfigs ) );
 
             createPageTemplateHomePage( site.getPath() );
             createPageTemplateBannerPage( site.getPath() );
@@ -97,7 +93,7 @@ public final class Initializer
                     name( "main" ).
                     add( PartComponent.newPartComponent().name( "Empty-part" ).build() ).
                     build() ).
-                build() ), context );
+                build() ) );
     }
 
     private Content createPageTemplateBannerPage( final ContentPath sitePath )
@@ -130,7 +126,7 @@ public final class Initializer
                         build() ).
                     add( PartComponent.newPartComponent().name( "mypart" ).build() ).
                     build() ).
-                build() ), context );
+                build() ) );
     }
 
     private Content createPageTemplatePresonPage( final ContentPath sitePath )
@@ -150,14 +146,14 @@ public final class Initializer
                     add( PartComponent.newPartComponent().name( "Person" ).descriptor(
                         PartDescriptorKey.from( THIS_MODULE, "person" ) ).build() ).
                     build() ).
-                build() ), context );
+                build() ) );
     }
 
     private boolean hasContent( final ContentPath path )
     {
         try
         {
-            return this.contentService.getByPath( path, STAGE_CONTEXT ) != null;
+            return this.contentService.getByPath( path ) != null;
         }
         catch ( final Exception e )
         {

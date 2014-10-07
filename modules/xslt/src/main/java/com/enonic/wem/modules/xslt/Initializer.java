@@ -17,7 +17,6 @@ import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
 import com.enonic.wem.api.content.site.Site;
-import com.enonic.wem.api.context.Context;
 import com.enonic.wem.api.data.RootDataSet;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.module.ModuleKey;
@@ -31,8 +30,6 @@ public final class Initializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( Initializer.class );
 
-    private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
-
     public static final ModuleKey THIS_MODULE = ModuleKey.from( Initializer.class );
 
     private ContentPath xsltSitePath = ContentPath.from( "/xslt" );
@@ -43,7 +40,6 @@ public final class Initializer
 
     private ContentTypeService contentTypeService;
 
-    private Context context = STAGE_CONTEXT;
 
     @Override
     public void initialize()
@@ -59,7 +55,7 @@ public final class Initializer
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
-            final Site site = contentService.create( createSiteContent( "Xslt", "Xslt demo site.", moduleConfigs ), context );
+            final Site site = contentService.create( createSiteContent( "Xslt", "Xslt demo site.", moduleConfigs ) );
 
             createPageTemplateHomePage( site.getPath() );
         }
@@ -90,7 +86,7 @@ public final class Initializer
                     name( "main" ).
                     add( PartComponent.newPartComponent().name( "Empty-part" ).build() ).
                     build() ).
-                build() ), context );
+                build() ) );
     }
 
 
@@ -98,7 +94,7 @@ public final class Initializer
     {
         try
         {
-            return this.contentService.getByPath( path, STAGE_CONTEXT ) != null;
+            return this.contentService.getByPath( path ) != null;
         }
         catch ( final Exception e )
         {

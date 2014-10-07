@@ -36,8 +36,6 @@ public final class DemoInitializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( DemoInitializer.class );
 
-    private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
-
     private static final String[] FOLDER_IMAGES_POP =
         {"Pop_01.jpg", "Pop_02.jpg", "Pop_03.jpg", "Pop_04.jpg", "Pop_05.jpg", "Pop_06.jpg", "Pop_07.jpg", "Pop_08.jpg", "Pop-Black.jpg",
             "Pop-Green.jpg", "Pop-Silverpink.jpg"};
@@ -63,8 +61,6 @@ public final class DemoInitializer
 
     private ContentTypeService contentTypeService;
 
-    private final Context context = STAGE_CONTEXT;
-
     @Override
     public void initialize()
         throws Exception
@@ -77,7 +73,7 @@ public final class DemoInitializer
     {
         try
         {
-            return this.contentService.getByPath( path, STAGE_CONTEXT ) != null;
+            return this.contentService.getByPath( path ) != null;
         }
         catch ( final Exception e )
         {
@@ -93,21 +89,21 @@ public final class DemoInitializer
             contentService.create( createFolder().
                 name( "large-tree" ).
                 displayName( "Large tree" ).
-                parent( ContentPath.ROOT ), context );
+                parent( ContentPath.ROOT ) );
 
             for ( int i = 1; i <= 2; i++ )
             {
                 Content parent = contentService.create( createFolder().
                     displayName( "large-tree-node-" + i ).
                     displayName( "Large tree node " + i ).
-                    parent( largeTreePath ), context );
+                    parent( largeTreePath ) );
 
                 for ( int j = 1; j <= 100; j++ )
                 {
                     contentService.create( createFolder().
                         displayName( "large-tree-node-" + i + "-" + j ).
                         displayName( "Large tree node " + i + "-" + j ).
-                        parent( parent.getPath() ), context );
+                        parent( parent.getPath() ) );
                 }
             }
         }
@@ -144,33 +140,33 @@ public final class DemoInitializer
         final ContentPath imageArchivePath = contentService.create( createFolder().
             name( IMAGE_ARCHIVE_PATH_ELEMENT ).
             parent( ContentPath.ROOT ).
-            displayName( "Image Archive" ), context ).getPath();
+            displayName( "Image Archive" ) ).getPath();
 
         contentService.create( createFolder().
             name( "misc" ).
             parent( imageArchivePath ).
-            displayName( "Misc" ), context );
+            displayName( "Misc" ) );
 
         contentService.create( createFolder().
             name( "people" ).
             parent( imageArchivePath ).
-            displayName( "People" ), context );
+            displayName( "People" ) );
 
         ContentPath trampolinerPath = contentService.create( createFolder().
             name( TRAMPOLINE_PATH_ELEMENT ).
             parent( imageArchivePath ).
-            displayName( "Trampoliner" ), context ).getPath();
+            displayName( "Trampoliner" ) ).getPath();
 
         final ContentPath folderImagesBig = contentService.create( createFolder().
             name( JUMPING_JACK_BIG_BOUNCE_PATH_ELEMENT ).
             parent( trampolinerPath ).
-            displayName( "Jumping Jack - Big Bounce" ), context ).getPath();
+            displayName( "Jumping Jack - Big Bounce" ) ).getPath();
 
         final ContentPath folderImagesPop = contentService.create( createFolder().
             name( JUMPING_JACK_POP_PATH_ELEMENT ).
             parent( trampolinerPath ).
             displayName( "Jumping Jack - Pop" ).
-            contentType( ContentTypeName.folder() ), context ).getPath();
+            contentType( ContentTypeName.folder() ) ).getPath();
 
         for ( final String fileName : FOLDER_IMAGES_BIG )
         {
@@ -211,7 +207,7 @@ public final class DemoInitializer
             parent( parent ).
             contentData( dataSet ).
             attachments( attachment );
-        contentService.create( params, STAGE_CONTEXT ).getId();
+        contentService.create( params ).getId();
     }
 
     private ContentData createContentData( final String attachmentName )

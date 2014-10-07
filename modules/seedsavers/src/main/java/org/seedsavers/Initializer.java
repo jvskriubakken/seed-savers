@@ -40,8 +40,6 @@ public final class Initializer
 {
     private final static Logger LOG = LoggerFactory.getLogger( Initializer.class );
 
-    private static final Context STAGE_CONTEXT = ContentConstants.CONTEXT_STAGE;
-
     public static final ModuleKey THIS_MODULE = ModuleKey.from( Initializer.class );
 
     private static final ContentTypeName MEMBER_CONTENT_TYPE_NAME = ContentTypeName.from( THIS_MODULE, "member" );
@@ -55,8 +53,6 @@ public final class Initializer
     private PageTemplateService pageTemplateService;
 
     private ContentTypeService contentTypeService;
-
-    private Context context = STAGE_CONTEXT;
 
     @Override
     public void initialize()
@@ -72,8 +68,7 @@ public final class Initializer
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
-            final Site site =
-                contentService.create( createSiteContent( "Seed Savers", "A Site for seed savers.", moduleConfigs ), context );
+            final Site site = contentService.create( createSiteContent( "Seed Savers", "A Site for seed savers.", moduleConfigs ) );
 
             createPageTemplateTopMain( site.getPath() );
             createPageTemplatePlant( site.getPath() );
@@ -82,25 +77,25 @@ public final class Initializer
 
             contentService.create( createFolder().
                 parent( seedSaversFolder ).
-                displayName( "Members" ), context );
+                displayName( "Members" ) );
 
             final Content families = contentService.create( createFolder().
                 parent( seedSaversFolder ).
-                displayName( "Families" ), context );
+                displayName( "Families" ) );
 
             createFamilies( families.getPath() );
 
             contentService.create( createFolder().
                 parent( seedSaversFolder ).
-                displayName( "Genus" ), context );
+                displayName( "Genus" ) );
 
             contentService.create( createFolder().
                 parent( seedSaversFolder ).
-                displayName( "Varieties" ), context );
+                displayName( "Varieties" ) );
 
             contentService.create( createFolder().
                 parent( seedSaversFolder ).
-                displayName( "Caretakings" ), context );
+                displayName( "Caretakings" ) );
 
             createMembers();
         }
@@ -108,13 +103,13 @@ public final class Initializer
 
     private void createMembers()
     {
-        contentService.create( createMember( "aase-kaalrot", "Åse Kålrot" ), context );
-        contentService.create( createMember( "guri-gulrot", "Guri Gulrot" ), context );
-        contentService.create( createMember( "johan-stover", "Johan Støver" ), context );
-        contentService.create( createMember( "joerund-vier-skriubakken", "Jørund Vier Skriubakken" ), context );
-        contentService.create( createMember( "kari-korn", "Kari Korn" ), context );
-        contentService.create( createMember( "per-kaal", "Per Kål" ), context );
-        contentService.create( createMember( "petter-skvaller", "Petter Skvaller" ), context );
+        contentService.create( createMember( "aase-kaalrot", "Åse Kålrot" ) );
+        contentService.create( createMember( "guri-gulrot", "Guri Gulrot" ) );
+        contentService.create( createMember( "johan-stover", "Johan Støver" ) );
+        contentService.create( createMember( "joerund-vier-skriubakken", "Jørund Vier Skriubakken" ) );
+        contentService.create( createMember( "kari-korn", "Kari Korn" ) );
+        contentService.create( createMember( "per-kaal", "Per Kål" ) );
+        contentService.create( createMember( "petter-skvaller", "Petter Skvaller" ) );
     }
 
     private CreateSiteParams createSiteContent( final String displayName, final String description, final ModuleConfigs moduleConfigs )
@@ -154,11 +149,11 @@ public final class Initializer
     private void createFamilies( final ContentPath parentPath )
     {
         contentService.create( createFamily( "Plantaginaceae", "Kjempefamilien" ).
-            parent( parentPath ), context );
+            parent( parentPath ) );
         contentService.create( createFamily( "Verbenaceae", "Jernurtfamilien" ).
-            parent( parentPath ), context );
+            parent( parentPath ) );
         contentService.create( createFamily( "Lamiaceae", "Leppeblomstfamilien" ).
-            parent( parentPath ), context );
+            parent( parentPath ) );
     }
 
     private CreateContentParams createFamily( final String scientificName, final String norwegianName )
@@ -183,13 +178,13 @@ public final class Initializer
             controller( PageDescriptorKey.from( THIS_MODULE, "top-main" ) ).
             supports( supports ).
             pageConfig( new RootDataSet() ).
-                pageRegions( PageRegions.newPageRegions().
+            pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "top" ).
                     add( ImageComponent.newImageComponent().name( "Image" ).build() ).
                     build() ).
                 add( Region.newRegion().name( "main" ).build() ).
-                build() ), context );
+                build() ) );
     }
 
     private Content createPageTemplateFamily( final ContentPath sitePath )
@@ -210,7 +205,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ), context );
+            pageConfig( new RootDataSet() ) );
     }
 
     private Content createPageTemplatePlant( final ContentPath sitePath )
@@ -231,7 +226,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ), context );
+            pageConfig( new RootDataSet() ) );
     }
 
     private Content createPageTemplateMember( final ContentPath sitePath )
@@ -251,7 +246,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ), context );
+            pageConfig( new RootDataSet() ) );
     }
 
 
@@ -265,7 +260,7 @@ public final class Initializer
     {
         try
         {
-            return this.contentService.getByPath( path, STAGE_CONTEXT ) != null;
+            return this.contentService.getByPath( path ) != null;
         }
         catch ( final Exception e )
         {
