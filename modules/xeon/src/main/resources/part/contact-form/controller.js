@@ -4,7 +4,7 @@ function handleGet(portal) {
     var component = portal.component;
     var site = portal.site;
 
-    var contentData = site.getModuleConfig(portal.module.key).getConfig();
+    var contentData = site.getModuleConfig(portal.module.key).config;
 
     var social = {
         facebook: contentData.getProperty('facebook').getString(),

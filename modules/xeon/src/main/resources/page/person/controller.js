@@ -8,7 +8,7 @@ function handleGet(portal) {
     var contents = contentService.getChildContent(site.path);
     var editMode = portal.request.mode == 'edit';
 
-    var xeonConfig = site.getModuleConfig(portal.module.key).getConfig();
+    var xeonConfig = site.getModuleConfig(portal.module.key).config;
 
     var params = {
         context: portal,
