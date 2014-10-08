@@ -8,7 +8,7 @@ function handleGet(portal) {
     var person;
     var personContent;
 
-    if (content.type == 'com.enonic.wem.modules.xeon:person') {
+    if (content.type.toString() == 'com.enonic.wem.modules.xeon:person') {
         personContent = content;
     } else {
         var personId;
@@ -26,7 +26,7 @@ function handleGet(portal) {
         imageProperty = personContent.contentData.getProperty('image');
     }
 
-    if (personContent && imageProperty) {
+    if (personContent) {
         var imageContent = contentService.getContentById(imageProperty.getString());
         person = {
             name: personContent.contentData.getProperty('first-name').getString() + ' ' +
