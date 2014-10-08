@@ -1,6 +1,6 @@
-exports.render = function(view, params) {
+exports.render = function (view, params) {
 
-    return execute('com.enonic.wem.mustache.RenderView', {
+    return execute('view.renderMustache', {
         view: view,
         parameters: params
     });

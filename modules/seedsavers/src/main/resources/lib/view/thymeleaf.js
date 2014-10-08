@@ -1,6 +1,6 @@
-exports.render = function(view, params) {
+exports.render = function (view, params) {
 
-    return execute('com.enonic.wem.thymeleaf.RenderView', {
+    return execute('view.renderThymeleaf', {
         view: view,
         parameters: params
     });
