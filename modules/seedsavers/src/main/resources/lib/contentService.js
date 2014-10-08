@@ -1,6 +1,6 @@
 exports.getRootContent = function () {
 
-    return executeCommand('com.enonic.wem.portal.content.FindContentByParent', {
+    return execute('com.enonic.wem.portal.content.FindContentByParent', {
         from: 0,
         size: 1,
         parentPath: null
@@ -9,7 +9,7 @@ exports.getRootContent = function () {
 
 exports.getChildContent = function (parentPath, size) {
 
-    return executeCommand('com.enonic.wem.portal.content.FindContentByParent', {
+    return execute('com.enonic.wem.portal.content.FindContentByParent', {
         from: 0,
         size: size ? size : 500,
         parentPath: parentPath
@@ -18,7 +18,7 @@ exports.getChildContent = function (parentPath, size) {
 
 exports.getContentById = function (contentId) {
 
-    return executeCommand('com.enonic.wem.portal.content.GetContentById', {
+    return execute('com.enonic.wem.portal.content.GetContentById', {
         id: contentId
     });
 
