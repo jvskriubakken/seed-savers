@@ -7,7 +7,7 @@ function handleGet(portal) {
     var site = portal.site;
     var editMode = portal.request.mode == 'edit';
 
-    var xeonConfig = site.getModuleConfig(portal.module.key).config;
+    var xeonConfig = site.getModuleConfig(portal.module.key);
 
     var params = {
         context: portal,

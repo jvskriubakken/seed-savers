@@ -4,15 +4,15 @@ function handleGet(portal) {
     var component = portal.component;
     var site = portal.site;
 
-    var contentData = site.getModuleConfig(portal.module.key).config;
+    var xeonConfig = site.getModuleConfig(portal.module.key);
 
     var social = {
-        facebook: contentData.getProperty('facebook').getString(),
-        twitter: contentData.getProperty('twitter').getString(),
-        linkedin: contentData.getProperty('linkedin').getString(),
-        google: contentData.getProperty('google').getString(),
-        pintrest: contentData.getProperty('pintrest').getString(),
-        youtube: contentData.getProperty('youtube').getString()
+        facebook: xeonConfig.getProperty('facebook').getString(),
+        twitter: xeonConfig.getProperty('twitter').getString(),
+        linkedin: xeonConfig.getProperty('linkedin').getString(),
+        google: xeonConfig.getProperty('google').getString(),
+        pintrest: xeonConfig.getProperty('pintrest').getString(),
+        youtube: xeonConfig.getProperty('youtube').getString()
     };
 
     var addresses = site.contentData.getDataSetsByName('location');

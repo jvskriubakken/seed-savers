@@ -9,7 +9,7 @@ function handleGet(portal) {
     var editMode = portal.request.mode == 'edit';
     var slides = page ? page.config.getDataSetsByName("slide") : [];
 
-    var xeonConfig = site.getModuleConfig(portal.module.key).config;
+    var xeonConfig = site.getModuleConfig(portal.module.key);
 
     var params = {
         context: portal,
