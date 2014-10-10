@@ -191,7 +191,6 @@ public final class DemoInitializer
             contentType( ContentTypeName.imageMedia() ).
             form( MEDIA_IMAGE_FORM ).
             displayName( displayName ).
-            name( filteredFileName ).
             parent( parent ).
             contentData( dataSet ).
             attachments( attachment );
