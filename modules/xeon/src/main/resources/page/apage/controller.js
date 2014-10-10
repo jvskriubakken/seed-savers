@@ -3,7 +3,6 @@ var thymeleaf = require('view/thymeleaf');
 
 function handleGet(portal) {
     var content = portal.content;
-    var pageRegions = portal.pageRegions;
     var site = portal.site;
     var editMode = portal.request.mode == 'edit';
 
@@ -11,8 +10,7 @@ function handleGet(portal) {
 
     var params = {
         context: portal,
-        pageRegions: pageRegions,
-        mainRegion: pageRegions.getRegion("main"),
+        mainRegion: portal.content.page.getRegion("main"),
         contents: getContentsWithoutImages(site),
         editable: editMode,
         banner: false,

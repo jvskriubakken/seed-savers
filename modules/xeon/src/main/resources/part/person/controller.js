@@ -26,7 +26,7 @@ function handleGet(portal) {
         imageProperty = personContent.contentData.getProperty('image');
     }
 
-    if (personContent) {
+    if (personContent && imageProperty) {
         var imageContent = contentService.getContentById(imageProperty.getString());
         person = {
             name: personContent.contentData.getProperty('first-name').getString() + ' ' +

@@ -8,8 +8,8 @@ function handleGet(portal) {
         context: portal,
         site: portal.site,
         content: portal.content,
-        pageRegions: portal.pageRegions,
-        mainRegion: portal.pageRegions.getRegion("main"),
+        pageConfig: portal.content.page.config.toMap(),
+        mainRegion: portal.content.page.getRegion("main"),
         editable: editMode,
         from: "member"
     };
