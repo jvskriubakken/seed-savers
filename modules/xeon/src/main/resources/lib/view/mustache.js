@@ -1,6 +1,6 @@
 exports.render = function (view, params) {
 
-    return execute('view.renderMustache', {
+    return execute('mustache.render', {
         view: view,
         parameters: params
     });
