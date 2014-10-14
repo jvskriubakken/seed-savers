@@ -27,13 +27,16 @@ function handleGet(portal) {
     }
 
     if (personContent && imageProperty) {
-        var imageContent = contentService.getContentById(imageProperty.getString());
+        var personImageUrl = portal.url.createResourceUrl('images/team1.jpg');
+        if( imageProperty.getString() ) {
+            personImageUrl = portal.url.createImageByIdUrl(imageProperty.getContentId()).filter("scaleblock(400,400)");
+        }
         person = {
             name: personContent.contentData.getProperty('first-name').getString() + ' ' +
                   personContent.contentData.getProperty('middle-name').getString() + ' ' +
                   personContent.contentData.getProperty('last-name').getString(),
             title: personContent.contentData.getProperty('job-title').getString(),
-            image: portal.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
+            image: personImageUrl
         };
     } else {
         person = {
