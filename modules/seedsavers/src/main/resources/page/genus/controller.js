@@ -3,12 +3,11 @@ var thymeleaf = require('view/thymeleaf');
 function handleGet(portal) {
 
     var editMode = portal.request.mode == 'edit';
-    var view = resolve('./member.page.html');
+    var view = resolve('./genus.page.html');
     var params = {
         context: portal,
         site: portal.site,
         content: portal.content,
-        pageConfig: portal.content.page.config.toMap(),
         mainRegion: portal.content.page.getRegion("main"),
         editable: editMode
     };
@@ -16,6 +15,8 @@ function handleGet(portal) {
 
     portal.response.contentType = 'text/html';
     portal.response.body = body;
+
 }
+
 
 exports.get = handleGet;

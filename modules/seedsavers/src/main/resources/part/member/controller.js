@@ -5,13 +5,23 @@ function handleGet(portal) {
     var member;
     if( portal.content.isPageTemplate() ) {
         member = {
-            name : "Member name"
+            name : ["Member name"],
+            address : Java.to([{
+                street : ["Street"],
+                postalCode: ["Postal code"],
+                postalPlace: ["Postal place"]
+            }
+            ], "java.util.Map[]")
         };
     }
     else {
+        var data = portal.content.contentData.toMap();
+        member = data;
+        /*
         member = {
-            name : portal.content.displayName
-        };
+            name : portal.content.displayName,
+            address : data.address ? data.address : []
+        };*/
     }
 
     var params = {

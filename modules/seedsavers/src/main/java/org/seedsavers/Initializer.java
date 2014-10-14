@@ -72,6 +72,7 @@ public final class Initializer
             createPageTemplatePlant( site.getPath() );
             createPageTemplateMember( site.getPath() );
             createPageTemplateFamily( site.getPath() );
+            createPageTemplateGenus( site.getPath() );
 
             contentService.create( createFolder().
                 parent( seedSaversFolder ).
@@ -189,7 +190,6 @@ public final class Initializer
         final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "family" ) );
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
-            name( "family" ).
             displayName( "Family" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "family" ) ).
             supports( supports ).
@@ -205,12 +205,31 @@ public final class Initializer
             pageConfig( new RootDataSet() ) );
     }
 
+    private Content createPageTemplateGenus( final ContentPath sitePath )
+    {
+        final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "genus" ) );
+        return pageTemplateService.create( new CreatePageTemplateParams().
+            site( sitePath ).
+            displayName( "Genus" ).
+            controller( PageDescriptorKey.from( THIS_MODULE, "genus" ) ).
+            supports( supports ).
+            pageRegions( PageRegions.newPageRegions().
+                add( Region.newRegion().
+                    name( "main" ).
+                    add( ImageComponent.newImageComponent().name( "Image" ).build() ).
+                    add( PartComponent.newPartComponent().
+                        name( "Genus" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "genus" ) ).
+                        build() ).
+                    build() ).
+                build() ).
+            pageConfig( new RootDataSet() ) );
+    }
+
     private Content createPageTemplatePlant( final ContentPath sitePath )
     {
         final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "plant" ) );
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
-            name( "plant" ).
             displayName( "Plant" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "plant" ) ).
             supports( supports ).
@@ -231,7 +250,6 @@ public final class Initializer
         final ContentTypeNames supports = ContentTypeNames.from( ContentTypeName.from( THIS_MODULE, "member" ) );
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
-            name( "member" ).
             displayName( "Member" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "member" ) ).
             supports( supports ).
