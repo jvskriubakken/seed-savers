@@ -5,7 +5,6 @@ function handleGet(portal) {
 
     var content = portal.content;
     var component = portal.component;
-    var layoutRegions = portal.layoutRegions;
 
     var view = resolve('/view/layout-70-30.html');
     var body = thymeleaf.render(view, {
@@ -15,8 +14,8 @@ function handleGet(portal) {
         editable: editMode,
         resourcesPath: portal.url.createResourceUrl(''),
         component: component,
-        leftRegion: layoutRegions.getRegion("left"),
-        rightRegion: layoutRegions.getRegion("right")
+        leftRegion: component.getRegion("left"),
+        rightRegion: component.getRegion("right")
     });
 
 

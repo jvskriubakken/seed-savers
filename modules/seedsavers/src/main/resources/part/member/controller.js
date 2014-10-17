@@ -1,27 +1,26 @@
 var thymeleaf = require('view/thymeleaf');
 
+var defaultMember = {
+    name: ["Member name"],
+    address: Java.to([
+        {
+            street: ["Street"],
+            postalCode: ["Postal code"],
+            postalPlace: ["Postal place"]
+        }
+    ], "java.util.Map[]")
+};
+
 function handleGet(portal) {
 
+
     var member;
-    if( portal.content.isPageTemplate() ) {
-        member = {
-            name : ["Member name"],
-            address : Java.to([{
-                street : ["Street"],
-                postalCode: ["Postal code"],
-                postalPlace: ["Postal place"]
-            }
-            ], "java.util.Map[]")
-        };
+    if (portal.content.isPageTemplate()) {
+        member = defaultMember;
     }
     else {
         var data = portal.content.contentData.toMap();
-        member = data;
-        /*
-        member = {
-            name : portal.content.displayName,
-            address : data.address ? data.address : []
-        };*/
+        member = !data.isEmpty() ? data : defaultMember;
     }
 
     var params = {

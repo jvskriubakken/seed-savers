@@ -4,15 +4,14 @@ function handleGet(portal) {
 
     var editMode = portal.request.mode == 'edit';
     var component = portal.component;
-    var layoutRegions = portal.layoutRegions;
     var view = resolve('./left-main-right.html');
 
     var params = {
         editable: editMode,
         component: component,
-        leftRegion: layoutRegions.getRegion("left"),
-        mainRegion: layoutRegions.getRegion("main"),
-        rightRegion: layoutRegions.getRegion("right")
+        leftRegion: component.getRegion("left"),
+        mainRegion: component.getRegion("main"),
+        rightRegion: component.getRegion("right")
     };
     var body = thymeleaf.render(view, params);
 

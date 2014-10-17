@@ -1,5 +1,7 @@
 package org.seedsavers;
 
+import java.util.HashMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +54,8 @@ public final class Initializer
 
     private ContentTypeService contentTypeService;
 
+    private HashMap<String, Content> familyByDisplayName = new HashMap<>();
+
     @Override
     public void initialize()
         throws Exception
@@ -84,9 +88,11 @@ public final class Initializer
 
             createFamilies( families.getPath() );
 
-            contentService.create( createFolder().
+            final Content genuses = contentService.create( createFolder().
                 parent( seedSaversFolder ).
                 displayName( "Genus" ) );
+
+            createGenuses( genuses.getPath() );
 
             contentService.create( createFolder().
                 parent( seedSaversFolder ).
@@ -146,12 +152,17 @@ public final class Initializer
 
     private void createFamilies( final ContentPath parentPath )
     {
-        contentService.create( createFamily( "Plantaginaceae", "Kjempefamilien" ).
+        Content family = contentService.create( createFamily( "Plantaginaceae", "Kjempefamilien" ).
             parent( parentPath ) );
-        contentService.create( createFamily( "Verbenaceae", "Jernurtfamilien" ).
+        familyByDisplayName.put( family.getDisplayName(), family );
+
+        family = contentService.create( createFamily( "Verbenaceae", "Jernurtfamilien" ).
             parent( parentPath ) );
-        contentService.create( createFamily( "Lamiaceae", "Leppeblomstfamilien" ).
+        familyByDisplayName.put( family.getDisplayName(), family );
+
+        family = contentService.create( createFamily( "Lamiaceae", "Leppeblomstfamilien" ).
             parent( parentPath ) );
+        familyByDisplayName.put( family.getDisplayName(), family );
     }
 
     private CreateContentParams createFamily( final String scientificName, final String norwegianName )
@@ -163,7 +174,34 @@ public final class Initializer
             displayName( scientificName ).
             owner( AccountKey.anonymous() ).
             contentData( data ).
-            contentType( ContentTypeName.from( "com.enonic.wem.modules.seedsavers:family" ) );
+            contentType( ContentTypeName.from( THIS_MODULE, "family" ) );
+    }
+
+    private void createGenuses( final ContentPath parentPath )
+    {
+        contentService.create( createGenus( "Plantago", "Grodblad", "Plantaginaceae" ).
+            parent( parentPath ) );
+        contentService.create( createGenus( "Antirrhinum", "Løvemunnslekta", "Plantaginaceae" ).
+            parent( parentPath ) );
+        contentService.create( createGenus( "Digitalis", "Revebjelleslekta", "Plantaginaceae" ).
+            parent( parentPath ) );
+    }
+
+    private CreateContentParams createGenus( final String scientificName, final String norwegianName, final String familyDisplayName )
+    {
+        final Content family = this.familyByDisplayName.get( familyDisplayName );
+        final ContentData data = new ContentData();
+        data.addProperty( "norwegianNames", Value.newString( norwegianName ) );
+        if ( family != null )
+        {
+            data.addProperty( "family", Value.newContentId( family.getId() ) );
+        }
+
+        return new CreateContentParams().
+            displayName( scientificName ).
+            owner( AccountKey.anonymous() ).
+            contentData( data ).
+            contentType( ContentTypeName.from( THIS_MODULE, "genus" ) );
     }
 
     private Content createPageTemplateTopMain( final ContentPath sitePath )

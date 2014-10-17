@@ -10,8 +10,7 @@ function handleGet(portal) {
         content: portal.content,
         topRegion: portal.content.page.getRegion("top"),
         mainRegion: portal.content.page.getRegion("main"),
-        editable: editMode,
-        from: "site"
+        editable: editMode
     };
     var body = thymeleaf.render(view, params);
 
