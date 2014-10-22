@@ -8,7 +8,6 @@ function handleGet(portal) {
         component: component
     };
 
-//var body = system.thymeleaf.render('view/services.html', params);
 
     var view = resolve('/view/services.html');
     var body = thymeleaf.render(view, params);

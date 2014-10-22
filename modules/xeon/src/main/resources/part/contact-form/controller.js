@@ -29,7 +29,6 @@ function handleGet(portal) {
         data: data
     };
 
-//var body = system.thymeleaf.render('view/contact-form.html', params);
     var view = resolve('/view/contact-form.html');
     var body = thymeleaf.render(view, params);
 

@@ -61,8 +61,4 @@ function handleGet(portal) {
     portal.response.body = body;
 }
 
-function log(text) {
-    java.lang.System.out.println(text);
-}
-
 exports.get = handleGet;

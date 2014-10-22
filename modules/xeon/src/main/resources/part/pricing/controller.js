@@ -12,8 +12,6 @@ function handleGet(portal) {
         slides: slides
     };
 
-//var body = system.thymeleaf.render('view/pricing.html', params);
-
     var view = resolve('/view/pricing.html');
     var body = thymeleaf.render(view, params);
 

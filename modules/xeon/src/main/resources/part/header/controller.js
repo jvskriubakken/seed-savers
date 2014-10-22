@@ -23,7 +23,6 @@ function handleGet(portal) {
         text: text
     };
 
-//var body = system.thymeleaf.render('view/header.html', params);
     var view = resolve('/view/header.html');
     var body = thymeleaf.render(view, params);
 

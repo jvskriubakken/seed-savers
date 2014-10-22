@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page-component>
-    <display-name>Main page</display-name>
+    <display-name>Person page</display-name>
     <config>
         <input name="title" type="TextLine">
             <label>Title</label>

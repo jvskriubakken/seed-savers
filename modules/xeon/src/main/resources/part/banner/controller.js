@@ -10,8 +10,6 @@ function handleGet(portal) {
         slides: slides
     };
 
-    //var body = system.thymeleaf.render('view/banner.html', params);
-
     var view = resolve('/view/banner.html');
     var body = thymeleaf.render(view, params);
 

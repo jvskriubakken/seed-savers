@@ -1,47 +1,20 @@
-var contentService = require('contentService');
+var xeon = require('xeon');
 var thymeleaf = require('view/thymeleaf');
 
 function handleGet(portal) {
-    var content = portal.content;
     var page = portal.content.page;
-    var site = portal.site;
-    var editMode = portal.request.mode == 'edit';
     var slides = page ? page.config.getDataSetsByName("slide") : [];
-
-    var xeonConfig = site.getModuleConfig(portal.module.key);
-
-    var params = {
-        context: portal,
-        mainRegion: portal.content.page.getRegion("main"),
-        contents: contentService.getChildContent(site.path),
-        editable: editMode,
-        banner: true,
+    var pageParams = {
         slides: slides,
-        site: site,
-        moduleConfig: xeonConfig,
-        content: content,
-        logoUrl: getLogoUrl(portal, xeonConfig)
+        banner: true
     };
+    var params = xeon.merge(xeon.defaultParams(portal), pageParams);
 
     var view = resolve('../../view/page.html');
     var body = thymeleaf.render(view, params);
 
     portal.response.contentType = 'text/html';
     portal.response.body = body;
-}
-
-function getLogoUrl(portal, xeonConfig) {
-    var logoContent;
-    var logo = xeonConfig.getProperty('logo');
-    if (logo && !logo.hasNullValue()) {
-        logoContent = contentService.getContentById(logo.getString());
-    }
-
-    if (logoContent) {
-        return portal.url.createImageByIdUrl(logoContent.id).filter("scaleblock(115,26)");
-    } else {
-        return portal.url.createResourceUrl('images/logo.png');
-    }
 }
 
 exports.get = handleGet;
