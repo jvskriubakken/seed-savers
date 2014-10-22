@@ -2,7 +2,6 @@ include 'seedsavers'
 include 'xeon'
 include 'xslt'
 include 'demo'
-include 'my-first-module'
 
 rootProject.children.each { project ->
     String projectDirName = "modules/${project.name}"
