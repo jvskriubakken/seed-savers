@@ -17,7 +17,7 @@ exports.getLogoUrl = function(portal, moduleConfig) {
 
 exports.defaultParams = function(portal) {
     var content = portal.content;
-    var editMode = portal.request.mode == 'edit';
+    var editMode = portal.request.mode.toString() == 'edit';
     var moduleConfig = portal.site.getModuleConfig(portal.module.key);
 
     return {
