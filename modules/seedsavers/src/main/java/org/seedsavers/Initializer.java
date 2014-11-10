@@ -5,7 +5,6 @@ import java.util.HashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.enonic.wem.api.account.AccountKey;
 import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
@@ -33,6 +32,7 @@ import com.enonic.wem.api.schema.content.ContentTypeName;
 import com.enonic.wem.api.schema.content.ContentTypeNames;
 import com.enonic.wem.api.schema.content.ContentTypeService;
 import com.enonic.wem.api.schema.content.GetContentTypesParams;
+import com.enonic.wem.api.security.PrincipalKey;
 
 @SuppressWarnings("UnusedDeclaration")
 public final class Initializer
@@ -129,7 +129,7 @@ public final class Initializer
     private CreateContentParams createFolder()
     {
         return new CreateContentParams().
-            owner( AccountKey.anonymous() ).
+            owner( PrincipalKey.ofAnonymous() ).
             contentData( new ContentData() ).
             form( getContentType( ContentTypeName.folder() ).form() ).
             contentType( ContentTypeName.folder() );
@@ -143,7 +143,7 @@ public final class Initializer
         data.setProperty( "name", Value.newString( displayName ) );
         return new CreateContentParams().
             displayName( displayName ).
-            owner( AccountKey.anonymous() ).
+            owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
             form( memberForm ).
             contentType( contentType ).
@@ -172,7 +172,7 @@ public final class Initializer
 
         return new CreateContentParams().
             displayName( scientificName ).
-            owner( AccountKey.anonymous() ).
+            owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
             contentType( ContentTypeName.from( THIS_MODULE, "family" ) );
     }
@@ -199,7 +199,7 @@ public final class Initializer
 
         return new CreateContentParams().
             displayName( scientificName ).
-            owner( AccountKey.anonymous() ).
+            owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
             contentType( ContentTypeName.from( THIS_MODULE, "genus" ) );
     }

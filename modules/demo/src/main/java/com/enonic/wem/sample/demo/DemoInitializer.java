@@ -7,17 +7,14 @@ import org.slf4j.LoggerFactory;
 import com.google.common.io.ByteSource;
 import com.google.common.io.Resources;
 
-import com.enonic.wem.api.account.AccountKey;
 import com.enonic.wem.api.blob.Blob;
 import com.enonic.wem.api.blob.BlobService;
 import com.enonic.wem.api.content.Content;
-import com.enonic.wem.api.content.ContentConstants;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
 import com.enonic.wem.api.content.attachment.Attachment;
 import com.enonic.wem.api.content.data.ContentData;
-import com.enonic.wem.api.context.Context;
 import com.enonic.wem.api.data.Property;
 import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.form.Input;
@@ -28,6 +25,7 @@ import com.enonic.wem.api.schema.content.ContentTypeName;
 import com.enonic.wem.api.schema.content.ContentTypeNames;
 import com.enonic.wem.api.schema.content.ContentTypeService;
 import com.enonic.wem.api.schema.content.GetContentTypesParams;
+import com.enonic.wem.api.security.PrincipalKey;
 
 import static com.enonic.wem.api.content.attachment.Attachment.newAttachment;
 
@@ -222,7 +220,7 @@ public final class DemoInitializer
     private CreateContentParams createFolder()
     {
         return new CreateContentParams().
-            owner( AccountKey.anonymous() ).
+            owner( PrincipalKey.ofAnonymous() ).
             contentData( new ContentData() ).
             form( getContentType( ContentTypeName.folder() ).form() ).
             contentType( ContentTypeName.folder() );
@@ -235,6 +233,7 @@ public final class DemoInitializer
     }
 
     private static Form createMediaImageForm()
+
     {
         return Form.newForm().
             addFormItem( Input.newInput().name( "image" ).
