@@ -25,7 +25,12 @@ import com.enonic.wem.api.schema.content.ContentTypeName;
 import com.enonic.wem.api.schema.content.ContentTypeNames;
 import com.enonic.wem.api.schema.content.ContentTypeService;
 import com.enonic.wem.api.schema.content.GetContentTypesParams;
+import com.enonic.wem.api.security.CreateGroupParams;
+import com.enonic.wem.api.security.CreateRoleParams;
+import com.enonic.wem.api.security.CreateUserParams;
 import com.enonic.wem.api.security.PrincipalKey;
+import com.enonic.wem.api.security.SecurityService;
+import com.enonic.wem.api.security.UserStoreKey;
 
 import static com.enonic.wem.api.content.attachment.Attachment.newAttachment;
 
@@ -53,12 +58,15 @@ public final class DemoInitializer
 
     private ContentTypeService contentTypeService;
 
+    private SecurityService securityService;
+
     @Override
     public void initialize()
         throws Exception
     {
         createImages();
         createLargeTree();
+        createPrincipals();
     }
 
     private boolean hasContent( final ContentPath path )
@@ -232,6 +240,99 @@ public final class DemoInitializer
         return contentTypeService.getByNames( params ).first();
     }
 
+    private void createPrincipals()
+    {
+        final CreateUserParams user1 = CreateUserParams.create().
+            userKey( PrincipalKey.ofUser( UserStoreKey.system(), "tsi" ) ).
+            displayName( "Thomas Sigdestad" ).
+            login( "tsi" ).
+            password( "password" ).
+            build();
+        addUser( user1 );
+
+        final CreateUserParams user2 = CreateUserParams.create().
+            userKey( PrincipalKey.ofUser( UserStoreKey.system(), "mer" ) ).
+            displayName( "Morten Eriksen" ).
+            login( "mer" ).
+            password( "password" ).
+            build();
+        addUser( user2 );
+
+        final CreateUserParams createAdmin = CreateUserParams.create().
+            userKey( PrincipalKey.ofUser( UserStoreKey.system(), "admin" ) ).
+            displayName( "Administrator" ).
+            login( "admin" ).
+            password( "password" ).
+            build();
+        addUser( createAdmin );
+
+        final CreateGroupParams createGroup1 = CreateGroupParams.create().
+            groupKey( PrincipalKey.ofGroup( UserStoreKey.system(), "developers" ) ).
+            displayName( "Developers" ).
+            build();
+        addGroup( createGroup1 );
+
+        final CreateGroupParams createGroup2 = CreateGroupParams.create().
+            groupKey( PrincipalKey.ofGroup( UserStoreKey.system(), "consultants" ) ).
+            displayName( "Consultants" ).
+            build();
+        addGroup( createGroup2 );
+
+        final CreateRoleParams createRole1 = CreateRoleParams.create().
+            roleKey( PrincipalKey.ofRole( "superuser" ) ).
+            displayName( "Superuser" ).
+            build();
+        addRole( createRole1 );
+    }
+
+    private void addUser( final CreateUserParams createUser )
+    {
+        try
+        {
+            if ( !securityService.getUser( createUser.getKey() ).isPresent() )
+            {
+                securityService.createUser( createUser );
+                LOG.info( "User created: " + createUser.getKey().toString() );
+            }
+        }
+        catch ( Throwable t )
+        {
+            LOG.error( "Unable to initialize user: " + createUser.getKey().toString(), t );
+        }
+    }
+
+    private void addGroup( final CreateGroupParams createGroup )
+    {
+        try
+        {
+            if ( !securityService.getGroup( createGroup.getKey() ).isPresent() )
+            {
+                securityService.createGroup( createGroup );
+                LOG.info( "Group created: " + createGroup.getKey().toString() );
+            }
+        }
+        catch ( Throwable t )
+        {
+            LOG.error( "Unable to initialize group: " + createGroup.getKey().toString(), t );
+        }
+    }
+
+    private void addRole( final CreateRoleParams createRole )
+    {
+        try
+        {
+            if ( !securityService.getRole( createRole.getKey() ).isPresent() )
+            {
+                securityService.createRole( createRole );
+                LOG.info( "Role created: " + createRole.getKey().toString() );
+            }
+        }
+        catch ( Throwable t )
+        {
+            LOG.error( "Unable to initialize role: " + createRole.getKey().toString(), t );
+        }
+    }
+
     private static Form createMediaImageForm()
 
     {
@@ -261,4 +362,10 @@ public final class DemoInitializer
     {
         this.contentTypeService = contentTypeService;
     }
+
+    public void setSecurityService( final SecurityService securityService )
+    {
+        this.securityService = securityService;
+    }
+
 }
