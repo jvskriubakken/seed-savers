@@ -29,6 +29,7 @@ import com.enonic.wem.api.security.CreateGroupParams;
 import com.enonic.wem.api.security.CreateRoleParams;
 import com.enonic.wem.api.security.CreateUserParams;
 import com.enonic.wem.api.security.PrincipalKey;
+import com.enonic.wem.api.security.PrincipalRelationship;
 import com.enonic.wem.api.security.SecurityService;
 import com.enonic.wem.api.security.UserStoreKey;
 
@@ -283,6 +284,25 @@ public final class DemoInitializer
             displayName( "Superuser" ).
             build();
         addRole( createRole1 );
+
+        addMember( createGroup1.getKey(), user1.getKey() );
+        addMember( createGroup1.getKey(), user1.getKey() );
+        addMember( createGroup1.getKey(), user2.getKey() );
+        addMember( createRole1.getKey(), user2.getKey() );
+    }
+
+    private void addMember( final PrincipalKey parent, final PrincipalKey member )
+    {
+        try
+        {
+            final PrincipalRelationship relationship = PrincipalRelationship.from( parent ).to( member );
+            securityService.addRelationship( relationship );
+            LOG.info( "Principal " + member + " added as member of " + parent );
+        }
+        catch ( Throwable t )
+        {
+            LOG.error( "Unable to add principal " + member + " as member of " + parent );
+        }
     }
 
     private void addUser( final CreateUserParams createUser )
