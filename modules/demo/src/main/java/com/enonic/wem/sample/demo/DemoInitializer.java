@@ -286,7 +286,7 @@ public final class DemoInitializer
         addRole( createRole1 );
 
         addMember( createGroup1.getKey(), user1.getKey() );
-        addMember( createGroup1.getKey(), user1.getKey() );
+        addMember( createGroup2.getKey(), user1.getKey() );
         addMember( createGroup1.getKey(), user2.getKey() );
         addMember( createRole1.getKey(), user2.getKey() );
     }
