@@ -279,11 +279,20 @@ public final class DemoInitializer
             build();
         addGroup( createGroup2 );
 
+        final CreateGroupParams createGroup3 = CreateGroupParams.create().
+            groupKey( PrincipalKey.ofGroup( UserStoreKey.system(), "employees" ) ).
+            displayName( "Enonic Employees" ).
+            build();
+        addGroup( createGroup3 );
+
         final CreateRoleParams createRole1 = CreateRoleParams.create().
             roleKey( PrincipalKey.ofRole( "superuser" ) ).
             displayName( "Superuser" ).
             build();
         addRole( createRole1 );
+
+        addMember( createGroup3.getKey(), createGroup1.getKey() );
+        addMember( createGroup3.getKey(), createGroup2.getKey() );
 
         addMember( createGroup1.getKey(), user1.getKey() );
         addMember( createGroup2.getKey(), user1.getKey() );
