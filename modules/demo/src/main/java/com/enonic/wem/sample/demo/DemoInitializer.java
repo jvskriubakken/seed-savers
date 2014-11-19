@@ -247,6 +247,7 @@ public final class DemoInitializer
             userKey( PrincipalKey.ofUser( UserStoreKey.system(), "tsi" ) ).
             displayName( "Thomas Sigdestad" ).
             login( "tsi" ).
+            email( "tsi@enonic.com" ).
             password( "password" ).
             build();
         addUser( user1 );
@@ -255,6 +256,7 @@ public final class DemoInitializer
             userKey( PrincipalKey.ofUser( UserStoreKey.system(), "mer" ) ).
             displayName( "Morten Eriksen" ).
             login( "mer" ).
+            email( "mer@enonic.com" ).
             password( "password" ).
             build();
         addUser( user2 );
