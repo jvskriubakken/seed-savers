@@ -7,8 +7,8 @@ function getMenuProperties(content) {
     };
 
     var menuProps;
-    if( content.hasMetadata("system:menu") ) {
-        menuProps = content.getMetadata("system:menu").toMap();
+    if( content.hasMetadata("system:menu-item") ) {
+        menuProps = content.getMetadata("system:menu-item").toMap();
     }
     else {
         menuProps = defaultMenu;
@@ -22,7 +22,7 @@ exports.getSiteMenu = function(site) {
     var menuContent = [];
     for (var i = 0; i <contents.length; i++) {
         var menuProps = getMenuProperties(contents[i]);
-        if (menuProps.menu[0]) {
+        if (menuProps.menuItem[0]) {
             var name;
             if (menuProps.menuName[0]) {
                 name = menuProps.menuName[0];
