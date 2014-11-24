@@ -4,19 +4,20 @@ function handleGet(portal) {
 
     var editMode = portal.request.mode == 'edit';
     var view = resolve('./family.page.html');
-    var params = {
+    var model = {
         context: portal,
         site: portal.site,
         content: portal.content,
         mainRegion: portal.content.page.getRegion("main"),
         editable: editMode
     };
-    var body = thymeleaf.render(view, params);
+    var body = thymeleaf.render(view, model);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 
 }
-
 
 exports.get = handleGet;

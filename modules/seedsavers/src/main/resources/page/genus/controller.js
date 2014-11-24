@@ -13,8 +13,10 @@ function handleGet(portal) {
     };
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 
 }
 
