@@ -9,7 +9,7 @@
   </vendor>
   <dependencies system-min-version="5.0.0" system-max-version="6.0.0"/>
   <metadata-schemas>
-	<metadata-schema name="system:menu"/>
+	<metadata-schema name="system:menu-item"/>
   </metadata-schemas>
   <config>
     <field-set name="info">

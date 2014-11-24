@@ -14,8 +14,8 @@ function handleGet(portal) {
     };
 
     var menu;
-    if( portal.content.hasMetadata("system:menu") ) {
-        menu = portal.content.getMetadata("system:menu").toMap();
+    if( portal.content.hasMetadata("system:menu-item") ) {
+        menu = portal.content.getMetadata("system:menu-item").toMap();
     }
     else {
         menu = defaultMenu;
