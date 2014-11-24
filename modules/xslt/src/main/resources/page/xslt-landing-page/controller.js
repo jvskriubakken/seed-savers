@@ -3,21 +3,19 @@ var view = resolve('/view/frogger.xsl');
 
 function handleGet(portal) {
 
-    var xml = '<dummy/>';
     var editMode = portal.request.mode == 'edit';
-    var params = {
+    var model = {
         title: portal.content.displayName,
         editable: editMode
     };
 
-    var body = xslt.render(view, xml, params);
+    var body = execute('xslt.render', {
+        view: view,
+        model: model
+    });
 
     portal.response.contentType = 'text/html';
     portal.response.body = body;
-}
-
-function log(text) {
-    java.lang.System.out.println(text);
 }
 
 exports.get = handleGet;

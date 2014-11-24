@@ -7,8 +7,8 @@
   <xsl:output method="html" omit-xml-declaration="yes"/>
 
   <xsl:include href="portal-lib.xsl"/>
-  <xsl:param name="editable" select="false()"/>
-  <xsl:param name="title" select="''"/>
+  <xsl:param name="editable" select="/root/editable"/>
+  <xsl:param name="title" select="/root/title"/>
 
   <xsl:template match="/">
     <html lang="en">
