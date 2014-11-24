@@ -2,7 +2,7 @@ var contentService = require('contentService');
 
 function getMenuProperties(content) {
     var defaultMenu = {
-        menu: [false],
+        menuItem: [false],
         menuName: [content.displayName]
     };
 
