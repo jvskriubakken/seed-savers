@@ -1,4 +1,4 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
 var defaultMember = {
     name: ["Member name"],
@@ -11,32 +11,33 @@ var defaultMember = {
     ], "java.util.Map[]")
 };
 
-function handleGet(portal) {
+function handleGet(req) {
 
 
     var member;
-    if (portal.content.isPageTemplate()) {
+    if (req.content.isPageTemplate()) {
         member = defaultMember;
     }
     else {
-        var data = portal.content.contentData.toMap();
+        var data = req.content.contentData.toMap();
         member = !data.isEmpty() ? data : defaultMember;
     }
 
     var params = {
-        context: portal,
-        component: portal.component,
-        config: portal.component.config.toMap(),
-        content: portal.content,
+        context: req,
+        component: req.component,
+        config: req.component.config.toMap(),
+        content: req.content,
         member: member
     };
 
     var view = resolve('./member.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
-
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 }
 
 exports.get = handleGet;

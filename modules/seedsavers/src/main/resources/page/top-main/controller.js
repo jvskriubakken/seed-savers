@@ -1,15 +1,15 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
+function handleGet(req) {
 
-    var editMode = portal.request.mode == 'edit';
+    var editMode = req.mode == 'edit';
     var view = resolve('./top-main.page.html');
     var params = {
-        context: portal,
-        site: portal.site,
-        content: portal.content,
-        topRegion: portal.content.page.getRegion("top"),
-        mainRegion: portal.content.page.getRegion("main"),
+        context: req,
+        site: req.site,
+        content: req.content,
+        topRegion: req.content.page.getRegion("top"),
+        mainRegion: req.content.page.getRegion("main"),
         editable: editMode
     };
     var body = thymeleaf.render(view, params);
@@ -21,6 +21,3 @@ function handleGet(portal) {
 }
 
 exports.get = handleGet;
-
-
-

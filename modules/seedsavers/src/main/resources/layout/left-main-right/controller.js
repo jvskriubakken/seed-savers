@@ -1,9 +1,9 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
+function handleGet(req) {
 
-    var editMode = portal.request.mode == 'edit';
-    var component = portal.component;
+    var editMode = req.mode == 'edit';
+    var component = req.component;
     var view = resolve('./left-main-right.html');
 
     var params = {
@@ -13,12 +13,14 @@ function handleGet(portal) {
         mainRegion: component.getRegion("main"),
         rightRegion: component.getRegion("right")
     };
+
     var body = thymeleaf.render(view, params);
 
-
-    portal.response.body = body;
-    portal.response.contentType = 'text/html';
-    portal.response.status = 200;
+    return {
+        body: body,
+        contentType: 'text/html',
+        status: 200
+    };
 }
 
 exports.get = handleGet;

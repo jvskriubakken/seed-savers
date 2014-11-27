@@ -1,14 +1,14 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
+function handleGet(req) {
 
-    var editMode = portal.request.mode == 'edit';
+    var editMode = req.mode == 'edit';
     var view = resolve('./family.page.html');
     var model = {
-        context: portal,
-        site: portal.site,
-        content: portal.content,
-        mainRegion: portal.content.page.getRegion("main"),
+        context: req,
+        site: req.site,
+        content: req.content,
+        mainRegion: req.content.page.getRegion("main"),
         editable: editMode
     };
     var body = thymeleaf.render(view, model);

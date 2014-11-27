@@ -1,17 +1,19 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
+function handleGet(req) {
     var view = resolve('./caretakings.html');
     var params = {
-        context: portal,
-        component: portal.component,
-        content: portal.content,
-        contentData: portal.content.getContentData().toMap()
+        context: req,
+        component: req.component,
+        content: req.content,
+        contentData: req.content.getContentData().toMap()
     };
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 }
 
 exports.get = handleGet;

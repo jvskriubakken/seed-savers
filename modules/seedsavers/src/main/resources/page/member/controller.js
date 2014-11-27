@@ -1,21 +1,19 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
+function handleGet(req) {
 
-
-function handleGet(portal) {
-
-    var editMode = portal.request.mode == 'edit';
+    var editMode = req.mode == 'edit';
     var view = resolve('./member.page.html');
 
 
     var defaultMenu = {
         menu: [false],
-        menuName: [portal.content.displayName]
+        menuName: [req.content.displayName]
     };
 
     var menu;
-    if( portal.content.hasMetadata("system:menu-item") ) {
-        menu = portal.content.getMetadata("system:menu-item").toMap();
+    if( req.content.hasMetadata("system:menu-item") ) {
+        menu = req.content.getMetadata("system:menu-item").toMap();
     }
     else {
         menu = defaultMenu;
@@ -23,11 +21,11 @@ function handleGet(portal) {
 
 
     var params = {
-        context: portal,
-        site: portal.site,
-        content: portal.content,
-        pageConfig: portal.content.page.config.toMap(),
-        mainRegion: portal.content.page.getRegion("main"),
+        context: req,
+        site: req.site,
+        content: req.content,
+        pageConfig: req.content.page.config.toMap(),
+        mainRegion: req.content.page.getRegion("main"),
         editable: editMode,
         menu: menu
     };

@@ -1,32 +1,34 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
+function handleGet(req) {
 
     var view = resolve('./plant.html');
     var plant;
-    if( portal.content.isPageTemplate() ) {
+    if( req.content.isPageTemplate() ) {
         plant = {
             binomialName : "Binomial name",
             norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")
         };
     }
     else {
-        var contentData = portal.content.getContentData().toMap();
+        var contentData = req.content.getContentData().toMap();
         plant = {
             binomialName : contentData.binomialName ? contentData.binomialName[0] : "",
             norwegianNames: contentData.norwegianNames
         };
     }
     var params = {
-        context: portal,
-        component: portal.component,
-        content: portal.content,
+        context: req,
+        component: req.component,
+        content: req.content,
         plant: plant
     };
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 }
 
 exports.get = handleGet;
