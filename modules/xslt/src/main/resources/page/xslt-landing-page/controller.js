@@ -1,11 +1,10 @@
-var xslt = require('view/xslt');
 var view = resolve('/view/frogger.xsl');
 
-function handleGet(portal) {
+function handleGet(req) {
 
-    var editMode = portal.request.mode == 'edit';
+    var editMode = req.mode == 'edit';
     var model = {
-        title: portal.content.displayName,
+        title: req.content.displayName,
         editable: editMode
     };
 
@@ -14,8 +13,10 @@ function handleGet(portal) {
         model: model
     });
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 }
 
 exports.get = handleGet;

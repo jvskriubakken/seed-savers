@@ -1,21 +1,23 @@
-var xslt = require('view/xslt');
 var view = resolve('/view/trampoline-buy.xsl');
 
-function handleGet(portal) {
+function handleGet(req) {
 
-    var xml = '<dummy/>';
-    var editMode = portal.request.mode == 'edit';
-    var params = {
-        title: portal.content.displayName,
-        componentType: portal.component.type,
+    var editMode = req.mode == 'edit';
+    var model = {
+        title: req.content.displayName,
+        componentType: req.component.type,
         editable: editMode
     };
 
-    var body = xslt.render(view, xml, params);
+    var body = execute('xslt.render', {
+        view: view,
+        model: model
+    });
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
-
+    return {
+        contentType: 'text/html',
+        body: body
+    };
 }
 
 exports.get = handleGet;
