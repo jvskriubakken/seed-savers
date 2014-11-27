@@ -1,20 +1,22 @@
-var xeon = require('xeon');
-var thymeleaf = require('view/thymeleaf');
+var xeon = require('/lib/xeon');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
-    var page = portal.content.page;
+function handleGet(req) {
+    var page = req.content.page;
     var slides = page ? page.config.getDataSetsByName("slide") : [];
     var pageParams = {
         slides: slides,
         banner: true
     };
-    var params = xeon.merge(xeon.defaultParams(portal), pageParams);
+    var params = xeon.merge(xeon.defaultParams(req), pageParams);
 
     var view = resolve('../../view/page.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        body: body,
+        contentType: 'text/html'
+    };
 }
 
 exports.get = handleGet;

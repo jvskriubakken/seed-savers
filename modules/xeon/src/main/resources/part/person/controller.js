@@ -1,10 +1,10 @@
-var thymeleaf = require('view/thymeleaf');
-var contentService = require('contentService');
+var thymeleaf = require('/lib/view/thymeleaf');
+var contentService = require('/lib/contentService');
 
-function handleGet(portal) {
+function handleGet(req) {
 
-    var component = portal.component;
-    var content = portal.content;
+    var component = req.component;
+    var content = req.content;
     var person;
     var personContent;
 
@@ -27,9 +27,9 @@ function handleGet(portal) {
     }
 
     if (personContent && imageProperty) {
-        var personImageUrl = portal.url.createResourceUrl('images/team1.jpg');
+        var personImageUrl = req.url.createResourceUrl('images/team1.jpg');
         if( imageProperty.getString() ) {
-            personImageUrl = portal.url.createImageByIdUrl(imageProperty.getContentId()).filter("scaleblock(400,400)");
+            personImageUrl = req.url.createImageByIdUrl(imageProperty.getContentId()).filter("scaleblock(400,400)");
         }
         person = {
             name: personContent.contentData.getProperty('first-name').getString() + ' ' +
@@ -42,12 +42,12 @@ function handleGet(portal) {
         person = {
             name: 'Test Testesen',
             title: 'Sjefen over alle sjefer',
-            image: portal.url.createResourceUrl('images/team1.jpg')
+            image: req.url.createResourceUrl('images/team1.jpg')
         };
     }
 
     var params = {
-        context: portal,
+        context: req,
         component: component,
         content: content,
         person: person
@@ -57,8 +57,10 @@ function handleGet(portal) {
     var view = resolve('/view/person.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        body: body,
+        contentType: 'text/html'
+    };
 }
 
 exports.get = handleGet;

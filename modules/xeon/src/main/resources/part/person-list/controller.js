@@ -1,8 +1,8 @@
-var thymeleaf = require('view/thymeleaf');
-var contentService = require('contentService');
+var thymeleaf = require('/lib/view/thymeleaf');
+var contentService = require('/lib/contentService');
 
-function handleGet(portal) {
-    var component = portal.component;
+function handleGet(req) {
+    var component = req.component;
     var relatedPersons = Java.from(component.config.getDataByName("person"));
     var persons = [];
 
@@ -14,7 +14,7 @@ function handleGet(portal) {
                   personData.contentData.getProperty('middle-name').getString() + ' ' +
                   personData.contentData.getProperty('last-name').getString(),
             title: personData.contentData.getProperty('job-title').getString(),
-            image: portal.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
+            image: req.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
         });
     });
 
@@ -25,7 +25,7 @@ function handleGet(portal) {
     };
 
     var params = {
-        context: portal,
+        context: req,
         component: component,
         data: data
     };
@@ -34,8 +34,10 @@ function handleGet(portal) {
     var view = resolve('/view/person-list.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        body: body,
+        contentType: 'text/html'
+    };
 }
 
 exports.get = handleGet;

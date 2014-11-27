@@ -1,10 +1,10 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
-    var component = portal.component;
-    var site = portal.site;
+function handleGet(req) {
+    var component = req.component;
+    var site = req.site;
 
-    var xeonConfig = site.getModuleConfig(portal.module.key);
+    var xeonConfig = site.getModuleConfig(req.module.key);
 
     var social = {
         facebook: xeonConfig.getProperty('facebook').getString(),
@@ -23,7 +23,7 @@ function handleGet(portal) {
     };
 
     var params = {
-        context: portal,
+        context: req,
         component: component,
         site: site,
         data: data
@@ -32,8 +32,10 @@ function handleGet(portal) {
     var view = resolve('/view/contact-form.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        body: body,
+        contentType: 'text/html'
+    };
 }
 
 exports.get = handleGet;

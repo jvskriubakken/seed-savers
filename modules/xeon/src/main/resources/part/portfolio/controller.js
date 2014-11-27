@@ -1,18 +1,20 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
-    var component = portal.component;
+function handleGet(req) {
+    var component = req.component;
 
     var params = {
-        context: portal,
+        context: req,
         component: component
     };
 
     var view = resolve('/view/portfolio.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        body: body,
+        contentType: 'text/html'
+    };
 }
 
 exports.get = handleGet;

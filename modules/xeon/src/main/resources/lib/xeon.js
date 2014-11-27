@@ -1,7 +1,7 @@
 var menuService = require('menuService');
 var contentService = require('contentService');
 
-exports.getLogoUrl = function(portal, moduleConfig) {
+exports.getLogoUrl = function (req, moduleConfig) {
     var logoContent;
     var logo = moduleConfig.getProperty('logo');
     if (logo && !logo.hasNullValue()) {
@@ -9,31 +9,31 @@ exports.getLogoUrl = function(portal, moduleConfig) {
     }
 
     if (logoContent) {
-        return portal.url.createImageByIdUrl(logoContent.id).filter("scaleblock(115,26)");
+        return req.url.createImageByIdUrl(logoContent.id).filter("scaleblock(115,26)");
     } else {
-        return portal.url.createResourceUrl('images/logo.png');
+        return req.url.createResourceUrl('images/logo.png');
     }
 };
 
-exports.defaultParams = function(portal) {
-    var content = portal.content;
-    var editMode = portal.request.mode.toString() == 'edit';
-    var moduleConfig = portal.site.getModuleConfig(portal.module.key);
+exports.defaultParams = function (req) {
+    var content = req.content;
+    var editMode = req.mode.toString() == 'edit';
+    var moduleConfig = req.site.getModuleConfig(req.module.key);
 
     return {
-        context: portal,
-        mainRegion: portal.content.page.getRegion("main"),
+        context: req,
+        mainRegion: req.content.page.getRegion("main"),
         menuItems: menuService.getSiteMenuAsList(portal.site),
         editable: editMode,
         banner: false,
-        site: portal.site,
+        site: req.site,
         moduleConfig: moduleConfig,
         content: content,
-        logoUrl: this.getLogoUrl(portal, moduleConfig)
+        logoUrl: this.getLogoUrl(req, moduleConfig)
     }
 };
 
-exports.merge = function(o1, o2) {
+exports.merge = function (o1, o2) {
     for (var key in o2) {
         o1[key] = o2[key];
     }

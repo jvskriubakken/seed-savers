@@ -1,15 +1,15 @@
-var thymeleaf = require('view/thymeleaf');
+var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(portal) {
-    var component = portal.component;
-    var page = portal.content.page;
+function handleGet(req) {
+    var component = req.component;
+    var page = req.content.page;
 
     var title, text = "";
 
     if (component.config.getProperty("title") && component.config.getProperty("title").getString() != "") {
         title = component.config.getProperty("title").getString();
     } else {
-        title = portal.content.displayName;
+        title = req.content.displayName;
     }
 
     if (component.config.getProperty("text") && component.config.getProperty("text").getString() != "") {
@@ -17,7 +17,7 @@ function handleGet(portal) {
     }
 
     var params = {
-        context: portal,
+        context: req,
         component: component,
         title: title,
         text: text
@@ -26,8 +26,10 @@ function handleGet(portal) {
     var view = resolve('/view/header.html');
     var body = thymeleaf.render(view, params);
 
-    portal.response.contentType = 'text/html';
-    portal.response.body = body;
+    return {
+        body: body,
+        contentType: 'text/html'
+    };
 }
 
 exports.get = handleGet;
