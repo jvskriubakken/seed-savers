@@ -1,26 +1,27 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 var contentService = require('/lib/contentService');
+var xeon = require('xeon');
 
 function handleGet(req) {
     var component = req.component;
-    var relatedPersons = Java.from(component.config.getDataByName("person"));
+    var relatedPersonsId = Java.from(component.config.getContentIds("person"));
     var persons = [];
 
-    relatedPersons.forEach(function (element) {
-        var personData = contentService.getContentById(element.getString());
-        var imageContent = contentService.getContentById(personData.contentData.getProperty('image').getString());
+    relatedPersonsId.forEach(function (relatedPersonId) {
+        var personData = contentService.getContentById(relatedPersonId);
+        var imageContent = contentService.getContentById(personData.data.getContentId('image'));
         persons.push({
-            name: personData.contentData.getProperty('first-name').getString() + ' ' +
-                  personData.contentData.getProperty('middle-name').getString() + ' ' +
-                  personData.contentData.getProperty('last-name').getString(),
-            title: personData.contentData.getProperty('job-title').getString(),
+            name: personData.data.getString('first-name') + ' ' +
+                  personData.data.getString('middle-name') + ' ' +
+                  personData.data.getString('last-name'),
+            title: personData.data.getString('job-title'),
             image: req.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
         });
     });
 
     var data = {
-        title: component.config.getProperty('title') ? component.config.getProperty('title').getString() : "Please configure",
-        text: component.config.getProperty('text') ? component.config.getProperty('text').getString() : "",
+        title: xeon.ifEmpty(component.config.getString('title'), "Please configure"),
+        text: xeon.ifEmpty(component.config.getString('text'), ""),
         persons: Java.to(persons, "java.util.Map[]")
     };
 

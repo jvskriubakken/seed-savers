@@ -12,30 +12,28 @@ function handleGet(req) {
         personContent = content;
     } else {
         var personId;
-        var relatedPerson = component.config.getProperty('person');
-        if (relatedPerson) {
-            personId = relatedPerson.getString();
+        var relatedPersonId = component.config.getContentId('person');
+        if (relatedPersonId) {
+            personId = relatedPersonId;
             if (personId) {
                 personContent = contentService.getContentById(personId);
             }
         }
     }
 
-    var imageProperty = null;
+    var imageId = null;
     if (personContent) {
-        imageProperty = personContent.contentData.getProperty('image');
+        imageId = personContent.data.getContentId('image');
     }
 
-    if (personContent && imageProperty) {
-        var personImageUrl = req.url.createResourceUrl('images/team1.jpg');
-        if( imageProperty.getString() ) {
-            personImageUrl = req.url.createImageByIdUrl(imageProperty.getContentId()).filter("scaleblock(400,400)");
-        }
+    if (imageId) {
+        personImageUrl = req.url.createImageByIdUrl(imageId).filter("scaleblock(400,400)");
+
         person = {
-            name: personContent.contentData.getProperty('first-name').getString() + ' ' +
-                  personContent.contentData.getProperty('middle-name').getString() + ' ' +
-                  personContent.contentData.getProperty('last-name').getString(),
-            title: personContent.contentData.getProperty('job-title').getString(),
+            name: personContent.data.getString('first-name') + ' ' +
+                  personContent.data.getString('middle-name') + ' ' +
+                  personContent.data.getString('last-name'),
+            title: personContent.data.getString('job-title'),
             image: personImageUrl
         };
     } else {

@@ -1,20 +1,12 @@
+var xeon = require('xeon');
 var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
     var component = req.component;
     var page = req.content.page;
 
-    var title, text = "";
-
-    if (component.config.getProperty("title") && component.config.getProperty("title").getString() != "") {
-        title = component.config.getProperty("title").getString();
-    } else {
-        title = req.content.displayName;
-    }
-
-    if (component.config.getProperty("text") && component.config.getProperty("text").getString() != "") {
-        text = component.config.getProperty("text").getString();
-    }
+    var title = xeon.ifEmpty(component.config.getString("title"), req.content.displayName);
+    var text = xeon.ifNull(component.config.getString("text"), "");
 
     var params = {
         context: req,

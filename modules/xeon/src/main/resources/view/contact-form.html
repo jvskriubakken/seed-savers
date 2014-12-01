@@ -40,10 +40,10 @@
                 <div class="row">
                     <div class="col-md-6" data-th-each="address, iterStat : ${data.addresses}">
                         <address>
-                            <strong><span data-th-text="${site.contentData.getProperty('company').getString()}">Twitter, Inc.</span> <span data-th-text="${address.getProperty('label').getString()}"></span></strong><br/>
-                            <span data-th-text="${address.getProperty('street').getString()}">795 Folsom Ave, Suite 600</span><br/>
-                            <span data-th-text="${address.getProperty('zip').getString()}">CA 94107</span> <span data-th-text="${address.getProperty('city').getString()}">San Francisco</span><br/>
-                            <abbr title="Phone">P:</abbr> <span data-th-text="${address.getProperty('phone').getString()}">(123) 456-7890</span>
+                            <strong><span data-th-text="${site.data.getString('company')}">Twitter, Inc.</span> <span data-th-text="${address.getString('label')}"></span></strong><br/>
+                            <span data-th-text="${address.getString('street')}">795 Folsom Ave, Suite 600</span><br/>
+                            <span data-th-text="${address.getString('zip')}">CA 94107</span> <span data-th-text="${address.getString('city')}">San Francisco</span><br/>
+                            <abbr title="Phone">P:</abbr> <span data-th-text="${address.getString('phone')}">(123) 456-7890</span>
                         </address>
                     </div>
                     <div class="col-md-6" data-th-remove="all">

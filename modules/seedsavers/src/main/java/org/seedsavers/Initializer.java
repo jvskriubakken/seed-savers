@@ -9,7 +9,6 @@ import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
-import com.enonic.wem.api.content.data.ContentData;
 import com.enonic.wem.api.content.page.CreatePageTemplateParams;
 import com.enonic.wem.api.content.page.PageDescriptorKey;
 import com.enonic.wem.api.content.page.PageRegions;
@@ -22,8 +21,8 @@ import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
 import com.enonic.wem.api.content.site.Site;
-import com.enonic.wem.api.data.RootDataSet;
-import com.enonic.wem.api.data.Value;
+import com.enonic.wem.api.data2.PropertyTree;
+import com.enonic.wem.api.data2.Value;
 import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.module.ModuleKey;
@@ -64,9 +63,11 @@ public final class Initializer
 
         if ( !this.hasContent( ContentPath.from( "/seed-savers" ) ) )
         {
+            final PropertyTree moduleConfigData = new PropertyTree();
+            moduleConfigData.setString( "language", "no" );
             final ModuleConfig moduleConfig = ModuleConfig.newModuleConfig().
                 module( THIS_MODULE ).
-                config( new RootDataSet() ).
+                config( moduleConfigData ).
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
@@ -130,7 +131,7 @@ public final class Initializer
     {
         return new CreateContentParams().
             owner( PrincipalKey.ofAnonymous() ).
-            contentData( new ContentData() ).
+            contentData( new PropertyTree() ).
             form( getContentType( ContentTypeName.folder() ).form() ).
             contentType( ContentTypeName.folder() );
     }
@@ -139,8 +140,8 @@ public final class Initializer
     {
         final Form memberForm = this.getContentType( MEMBER_CONTENT_TYPE_NAME ).form();
         final ContentTypeName contentType = MEMBER_CONTENT_TYPE_NAME;
-        final ContentData data = new ContentData();
-        data.setProperty( "name", Value.newString( displayName ) );
+        final PropertyTree data = new PropertyTree();
+        data.setString( "name", displayName );
         return new CreateContentParams().
             displayName( displayName ).
             owner( PrincipalKey.ofAnonymous() ).
@@ -167,8 +168,8 @@ public final class Initializer
 
     private CreateContentParams createFamily( final String scientificName, final String norwegianName )
     {
-        final ContentData data = new ContentData();
-        data.addProperty( "norwegianNames", Value.newString( norwegianName ) );
+        final PropertyTree data = new PropertyTree();
+        data.addString( "norwegianNames", norwegianName );
 
         return new CreateContentParams().
             displayName( scientificName ).
@@ -190,8 +191,8 @@ public final class Initializer
     private CreateContentParams createGenus( final String scientificName, final String norwegianName, final String familyDisplayName )
     {
         final Content family = this.familyByDisplayName.get( familyDisplayName );
-        final ContentData data = new ContentData();
-        data.addProperty( "norwegianNames", Value.newString( norwegianName ) );
+        final PropertyTree data = new PropertyTree();
+        data.addString( "norwegianNames", norwegianName );
         if ( family != null )
         {
             data.addProperty( "family", Value.newContentId( family.getId() ) );
@@ -213,7 +214,7 @@ public final class Initializer
             displayName( "Top and main" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "top-main" ) ).
             supports( supports ).
-            pageConfig( new RootDataSet() ).
+            pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "top" ).
@@ -240,7 +241,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ) );
+            pageConfig( new PropertyTree() ) );
     }
 
     private Content createPageTemplateGenus( final ContentPath sitePath )
@@ -260,7 +261,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ) );
+            pageConfig( new PropertyTree() ) );
     }
 
     private Content createPageTemplatePlant( final ContentPath sitePath )
@@ -280,7 +281,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ) );
+            pageConfig( new PropertyTree() ) );
     }
 
     private Content createPageTemplateMember( final ContentPath sitePath )
@@ -299,7 +300,7 @@ public final class Initializer
                         build() ).
                     build() ).
                 build() ).
-            pageConfig( new RootDataSet() ) );
+            pageConfig( new PropertyTree() ) );
     }
 
 

@@ -11,7 +11,7 @@ function handleGet(req) {
         };
     }
     else {
-        var contentData = req.content.getContentData().toMap();
+        var contentData = req.content.data;
         plant = {
             binomialName : contentData.binomialName ? contentData.binomialName[0] : "",
             norwegianNames: contentData.norwegianNames

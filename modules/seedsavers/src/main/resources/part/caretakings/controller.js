@@ -6,7 +6,7 @@ function handleGet(req) {
         context: req,
         component: req.component,
         content: req.content,
-        contentData: req.content.getContentData().toMap()
+        contentData: req.content.getContentData()
     };
     var body = thymeleaf.render(view, params);
 

@@ -14,8 +14,7 @@ import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
 import com.enonic.wem.api.content.attachment.Attachment;
-import com.enonic.wem.api.content.data.ContentData;
-import com.enonic.wem.api.data.Property;
+import com.enonic.wem.api.data2.PropertyTree;
 import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.form.Input;
 import com.enonic.wem.api.form.inputtype.InputTypes;
@@ -189,7 +188,7 @@ public final class DemoInitializer
         final String filteredFileName =
             fileName.replace( " ", "_" ).replace( "ø", "o" ).replace( "æ", "ae" ).replace( "å", "aa" ).toLowerCase();
 
-        final ContentData dataSet = createContentData( filteredFileName );
+        final PropertyTree dataSet = createContentData( filteredFileName );
 
         final Blob blob = blobService.create( ByteSource.wrap( bytes ).openStream() );
         final Attachment attachment = newAttachment().name( filteredFileName ).blobKey( blob.getKey() ).mimeType( "image/jpeg" ).build();
@@ -204,11 +203,11 @@ public final class DemoInitializer
         contentService.create( params ).getId();
     }
 
-    private ContentData createContentData( final String attachmentName )
+    private PropertyTree createContentData( final String attachmentName )
     {
-        final ContentData dataSet = new ContentData();
-        dataSet.add( Property.newString( "mimeType", "image/png" ) );
-        dataSet.add( Property.newString( "image", attachmentName ) );
+        final PropertyTree dataSet = new PropertyTree();
+        dataSet.addString( "mimeType", "image/png" );
+        dataSet.addString( "image", attachmentName );
         return dataSet;
     }
 
@@ -230,7 +229,7 @@ public final class DemoInitializer
     {
         return new CreateContentParams().
             owner( PrincipalKey.ofAnonymous() ).
-            contentData( new ContentData() ).
+            contentData( new PropertyTree() ).
             form( getContentType( ContentTypeName.folder() ).form() ).
             contentType( ContentTypeName.folder() );
     }

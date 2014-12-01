@@ -23,15 +23,23 @@
         <selector-type>DROPDOWN</selector-type>
         <options>
           <option>
-            <label>no</label>
-            <value>Norsk</value>
+            <label>Norsk</label>
+            <value>no</value>
           </option>
           <option>
-            <label>en</label>
-            <value>English</value>
+            <label>English</label>
+            <value>en</value>
           </option>
         </options>
       </config>
+    </input>
+    <input type="TextLine" name="requiredTest">
+      <label>Required test</label>
+      <immutable>false</immutable>
+      <indexed>true</indexed>
+      <custom-text/>
+      <help-text/>
+      <occurrences minimum="2" maximum="4"/>
     </input>
   </config>
 </module>

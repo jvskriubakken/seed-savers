@@ -11,7 +11,7 @@ function handleGet(req) {
         };
     }
     else {
-        var contentData = req.content.getContentData().toMap();
+        var contentData = req.content.data;
         family = {
             scientificName : req.content.displayName,
             norwegianNames: contentData.norwegianNames

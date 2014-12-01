@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.enonic.wem.api.content.Content;
-import com.enonic.wem.api.content.ContentConstants;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.page.CreatePageTemplateParams;
@@ -17,7 +16,7 @@ import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
 import com.enonic.wem.api.content.site.Site;
-import com.enonic.wem.api.data.RootDataSet;
+import com.enonic.wem.api.data2.PropertyTree;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.module.ModuleKey;
 import com.enonic.wem.api.schema.content.ContentTypeName;
@@ -51,7 +50,7 @@ public final class Initializer
         {
             final ModuleConfig moduleConfig = ModuleConfig.newModuleConfig().
                 module( THIS_MODULE ).
-                config( new RootDataSet() ).
+                config( new PropertyTree() ).
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
@@ -80,7 +79,7 @@ public final class Initializer
             displayName( "XSLT Landing page" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "xslt-landing-page" ) ).
             supports( supports ).
-            pageConfig( new RootDataSet() ).
+            pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).

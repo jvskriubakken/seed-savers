@@ -24,6 +24,7 @@ import com.enonic.wem.api.content.site.ModuleConfigs;
 import com.enonic.wem.api.content.site.Site;
 import com.enonic.wem.api.context.Context;
 import com.enonic.wem.api.data.RootDataSet;
+import com.enonic.wem.api.data2.PropertyTree;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.module.ModuleKey;
 import com.enonic.wem.api.schema.content.ContentTypeName;
@@ -56,7 +57,7 @@ public final class Initializer
         {
             final ModuleConfig moduleConfig = ModuleConfig.newModuleConfig().
                 module( THIS_MODULE ).
-                config( new RootDataSet() ).
+                config( new PropertyTree() ).
                 build();
             final ModuleConfigs moduleConfigs = ModuleConfigs.from( moduleConfig );
 
@@ -87,7 +88,7 @@ public final class Initializer
             displayName( "Home page" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "apage" ) ).
             supports( supports ).
-            pageConfig( new RootDataSet() ).
+            pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
@@ -106,7 +107,7 @@ public final class Initializer
             displayName( "Banner" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "banner-page" ) ).
             supports( supports ).
-            pageConfig( new RootDataSet() ).
+            pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
@@ -139,7 +140,7 @@ public final class Initializer
             displayName( "Person" ).
             controller( PageDescriptorKey.from( THIS_MODULE, "person" ) ).
             supports( supports ).
-            pageConfig( new RootDataSet() ).
+            pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).

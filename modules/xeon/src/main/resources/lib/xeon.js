@@ -17,13 +17,13 @@ exports.getLogoUrl = function (req, moduleConfig) {
 
 exports.defaultParams = function (req) {
     var content = req.content;
-    var editMode = req.mode.toString() == 'edit';
+    var editMode = req.request.mode.toString() == 'edit';
     var moduleConfig = req.site.getModuleConfig(req.module.key);
 
     return {
         context: req,
         mainRegion: req.content.page.getRegion("main"),
-        menuItems: menuService.getSiteMenuAsList(portal.site),
+        menuItems: menuService.getSiteMenuAsList(req.site),
         editable: editMode,
         banner: false,
         site: req.site,
@@ -38,4 +38,21 @@ exports.merge = function (o1, o2) {
         o1[key] = o2[key];
     }
     return o1;
+};
+
+exports.ifNull = function (string, defaultString) {
+    if (!string) {
+        return defaultString;
+    }
+    return string;
+};
+
+exports.ifEmpty = function (string, defaultString) {
+    if (!string) {
+        return defaultString;
+    }
+    if (string == "") {
+        return defaultString;
+    }
+    return string;
 };

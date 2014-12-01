@@ -7,15 +7,15 @@ function handleGet(req) {
     var xeonConfig = site.getModuleConfig(req.module.key);
 
     var social = {
-        facebook: xeonConfig.getProperty('facebook').getString(),
-        twitter: xeonConfig.getProperty('twitter').getString(),
-        linkedin: xeonConfig.getProperty('linkedin').getString(),
-        google: xeonConfig.getProperty('google').getString(),
-        pintrest: xeonConfig.getProperty('pintrest').getString(),
-        youtube: xeonConfig.getProperty('youtube').getString()
+        facebook: xeonConfig.getString('facebook'),
+        twitter: xeonConfig.getString('twitter'),
+        linkedin: xeonConfig.getString('linkedin'),
+        google: xeonConfig.getString('google'),
+        pintrest: xeonConfig.getString('pintrest'),
+        youtube: xeonConfig.getString('youtube')
     };
 
-    var addresses = site.contentData.getDataSetsByName('location');
+    var addresses = site.data.getSets('location');
 
     var data = {
         social: social,

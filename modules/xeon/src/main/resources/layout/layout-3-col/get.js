@@ -1,7 +1,7 @@
 var editMode = portal.request.mode == 'edit';
 
-var content = portal.content;
-var component = portal.component;
+var content = req.content;
+var component = req.component;
 
 var thymeleaf = require('view/thymeleaf');
 var view = resolve('/view/layout-3-col.html');
@@ -10,7 +10,7 @@ var body = thymeleaf.render(view, {
     path: content.path,
     name: content.name,
     editable: editMode,
-    resourcesPath: portal.url.createResourceUrl(''),
+    resourcesPath: req.url.createResourceUrl(''),
     component: component,
     leftRegion: component.getRegion("left"),
     centerRegion: component.getRegion("center"),

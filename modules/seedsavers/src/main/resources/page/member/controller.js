@@ -13,7 +13,7 @@ function handleGet(req) {
 
     var menu;
     if( req.content.hasMetadata("system:menu-item") ) {
-        menu = req.content.getMetadata("system:menu-item").toMap();
+        menu = req.content.getMetadata("system:menu-item");
     }
     else {
         menu = defaultMenu;
@@ -24,7 +24,7 @@ function handleGet(req) {
         context: req,
         site: req.site,
         content: req.content,
-        pageConfig: req.content.page.config.toMap(),
+        pageConfig: req.content.page.config,
         mainRegion: req.content.page.getRegion("main"),
         editable: editMode,
         menu: menu
