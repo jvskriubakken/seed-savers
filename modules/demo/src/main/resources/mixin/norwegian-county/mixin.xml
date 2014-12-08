@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mixin>
-  <display-name>Demo: Norwegian countries</display-name>
+  <display-name>Demo: Norwegian counties</display-name>
   <items>
     <input type="SingleSelector" name="norwegianCounty">
       <label>Norwegian county</label>
