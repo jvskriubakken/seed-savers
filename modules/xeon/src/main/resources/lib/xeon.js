@@ -18,7 +18,7 @@ exports.getLogoUrl = function (req, moduleConfig) {
 exports.defaultParams = function (req) {
     var content = req.content;
     var editMode = req.request.mode.toString() == 'edit';
-    var moduleConfig = req.site.getModuleConfig(req.module.key);
+    var moduleConfig = req.site.getModuleConfig(req.module);
 
     return {
         context: req,
