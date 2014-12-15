@@ -27,10 +27,17 @@ import com.enonic.wem.api.schema.content.GetContentTypesParams;
 import com.enonic.wem.api.security.CreateGroupParams;
 import com.enonic.wem.api.security.CreateRoleParams;
 import com.enonic.wem.api.security.CreateUserParams;
+import com.enonic.wem.api.security.CreateUserStoreParams;
+import com.enonic.wem.api.security.Group;
 import com.enonic.wem.api.security.PrincipalKey;
 import com.enonic.wem.api.security.PrincipalRelationship;
 import com.enonic.wem.api.security.SecurityService;
+import com.enonic.wem.api.security.User;
+import com.enonic.wem.api.security.UserStore;
 import com.enonic.wem.api.security.UserStoreKey;
+import com.enonic.wem.api.security.acl.UserStoreAccess;
+import com.enonic.wem.api.security.acl.UserStoreAccessControlEntry;
+import com.enonic.wem.api.security.acl.UserStoreAccessControlList;
 
 import static com.enonic.wem.api.content.attachment.Attachment.newAttachment;
 
@@ -52,6 +59,22 @@ public final class DemoInitializer
 
     private static final String IMAGE_ARCHIVE_PATH_ELEMENT = "imagearchive";
 
+    private static final UserStoreKey USER_STORE_KEY = new UserStoreKey( "enonic" );
+
+    public static final PrincipalKey EMPLOYEES = PrincipalKey.ofGroup( USER_STORE_KEY, "employees" );
+
+    public static final PrincipalKey CONSULTANTS = PrincipalKey.ofGroup( USER_STORE_KEY, "consultants" );
+
+    public static final PrincipalKey DEVELOPERS = PrincipalKey.ofGroup( USER_STORE_KEY, "developers" );
+
+    public static final PrincipalKey OPERATIONS = PrincipalKey.ofGroup( USER_STORE_KEY, "operations" );
+
+    public static final PrincipalKey OSLO = PrincipalKey.ofGroup( USER_STORE_KEY, "norway" );
+
+    public static final PrincipalKey MINSK = PrincipalKey.ofGroup( USER_STORE_KEY, "belarus" );
+
+    public static final PrincipalKey SAN_FRANCISCO = PrincipalKey.ofGroup( USER_STORE_KEY, "usa" );
+
     private BlobService blobService;
 
     private ContentService contentService;
@@ -66,6 +89,7 @@ public final class DemoInitializer
     {
         createImages();
         createLargeTree();
+        createUserStore();
         createPrincipals();
     }
 
@@ -240,65 +264,117 @@ public final class DemoInitializer
         return contentTypeService.getByNames( params ).first();
     }
 
+    private void createUserStore()
+    {
+        final UserStoreKey userStoreKey = new UserStoreKey( "enonic" );
+        final UserStore userStore = securityService.getUserStore( userStoreKey );
+        if ( userStore == null )
+        {
+            final UserStoreAccessControlList permissions = UserStoreAccessControlList.of(
+                UserStoreAccessControlEntry.create().principal( DEVELOPERS ).access( UserStoreAccess.USER_STORE_MANAGER ).build(),
+                UserStoreAccessControlEntry.create().principal( PrincipalKey.ofUser( USER_STORE_KEY, "tsi" ) ).access(
+                    UserStoreAccess.ADMINISTRATOR ).build(),
+                UserStoreAccessControlEntry.create().principal( CONSULTANTS ).access( UserStoreAccess.CREATE_USERS ).build() );
+            final CreateUserStoreParams createUserStoreParams = CreateUserStoreParams.create().
+                key( USER_STORE_KEY ).
+                displayName( "Enonic User Store" ).
+                permissions( permissions ).
+                build();
+            securityService.createUserStore( createUserStoreParams );
+        }
+    }
+
     private void createPrincipals()
     {
-        final CreateUserParams user1 = CreateUserParams.create().
-            userKey( PrincipalKey.ofUser( UserStoreKey.system(), "tsi" ) ).
-            displayName( "Thomas Sigdestad" ).
-            login( "tsi" ).
-            email( "tsi@enonic.com" ).
-            password( "password" ).
-            build();
-        addUser( user1 );
-
-        final CreateUserParams user2 = CreateUserParams.create().
-            userKey( PrincipalKey.ofUser( UserStoreKey.system(), "mer" ) ).
-            displayName( "Morten Eriksen" ).
-            login( "mer" ).
-            email( "mer@enonic.com" ).
-            password( "password" ).
-            build();
-        addUser( user2 );
-
-        final CreateUserParams createAdmin = CreateUserParams.create().
-            userKey( PrincipalKey.ofUser( UserStoreKey.system(), "admin" ) ).
-            displayName( "Administrator" ).
-            login( "admin" ).
-            password( "password" ).
-            build();
-        addUser( createAdmin );
-
-        final CreateGroupParams createGroup1 = CreateGroupParams.create().
-            groupKey( PrincipalKey.ofGroup( UserStoreKey.system(), "developers" ) ).
+        final CreateGroupParams createDev = CreateGroupParams.create().
+            groupKey( DEVELOPERS ).
             displayName( "Developers" ).
             build();
-        addGroup( createGroup1 );
+        final Group dev = addGroup( createDev );
 
-        final CreateGroupParams createGroup2 = CreateGroupParams.create().
-            groupKey( PrincipalKey.ofGroup( UserStoreKey.system(), "consultants" ) ).
+        final CreateGroupParams createCon = CreateGroupParams.create().
+            groupKey( CONSULTANTS ).
             displayName( "Consultants" ).
             build();
-        addGroup( createGroup2 );
+        final Group con = addGroup( createCon );
 
-        final CreateGroupParams createGroup3 = CreateGroupParams.create().
-            groupKey( PrincipalKey.ofGroup( UserStoreKey.system(), "employees" ) ).
+        final CreateGroupParams createOp = CreateGroupParams.create().
+            groupKey( OPERATIONS ).
+            displayName( "Operations" ).
+            build();
+        final Group op = addGroup( createOp );
+
+        final CreateGroupParams createOslo = CreateGroupParams.create().
+            groupKey( OSLO ).
+            displayName( "Enonic Oslo" ).
+            build();
+        final Group oslo = addGroup( createOslo );
+
+        final CreateGroupParams createMinsk = CreateGroupParams.create().
+            groupKey( MINSK ).
+            displayName( "Enonic Minsk" ).
+            build();
+        final Group minsk = addGroup( createMinsk );
+
+        final CreateGroupParams createSF = CreateGroupParams.create().
+            groupKey( SAN_FRANCISCO ).
+            displayName( "Enonic San Francisco" ).
+            build();
+        final Group sf = addGroup( createSF );
+
+        final CreateGroupParams createEmployees = CreateGroupParams.create().
+            groupKey( EMPLOYEES ).
             displayName( "Enonic Employees" ).
             build();
-        addGroup( createGroup3 );
+        final Group employees = addGroup( createEmployees );
 
-        final CreateRoleParams createRole1 = CreateRoleParams.create().
-            roleKey( PrincipalKey.ofRole( "superuser" ) ).
-            displayName( "Superuser" ).
+        addMember( employees.getKey(), dev.getKey() );
+        addMember( employees.getKey(), con.getKey() );
+        addMember( employees.getKey(), op.getKey() );
+
+        final User mer = createUser( "mer", "Morten Eriksen", EMPLOYEES, OSLO );
+        final User tsi = createUser( "tsi", "Thomas Sigdestad", EMPLOYEES, OSLO );
+
+        final User aro = createUser( "aro", "Alex Rodríguez", DEVELOPERS, OSLO );
+        final User jvs = createUser( "jvs", "Jørund Skriubakken", DEVELOPERS, OSLO );
+        final User jsi = createUser( "jsi", "Jørgen Sivesind", DEVELOPERS, OSLO );
+        final User rmy = createUser( "rmy", "Runar Myklebust", DEVELOPERS, OSLO );
+        final User srs = createUser( "srs", "Sten Roger Sandvik", DEVELOPERS, OSLO );
+        final User tlo = createUser( "tlo", "Tor Løkken", DEVELOPERS, OSLO );
+
+        final User pmi = createUser( "pmi", "Pavel Milkevich", DEVELOPERS, MINSK );
+        final User vbr = createUser( "vbr", "Vlachaslau Bradnitski", DEVELOPERS, MINSK );
+        final User mta = createUser( "mta", "Mikita Taukachou", DEVELOPERS, MINSK );
+        final User sig = createUser( "sig", "Siarhei Gauruseu", DEVELOPERS, MINSK );
+
+        final User bhj = createUser( "bhj", "Bjørnar Hjelmevold", CONSULTANTS, OSLO );
+        final User bwe = createUser( "bwe", "Bobby Westberg", CONSULTANTS, OSLO );
+        final User mla = createUser( "mla", "Michael Lazell", CONSULTANTS, SAN_FRANCISCO );
+        final User oda = createUser( "oda", "Øyvind Dahl", CONSULTANTS, OSLO );
+        final User rfo = createUser( "rfo", "Rune Forberg", CONSULTANTS, OSLO );
+
+        final User esu = createUser( "esu", "Erik Sunde", OPERATIONS, OSLO );
+        final User mbe = createUser( "mbe", "Marek Bettman", OPERATIONS, OSLO );
+    }
+
+    private User createUser( final String userName, final String displayName, final PrincipalKey... memberships )
+    {
+        final CreateUserParams createUser = CreateUserParams.create().
+            userKey( PrincipalKey.ofUser( USER_STORE_KEY, userName ) ).
+            displayName( displayName ).
+            login( userName ).
+            email( userName + "@enonic.com" ).
+            password( "password" ).
             build();
-        addRole( createRole1 );
-
-        addMember( createGroup3.getKey(), createGroup1.getKey() );
-        addMember( createGroup3.getKey(), createGroup2.getKey() );
-
-        addMember( createGroup1.getKey(), user1.getKey() );
-        addMember( createGroup2.getKey(), user1.getKey() );
-        addMember( createGroup1.getKey(), user2.getKey() );
-        addMember( createRole1.getKey(), user2.getKey() );
+        final User user = addUser( createUser );
+        if ( user != null )
+        {
+            for ( PrincipalKey key : memberships )
+            {
+                addMember( key, user.getKey() );
+            }
+        }
+        return user;
     }
 
     private void addMember( final PrincipalKey parent, final PrincipalKey member )
@@ -315,36 +391,40 @@ public final class DemoInitializer
         }
     }
 
-    private void addUser( final CreateUserParams createUser )
+    private User addUser( final CreateUserParams createUser )
     {
         try
         {
             if ( !securityService.getUser( createUser.getKey() ).isPresent() )
             {
-                securityService.createUser( createUser );
+                final User user = securityService.createUser( createUser );
                 LOG.info( "User created: " + createUser.getKey().toString() );
+                return user;
             }
         }
         catch ( Throwable t )
         {
             LOG.error( "Unable to initialize user: " + createUser.getKey().toString(), t );
         }
+        return null;
     }
 
-    private void addGroup( final CreateGroupParams createGroup )
+    private Group addGroup( final CreateGroupParams createGroup )
     {
         try
         {
             if ( !securityService.getGroup( createGroup.getKey() ).isPresent() )
             {
-                securityService.createGroup( createGroup );
+                final Group group = securityService.createGroup( createGroup );
                 LOG.info( "Group created: " + createGroup.getKey().toString() );
+                return group;
             }
         }
         catch ( Throwable t )
         {
             LOG.error( "Unable to initialize group: " + createGroup.getKey().toString(), t );
         }
+        return null;
     }
 
     private void addRole( final CreateRoleParams createRole )
