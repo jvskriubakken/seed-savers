@@ -9,9 +9,14 @@ exports.getLogoUrl = function (req, moduleConfig) {
     }
 
     if (logoContent) {
-        return req.url.createImageByIdUrl(logoContent.id).filter("scaleblock(115,26)");
+        return execute('portal.imageUrl', {
+            id: logoContent.id,
+            filter: 'scaleblock(115,26)'
+        });
     } else {
-        return req.url.createResourceUrl('images/logo.png');
+        return execute('portal.assetUrl', {
+            path: 'images/logo.png'
+        });
     }
 };
 

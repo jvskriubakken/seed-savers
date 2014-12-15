@@ -12,7 +12,7 @@ function handleGet(req) {
         path: content.path,
         name: content.name,
         editable: editMode,
-        resourcesPath: req.url.createResourceUrl(''),
+        resourcesPath: execute('portal.assetUrl', {}),
         component: component,
         leftRegion: component.getRegion("left"),
         rightRegion: component.getRegion("right")

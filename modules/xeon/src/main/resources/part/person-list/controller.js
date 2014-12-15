@@ -15,7 +15,11 @@ function handleGet(req) {
                   personData.data.getString('middle-name') + ' ' +
                   personData.data.getString('last-name'),
             title: personData.data.getString('job-title'),
-            image: req.url.createImageByIdUrl(imageContent.id).filter("scaleblock(400,400)")
+
+            image: execute('portal.imageUrl', {
+                id: imageContent.id,
+                filter: "scaleblock(400,400)"
+            })
         });
     });
 

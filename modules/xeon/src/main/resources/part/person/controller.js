@@ -27,7 +27,10 @@ function handleGet(req) {
     }
 
     if (imageId) {
-        personImageUrl = req.url.createImageByIdUrl(imageId).filter("scaleblock(400,400)");
+        personImageUrl = execute('portal.imageUrl', {
+            id: imageId,
+            filter: 'scaleblock(400,400)'
+        });
 
         person = {
             name: personContent.data.getString('first-name') + ' ' +
@@ -40,7 +43,7 @@ function handleGet(req) {
         person = {
             name: 'Test Testesen',
             title: 'Sjefen over alle sjefer',
-            image: req.url.createResourceUrl('images/team1.jpg')
+            image: execute('portal.assetUrl', {path: 'images/team1.jpg'})
         };
     }
 
