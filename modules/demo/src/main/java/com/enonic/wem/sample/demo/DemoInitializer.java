@@ -7,13 +7,12 @@ import org.slf4j.LoggerFactory;
 import com.google.common.io.ByteSource;
 import com.google.common.io.Resources;
 
-import com.enonic.wem.api.blob.Blob;
 import com.enonic.wem.api.blob.BlobService;
 import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
-import com.enonic.wem.api.content.attachment.Attachment;
+import com.enonic.wem.api.content.CreateMediaParams;
 import com.enonic.wem.api.data.PropertyTree;
 import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.form.Input;
@@ -38,8 +37,6 @@ import com.enonic.wem.api.security.UserStoreKey;
 import com.enonic.wem.api.security.acl.UserStoreAccess;
 import com.enonic.wem.api.security.acl.UserStoreAccessControlEntry;
 import com.enonic.wem.api.security.acl.UserStoreAccessControlList;
-
-import static com.enonic.wem.api.content.attachment.Attachment.newAttachment;
 
 public final class DemoInitializer
     implements DataInitializer
@@ -184,7 +181,7 @@ public final class DemoInitializer
         final ContentPath folderImagesPop = contentService.create( createFolder().
             parent( trampolinerPath ).
             displayName( "Jumping Jack - Pop" ).
-            contentType( ContentTypeName.folder() ) ).getPath();
+            type( ContentTypeName.folder() ) ).getPath();
 
         for ( final String fileName : FOLDER_IMAGES_BIG )
         {
@@ -194,6 +191,7 @@ public final class DemoInitializer
         for ( final String fileName : FOLDER_IMAGES_POP )
         {
             createImageContent( folderImagesPop, fileName, StringUtils.substringBefore( fileName, "." ) );
+            CMS - 4663 Media Types -Align content domain with node binary changes
         }
     }
 
@@ -212,27 +210,11 @@ public final class DemoInitializer
         final String filteredFileName =
             fileName.replace( " ", "_" ).replace( "ø", "o" ).replace( "æ", "ae" ).replace( "å", "aa" ).toLowerCase();
 
-        final PropertyTree dataSet = createContentData( filteredFileName );
-
-        final Blob blob = blobService.create( ByteSource.wrap( bytes ).openStream() );
-        final Attachment attachment = newAttachment().name( filteredFileName ).blobKey( blob.getKey() ).mimeType( "image/jpeg" ).build();
-
-        final CreateContentParams params = new CreateContentParams().
-            contentType( ContentTypeName.imageMedia() ).
-            form( MEDIA_IMAGE_FORM ).
-            displayName( displayName ).
-            parent( parent ).
-            contentData( dataSet ).
-            attachments( attachment );
+        final CreateMediaParams params = new CreateMediaParams().
+            mimeType( "image/jpeg" ).
+            name( filteredFileName ).
+            parent( parent ).byteSource( ByteSource.wrap( bytes ) );
         contentService.create( params ).getId();
-    }
-
-    private PropertyTree createContentData( final String attachmentName )
-    {
-        final PropertyTree dataSet = new PropertyTree();
-        dataSet.addString( "mimeType", "image/png" );
-        dataSet.addString( "image", attachmentName );
-        return dataSet;
     }
 
     private byte[] loadImageFileAsBytes( final String fileName )
@@ -255,7 +237,7 @@ public final class DemoInitializer
             owner( PrincipalKey.ofAnonymous() ).
             contentData( new PropertyTree() ).
             form( getContentType( ContentTypeName.folder() ).form() ).
-            contentType( ContentTypeName.folder() );
+            type( ContentTypeName.folder() );
     }
 
     private ContentType getContentType( ContentTypeName name )

@@ -133,7 +133,7 @@ public final class Initializer
             owner( PrincipalKey.ofAnonymous() ).
             contentData( new PropertyTree() ).
             form( getContentType( ContentTypeName.folder() ).form() ).
-            contentType( ContentTypeName.folder() );
+            type( ContentTypeName.folder() );
     }
 
     private CreateContentParams createMember( final String displayName )
@@ -147,7 +147,7 @@ public final class Initializer
             owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
             form( memberForm ).
-            contentType( contentType ).
+            type( contentType ).
             parent( this.membersFolder );
     }
 
@@ -175,7 +175,7 @@ public final class Initializer
             displayName( scientificName ).
             owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
-            contentType( ContentTypeName.from( THIS_MODULE, "family" ) );
+            type( ContentTypeName.from( THIS_MODULE, "family" ) );
     }
 
     private void createGenuses( final ContentPath parentPath )
@@ -202,7 +202,7 @@ public final class Initializer
             displayName( scientificName ).
             owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
-            contentType( ContentTypeName.from( THIS_MODULE, "genus" ) );
+            type( ContentTypeName.from( THIS_MODULE, "genus" ) );
     }
 
     private Content createPageTemplateTopMain( final ContentPath sitePath )
