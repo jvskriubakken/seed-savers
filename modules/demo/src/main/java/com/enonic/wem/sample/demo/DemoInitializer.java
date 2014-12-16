@@ -191,7 +191,6 @@ public final class DemoInitializer
         for ( final String fileName : FOLDER_IMAGES_POP )
         {
             createImageContent( folderImagesPop, fileName, StringUtils.substringBefore( fileName, "." ) );
-            CMS - 4663 Media Types -Align content domain with node binary changes
         }
     }
 
