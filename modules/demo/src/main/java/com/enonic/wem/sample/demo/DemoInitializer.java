@@ -1,6 +1,5 @@
 package com.enonic.wem.sample.demo;
 
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -185,16 +184,16 @@ public final class DemoInitializer
 
         for ( final String fileName : FOLDER_IMAGES_BIG )
         {
-            createImageContent( folderImagesBig, fileName, StringUtils.substringBefore( fileName, "." ) );
+            createImageContent( folderImagesBig, fileName );
         }
 
         for ( final String fileName : FOLDER_IMAGES_POP )
         {
-            createImageContent( folderImagesPop, fileName, StringUtils.substringBefore( fileName, "." ) );
+            createImageContent( folderImagesPop, fileName );
         }
     }
 
-    private void createImageContent( final ContentPath parent, final String fileName, final String displayName )
+    private void createImageContent( final ContentPath parent, final String fileName )
         throws Exception
     {
         // TODO: fix due to Intellij failing when building jar with ø in resource file
