@@ -448,7 +448,7 @@ public final class DemoInitializer
     {
         return Form.newForm().
             addFormItem( Input.newInput().name( "image" ).
-                inputType( InputTypes.IMAGE ).build() ).
+                inputType( InputTypes.IMAGE_UPLOADER ).build() ).
             addFormItem( Input.newInput().name( "mimeType" ).
                 inputType( InputTypes.TEXT_LINE ).
                 label( "Mime type" ).
