@@ -206,7 +206,7 @@ public final class DemoInitializer
 
         // FIXME: hack to avoid exception from NodeName preconditions
         final String filteredFileName =
-            fileName.replace( " ", "_" ).replace( "ø", "o" ).replace( "æ", "ae" ).replace( "å", "aa" ).toLowerCase();
+            fileName.replace( " ", "_" ).replace( "\u00F8", "o" ).replace( "\u00E6", "ae" ).replace( "\u00E5", "aa" ).toLowerCase();
 
         final CreateMediaParams params = new CreateMediaParams().
             mimeType( "image/jpeg" ).
@@ -315,22 +315,22 @@ public final class DemoInitializer
         final User mer = createUser( "mer", "Morten Eriksen", EMPLOYEES, OSLO );
         final User tsi = createUser( "tsi", "Thomas Sigdestad", EMPLOYEES, OSLO );
 
-        final User aro = createUser( "aro", "Alex Rodríguez", DEVELOPERS, OSLO );
-        final User jvs = createUser( "jvs", "Jørund Skriubakken", DEVELOPERS, OSLO );
-        final User jsi = createUser( "jsi", "Jørgen Sivesind", DEVELOPERS, OSLO );
+        final User aro = createUser( "aro", "Alex Rodr\u00EDguez", DEVELOPERS, OSLO );
+        final User jvs = createUser( "jvs", "J\u00F8rund Skriubakken", DEVELOPERS, OSLO );
+        final User jsi = createUser( "jsi", "J\u00F8rgen Sivesind", DEVELOPERS, OSLO );
         final User rmy = createUser( "rmy", "Runar Myklebust", DEVELOPERS, OSLO );
         final User srs = createUser( "srs", "Sten Roger Sandvik", DEVELOPERS, OSLO );
-        final User tlo = createUser( "tlo", "Tor Løkken", DEVELOPERS, OSLO );
+        final User tlo = createUser( "tlo", "Tor L\u00F8kken", DEVELOPERS, OSLO );
 
         final User pmi = createUser( "pmi", "Pavel Milkevich", DEVELOPERS, MINSK );
         final User vbr = createUser( "vbr", "Vlachaslau Bradnitski", DEVELOPERS, MINSK );
         final User mta = createUser( "mta", "Mikita Taukachou", DEVELOPERS, MINSK );
         final User sig = createUser( "sig", "Siarhei Gauruseu", DEVELOPERS, MINSK );
 
-        final User bhj = createUser( "bhj", "Bjørnar Hjelmevold", CONSULTANTS, OSLO );
+        final User bhj = createUser( "bhj", "Bj\u00F8rnar Hjelmevold", CONSULTANTS, OSLO );
         final User bwe = createUser( "bwe", "Bobby Westberg", CONSULTANTS, OSLO );
         final User mla = createUser( "mla", "Michael Lazell", CONSULTANTS, SAN_FRANCISCO );
-        final User oda = createUser( "oda", "Øyvind Dahl", CONSULTANTS, OSLO );
+        final User oda = createUser( "oda", "\u00D8yvind Dahl", CONSULTANTS, OSLO );
         final User rfo = createUser( "rfo", "Rune Forberg", CONSULTANTS, OSLO );
 
         final User esu = createUser( "esu", "Erik Sunde", OPERATIONS, OSLO );
