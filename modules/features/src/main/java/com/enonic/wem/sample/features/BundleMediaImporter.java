@@ -62,7 +62,6 @@ public class BundleMediaImporter
             protected void foundFile( final String name, final String parentPath, final String filePath )
                 throws Exception
             {
-                System.out.println( filePath );
                 final ContentPath parentContent = ContentPath.from( destination, ContentPath.from( parentPath ).asRelative() );
 
                 final CreateMediaParams createMediaParams = new CreateMediaParams().
