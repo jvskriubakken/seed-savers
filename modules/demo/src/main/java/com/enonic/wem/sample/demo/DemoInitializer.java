@@ -103,7 +103,7 @@ public final class DemoInitializer
 
     private void createLargeTree()
     {
-        final ContentPath largeTreePath = ContentPath.from( "large-tree" );
+        final ContentPath largeTreePath = ContentPath.from( "/large-tree" );
         if ( !hasContent( largeTreePath ) )
         {
             contentService.create( createFolder().

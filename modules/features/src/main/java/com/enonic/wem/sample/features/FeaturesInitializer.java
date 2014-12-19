@@ -22,7 +22,6 @@ public final class FeaturesInitializer
 
     private ContentTypeService contentTypeService;
 
-
     @Override
     public void initialize()
         throws Exception
