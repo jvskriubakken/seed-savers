@@ -3,9 +3,6 @@ package com.enonic.wem.sample.features;
 
 import org.osgi.framework.Bundle;
 
-import com.google.common.io.ByteSource;
-import com.google.common.io.Resources;
-
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
@@ -53,7 +50,7 @@ public class BundleMediaImporter
         {
 
             @Override
-            public void foundDirectory( final String name, final String parentPath )
+            protected void foundDirectory( final String name, final String parentPath )
                 throws Exception
             {
                 final ContentPath contentParentPath = ContentPath.from( destination, ContentPath.from( parentPath ).asRelative() );
@@ -62,18 +59,17 @@ public class BundleMediaImporter
             }
 
             @Override
-            public void foundFile( final String name, final String parentPath )
+            protected void foundFile( final String name, final String parentPath, final String filePath )
                 throws Exception
             {
-                final ContentPath contentParentPath = ContentPath.from( destination, ContentPath.from( parentPath ).asRelative() );
+                System.out.println( filePath );
+                final ContentPath parentContent = ContentPath.from( destination, ContentPath.from( parentPath ).asRelative() );
 
-                final String filePath = parentPath + name;
-
-                byte[] data = Resources.toByteArray( getClass().getResource( filePath ) );
-                CreateMediaParams createMediaParams = new CreateMediaParams().
-                    byteSource( ByteSource.wrap( data ) ).
+                final CreateMediaParams createMediaParams = new CreateMediaParams().
+                    byteSource( getByteSource( filePath ) ).
                     name( name ).
-                    parent( contentParentPath );
+                    parent( parentContent );
+
                 contentService.create( createMediaParams );
             }
         }.importMedia();

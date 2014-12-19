@@ -1,11 +1,15 @@
 package com.enonic.wem.sample.features;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 
 import org.apache.commons.io.FilenameUtils;
 import org.osgi.framework.Bundle;
+
+import com.google.common.io.ByteSource;
+import com.google.common.io.Resources;
 
 public abstract class BundleDirectoryTraverser
 {
@@ -40,16 +44,33 @@ public abstract class BundleDirectoryTraverser
             {
                 final String fileName = FilenameUtils.getName( filePath );
                 final String fileParent = "/" + FilenameUtils.getPath( filePath );
-                foundFile( fileName, fileParent );
+                foundFile( fileName, fileParent, filePath );
             }
         }
     }
 
-    public abstract void foundDirectory( final String name, final String parentPath )
+    protected abstract void foundDirectory( final String name, final String parentPath )
         throws Exception;
 
-    public abstract void foundFile( final String name, final String parentPath )
+    protected abstract void foundFile( final String name, final String parentPath, final String filePath )
         throws Exception;
+
+    protected URL getResource( final String filePath )
+    {
+        return getClass().getResource( filePath );
+    }
+
+    protected byte[] getBytes( final String filePath )
+        throws IOException
+    {
+        return Resources.toByteArray( getResource( filePath ) );
+    }
+
+    protected ByteSource getByteSource( final String filePath )
+        throws IOException
+    {
+        return ByteSource.wrap( getBytes( filePath ) );
+    }
 
     public static class Builder
     {
