@@ -56,9 +56,6 @@ public class BundleMediaImporter
             public void foundDirectory( final String name, final String parentPath )
                 throws Exception
             {
-                System.out.println( "foundDir: " );
-                System.out.println( " name " + name );
-                System.out.println( " parentPath " + parentPath );
                 final ContentPath contentParentPath = ContentPath.from( destination, ContentPath.from( parentPath ).asRelative() );
 
                 contentService.create( makeFolder().displayName( name ).parent( contentParentPath ) );
