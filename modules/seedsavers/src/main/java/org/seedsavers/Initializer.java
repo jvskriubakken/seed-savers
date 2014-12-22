@@ -53,7 +53,7 @@ public final class Initializer
 
     private ContentTypeService contentTypeService;
 
-    private HashMap<String, Content> familyByDisplayName = new HashMap<>();
+    private HashMap<String, Content> familyByDisplayName = new HashMap<String, Content>();
 
     @Override
     public void initialize()

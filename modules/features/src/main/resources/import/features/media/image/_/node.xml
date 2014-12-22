@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node xmlns="urn:enonic:xp:export:1.0">
+    <childOrder>_modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <properties>
+        <boolean name="draft">true</boolean>
+        <string name="displayName">image</string>
+        <string name="type">system:folder</string>
+        <property-set name="data"/>
+        <property-set name="form"/>
+    </properties>
+    <attachedBinaries/>
+    <indexConfigs>
+        <analyzer>content_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>draft</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>form</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+    </indexConfigs>
+</node>

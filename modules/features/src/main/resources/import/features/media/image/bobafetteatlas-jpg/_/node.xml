@@ -1,0 +1,1712 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node xmlns="urn:enonic:xp:export:1.0">
+    <childOrder>_modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <properties>
+        <boolean name="draft">false</boolean>
+        <string name="displayName">BobaFettEAtlas.jpg</string>
+        <string name="type">system:image</string>
+        <property-set name="data">
+            <string name="media">BobaFettEAtlas.jpg</string>
+            <string name="mimeType">image/jpeg</string>
+            <property-set name="metadata">
+                <string name="date">2009-09-06T13:03:04</string>
+                <string name="printFlagsInformation">0 1 0 0 0 0 0 0 0 2</string>
+                <string name="slices">Untitled-3 (0,0,900,656) 1 Slices</string>
+                <string name="compressionType">Baseline</string>
+                <string name="thumbnailCompression">JPEG (old-style)</string>
+                <string name="printFlags">0 0 0 0 0 0 0 0 1</string>
+                <string name="numberOfComponents">3</string>
+                <string name="component2">Cb component: Quantization table 1, Sampling factors 1 horiz/1 vert</string>
+                <string name="component1">Y component: Quantization table 0, Sampling factors 1 horiz/1 vert</string>
+                <string name="tiffResolutionunit">Inch</string>
+                <string name="seedNumber">1</string>
+                <string name="XResolution">72 dots per inch</string>
+                <string name="versionInfo">1 (Adobe Photoshop, Adobe Photoshop CS3) 1</string>
+                <string name="component3">Cr component: Quantization table 1, Sampling factors 1 horiz/1 vert</string>
+                <string name="modified">2009-09-06T13:03:04</string>
+                <string name="thumbnailData">JpegRGB, 117x160, Decomp 56320 bytes, 1572865 bpp, 7914 bytes</string>
+                <string name="tiffBitspersample">8</string>
+                <string name="resolutionInfo">600.0x600.0 DPI</string>
+                <string name="metaCreationDate">2009-09-06T13:03:04</string>
+                <string name="captionDigest">[16 bytes]</string>
+                <string name="creationDate">2009-09-06T13:03:04</string>
+                <string name="orientation">Top, left side (Horizontal / normal)</string>
+                <string name="tiffOrientation">1</string>
+                <string name="tiffSoftware">Adobe Photoshop CS3 Windows</string>
+                <string name="thumbnailOffset">302 bytes</string>
+                <string name="globalAngle">120</string>
+                <string name="exifImageHeight">900 pixels</string>
+                <string name="software">Adobe Photoshop CS3 Windows</string>
+                <string name="copyrightFlag">No</string>
+                <string name="tiffYresolution">600.0</string>
+                <string name="YResolution">72 dots per inch</string>
+                <string name="colorTransferFunctions">[112 bytes]</string>
+                <string name="dataPrecision">8 bits</string>
+                <string name="tiffImagelength">900</string>
+                <string name="jpegQuality">12 (Maximum), Standard format, 3 scans</string>
+                <string name="dctermsCreated">2009-09-06T13:03:04</string>
+                <string name="dctermsModified">2009-09-06T13:03:04</string>
+                <string name="lastModified">2009-09-06T13:03:04</string>
+                <string name="lastSaveDate">2009-09-06T13:03:04</string>
+                <string name="thumbnailLength">7914 bytes</string>
+                <string name="colorSpace">sRGB</string>
+                <string name="globalAltitude">30</string>
+                <string name="metaSaveDate">2009-09-06T13:03:04</string>
+                <string name="contentType">image/jpeg</string>
+                <string name="XParsedBy">Proxy5edc9051_6af9_4c56_be4a_6a0a487229d4</string>
+                <string name="resolutionUnits">inch</string>
+                <string name="colorHalftoningInformation">[72 bytes]</string>
+                <string name="tiffXresolution">600.0</string>
+                <string name="dateTime">2009:09:06 13:03:04</string>
+                <string name="gridAndGuidesInformation">[16 bytes]</string>
+                <string name="exifImageWidth">656 pixels</string>
+                <string name="imageHeight">900 pixels</string>
+                <string name="pixelAspectRatio">1.0</string>
+                <string name="imageWidth">656 pixels</string>
+                <string name="resolutionUnit">Inch</string>
+                <string name="urlList">0</string>
+                <string name="printScale">Centered, Scale 1.0</string>
+                <string name="tiffImagewidth">656</string>
+                <string name="printInfo">[74 bytes]</string>
+            </property-set>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">BobaFettEAtlas.jpg</string>
+            <string name="label">source</string>
+            <binaryReference name="binary">BobaFettEAtlas.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">892224</long>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">BobaFettEAtlas_small.jpg</string>
+            <string name="label">small</string>
+            <binaryReference name="binary">BobaFettEAtlas_small.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">20487</long>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">BobaFettEAtlas_medium.jpg</string>
+            <string name="label">medium</string>
+            <binaryReference name="binary">BobaFettEAtlas_medium.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">67594</long>
+        </property-set>
+        <property-set name="form">
+            <property-set name="Input">
+                <property-set name="inputType">
+                    <string name="name">ImageUploader</string>
+                </property-set>
+                <string name="name">media</string>
+                <boolean name="immutable">false</boolean>
+                <boolean name="indexed">false</boolean>
+                <property-set name="occurrences">
+                    <long name="minimum">0</long>
+                    <long name="maximum">1</long>
+                </property-set>
+            </property-set>
+            <property-set name="Input">
+                <property-set name="inputType">
+                    <string name="name">TextLine</string>
+                </property-set>
+                <string name="name">mimeType</string>
+                <string name="label">Mime type</string>
+                <boolean name="immutable">false</boolean>
+                <boolean name="indexed">false</boolean>
+                <property-set name="occurrences">
+                    <long name="minimum">1</long>
+                    <long name="maximum">1</long>
+                </property-set>
+            </property-set>
+            <property-set name="FormItemSet">
+                <string name="name">metadata</string>
+                <string name="label">Metadata</string>
+                <boolean name="immutable">false</boolean>
+                <property-set name="occurrences">
+                    <long name="minimum">0</long>
+                    <long name="maximum">1</long>
+                </property-set>
+                <property-set name="items">
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifVersion</string>
+                        <string name="label">exifVersion</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">compressionType</string>
+                        <string name="label">compressionType</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">sensorPixelSize</string>
+                        <string name="label">sensorPixelSize</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">imageDescription</string>
+                        <string name="label">imageDescription</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">thumbnailCompression</string>
+                        <string name="label">thumbnailCompression</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">numberOfComponents</string>
+                        <string name="label">numberOfComponents</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">cfaPattern</string>
+                        <string name="label">cfaPattern</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">component2</string>
+                        <string name="label">component2</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">focalLength</string>
+                        <string name="label">focalLength</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">unknown20</string>
+                        <string name="label">unknown20</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">component1</string>
+                        <string name="label">component1</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffResolutionunit</string>
+                        <string name="label">tiffResolutionunit</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dateTimeOriginal</string>
+                        <string name="label">dateTimeOriginal</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffMake</string>
+                        <string name="label">tiffMake</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">relatedSoundFile</string>
+                        <string name="label">relatedSoundFile</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">previewIfd</string>
+                        <string name="label">previewIfd</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">component3</string>
+                        <string name="label">component3</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">FNumber</string>
+                        <string name="label">FNumber</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">afFocusPosition</string>
+                        <string name="label">afFocusPosition</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffBitspersample</string>
+                        <string name="label">tiffBitspersample</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lensType</string>
+                        <string name="label">lensType</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">userComment</string>
+                        <string name="label">userComment</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">fileSource</string>
+                        <string name="label">fileSource</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">metaCreationDate</string>
+                        <string name="label">metaCreationDate</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">autoFlashMode</string>
+                        <string name="label">autoFlashMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">creationDate</string>
+                        <string name="label">creationDate</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">make</string>
+                        <string name="label">make</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">meteringMode</string>
+                        <string name="label">meteringMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">contrast</string>
+                        <string name="label">contrast</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">interoperabilityIndex</string>
+                        <string name="label">interoperabilityIndex</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffSoftware</string>
+                        <string name="label">tiffSoftware</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">thumbnailOffset</string>
+                        <string name="label">thumbnailOffset</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">gainControl</string>
+                        <string name="label">gainControl</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">flashUsed</string>
+                        <string name="label">flashUsed</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifImageHeight</string>
+                        <string name="label">exifImageHeight</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lens</string>
+                        <string name="label">lens</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffYresolution</string>
+                        <string name="label">tiffYresolution</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">YResolution</string>
+                        <string name="label">YResolution</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">shotInfo</string>
+                        <string name="label">shotInfo</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dcDescription</string>
+                        <string name="label">dcDescription</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">whiteBalance</string>
+                        <string name="label">whiteBalance</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">sensingMethod</string>
+                        <string name="label">sensingMethod</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lastModified</string>
+                        <string name="label">lastModified</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifExposuretime</string>
+                        <string name="label">exifExposuretime</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lensStops</string>
+                        <string name="label">lensStops</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">thumbnailLength</string>
+                        <string name="label">thumbnailLength</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">programShift</string>
+                        <string name="label">programShift</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">noiseReduction</string>
+                        <string name="label">noiseReduction</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">sharpening</string>
+                        <string name="label">sharpening</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exposureDifference</string>
+                        <string name="label">exposureDifference</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">iso</string>
+                        <string name="label">iso</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dateTime</string>
+                        <string name="label">dateTime</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">whiteBalanceFine</string>
+                        <string name="label">whiteBalanceFine</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifImageWidth</string>
+                        <string name="label">exifImageWidth</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">imageHeight</string>
+                        <string name="label">imageHeight</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffModel</string>
+                        <string name="label">tiffModel</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">cameraHueAdjustment</string>
+                        <string name="label">cameraHueAdjustment</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">model</string>
+                        <string name="label">model</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">autoFlashCompensation</string>
+                        <string name="label">autoFlashCompensation</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffImagewidth</string>
+                        <string name="label">tiffImagewidth</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">subSecTime</string>
+                        <string name="label">subSecTime</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">whiteBalanceMode</string>
+                        <string name="label">whiteBalanceMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">date</string>
+                        <string name="label">date</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">componentsConfiguration</string>
+                        <string name="label">componentsConfiguration</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">subSecTimeDigitized</string>
+                        <string name="label">subSecTimeDigitized</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">ycbcrPositioning</string>
+                        <string name="label">ycbcrPositioning</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">XResolution</string>
+                        <string name="label">XResolution</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">interoperabilityVersion</string>
+                        <string name="label">interoperabilityVersion</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">focalLength35</string>
+                        <string name="label">focalLength35</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">modified</string>
+                        <string name="label">modified</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">qualityFileFormat</string>
+                        <string name="label">qualityFileFormat</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">colorBalance</string>
+                        <string name="label">colorBalance</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exposureProgram</string>
+                        <string name="label">exposureProgram</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">digitalZoomRatio</string>
+                        <string name="label">digitalZoomRatio</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifFnumber</string>
+                        <string name="label">exifFnumber</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">afType</string>
+                        <string name="label">afType</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exposureTime</string>
+                        <string name="label">exposureTime</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">colourMode</string>
+                        <string name="label">colourMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifFocallength</string>
+                        <string name="label">exifFocallength</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lensData</string>
+                        <string name="label">lensData</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">software</string>
+                        <string name="label">software</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">sceneType</string>
+                        <string name="label">sceneType</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lightSource</string>
+                        <string name="label">lightSource</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">firmwareVersion</string>
+                        <string name="label">firmwareVersion</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">flashSyncMode</string>
+                        <string name="label">flashSyncMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">flashpixVersion</string>
+                        <string name="label">flashpixVersion</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dataPrecision</string>
+                        <string name="label">dataPrecision</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">compressedBitsPerPixel</string>
+                        <string name="label">compressedBitsPerPixel</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">subSecTimeOriginal</string>
+                        <string name="label">subSecTimeOriginal</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffImagelength</string>
+                        <string name="label">tiffImagelength</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">description</string>
+                        <string name="label">description</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dctermsCreated</string>
+                        <string name="label">dctermsCreated</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dctermsModified</string>
+                        <string name="label">dctermsModified</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifFlash</string>
+                        <string name="label">exifFlash</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">lastSaveDate</string>
+                        <string name="label">lastSaveDate</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">colorSpace</string>
+                        <string name="label">colorSpace</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">metaSaveDate</string>
+                        <string name="label">metaSaveDate</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">toneCompensation</string>
+                        <string name="label">toneCompensation</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">dateTimeDigitized</string>
+                        <string name="label">dateTimeDigitized</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">flash</string>
+                        <string name="label">flash</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">shootingMode</string>
+                        <string name="label">shootingMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">contentType</string>
+                        <string name="label">contentType</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">XParsedBy</string>
+                        <string name="label">XParsedBy</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">tiffXresolution</string>
+                        <string name="label">tiffXresolution</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">saturation</string>
+                        <string name="label">saturation</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exifDatetimeoriginal</string>
+                        <string name="label">exifDatetimeoriginal</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">sharpness</string>
+                        <string name="label">sharpness</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">imageWidth</string>
+                        <string name="label">imageWidth</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">resolutionUnit</string>
+                        <string name="label">resolutionUnit</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exposureBiasValue</string>
+                        <string name="label">exposureBiasValue</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">subjectDistanceRange</string>
+                        <string name="label">subjectDistanceRange</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">maxApertureValue</string>
+                        <string name="label">maxApertureValue</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">exposureMode</string>
+                        <string name="label">exposureMode</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">sceneCaptureType</string>
+                        <string name="label">sceneCaptureType</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                    <property-set name="Input">
+                        <property-set name="inputType">
+                            <string name="name">TextLine</string>
+                        </property-set>
+                        <string name="name">customRendered</string>
+                        <string name="label">customRendered</string>
+                        <boolean name="immutable">false</boolean>
+                        <boolean name="indexed">false</boolean>
+                        <property-set name="occurrences">
+                            <long name="minimum">0</long>
+                            <long name="maximum">1</long>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+    </properties>
+    <attachedBinaries>
+        <attachedBinary>
+            <binaryReference>BobaFettEAtlas.jpg</binaryReference>
+        </attachedBinary>
+        <attachedBinary>
+            <binaryReference>BobaFettEAtlas_small.jpg</binaryReference>
+        </attachedBinary>
+        <attachedBinary>
+            <binaryReference>BobaFettEAtlas_medium.jpg</binaryReference>
+        </attachedBinary>
+    </attachedBinaries>
+    <indexConfigs>
+        <analyzer>content_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>draft</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>form</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+    </indexConfigs>
+</node>

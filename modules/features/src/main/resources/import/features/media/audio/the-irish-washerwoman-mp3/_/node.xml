@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node xmlns="urn:enonic:xp:export:1.0">
+    <childOrder>_modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <properties>
+        <boolean name="draft">false</boolean>
+        <string name="displayName">the-irish-washerwoman.mp3</string>
+        <string name="type">system:unknown</string>
+        <property-set name="data">
+            <string name="media">the-irish-washerwoman.mp3</string>
+            <string name="mimeType">audio/mp3</string>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">the-irish-washerwoman.mp3</string>
+            <string name="label">source</string>
+            <binaryReference name="binary">the-irish-washerwoman.mp3</binaryReference>
+            <string name="mimeType">audio/mp3</string>
+            <long name="size">933012</long>
+        </property-set>
+        <property-set name="form">
+            <property-set name="Input">
+                <property-set name="inputType">
+                    <string name="name">FileUploader</string>
+                </property-set>
+                <string name="name">media</string>
+                <boolean name="immutable">false</boolean>
+                <boolean name="indexed">false</boolean>
+                <property-set name="occurrences">
+                    <long name="minimum">0</long>
+                    <long name="maximum">1</long>
+                </property-set>
+            </property-set>
+        </property-set>
+    </properties>
+    <attachedBinaries>
+        <attachedBinary>
+            <binaryReference>the-irish-washerwoman.mp3</binaryReference>
+        </attachedBinary>
+    </attachedBinaries>
+    <indexConfigs>
+        <analyzer>content_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>draft</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>form</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+    </indexConfigs>
+</node>
