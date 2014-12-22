@@ -41,11 +41,11 @@ public final class FeaturesInitializer
 
         final Bundle bundle = FrameworkUtil.getBundle( this.getClass() );
 
-        final VirtualFile contentImportRoot = VirtualFiles.from( bundle, "/import" );
+        final VirtualFile source = VirtualFiles.from( bundle, "/import" );
 
         final NodeImportResult nodeImportResult = this.exportService.importNodes( ImportNodesParams.create().
-            exportRoot( contentImportRoot ).
-            importRootPath( NodePath.newPath( "/content" ).build() ).
+            source( source ).
+            targetPath( NodePath.newPath( "/content" ).build() ).
             build() );
 
         logImport( nodeImportResult );

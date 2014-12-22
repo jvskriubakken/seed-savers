@@ -24,7 +24,7 @@ subprojects {
     apply plugin: 'maven-publish'
 
     repositories {
-//        mavenLocal()
+        mavenLocal()
         mavenCentral()
         maven {
             url 'http://repo.enonic.net/public'
