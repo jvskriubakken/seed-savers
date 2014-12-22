@@ -18,7 +18,7 @@ function getMenuProperties(content) {
 }
 
 exports.getSiteMenu = function(site) {
-    var contents = Java.from(contentService.getChildContent(site.path).getSet());
+    var contents = contentService.getChildContent(site._path);
     var menuContent = [];
     for (var i = 0; i <contents.length; i++) {
         var menuProps = getMenuProperties(contents[i]);
@@ -33,8 +33,4 @@ exports.getSiteMenu = function(site) {
         }
     }
     return menuContent;
-};
-
-exports.getSiteMenuAsList = function(site) {
-    return Java.to(this.getSiteMenu(site), "java.util.List");
 };

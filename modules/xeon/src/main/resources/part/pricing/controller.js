@@ -3,7 +3,7 @@ var thymeleaf = require('/lib/view/thymeleaf');
 function handleGet(req) {
     var component = req.component;
 
-    var slides = component.config.getSets('slide');
+    var slides = component.config['slide'] || [];
 
 
     var params = {

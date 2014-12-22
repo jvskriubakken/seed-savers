@@ -3,8 +3,8 @@ var contentService = require('contentService');
 
 exports.getLogoUrl = function (req, moduleConfig) {
     var logoContent;
-    var logo = moduleConfig.getProperty('logo');
-    if (logo && !logo.hasNullValue()) {
+    var logo = moduleConfig['logo'];
+    if (logo) {
         logoContent = contentService.getContentById(logo.getString());
     }
 
@@ -22,13 +22,14 @@ exports.getLogoUrl = function (req, moduleConfig) {
 
 exports.defaultParams = function (req) {
     var content = req.content;
-    var editMode = req.request.mode.toString() == 'edit';
-    var moduleConfig = req.site.getModuleConfig(req.module);
+    var editMode = req.mode == 'edit';
+
+    var moduleConfig = req.site.moduleConfigs[req.module];
 
     return {
         context: req,
-        mainRegion: req.content.page.getRegion("main"),
-        menuItems: menuService.getSiteMenuAsList(req.site),
+        mainRegion: req.content.page.regions["main"],
+        menuItems: menuService.getSiteMenu(req.site),
         editable: editMode,
         banner: false,
         site: req.site,

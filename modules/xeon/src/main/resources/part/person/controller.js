@@ -1,6 +1,13 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 var contentService = require('/lib/contentService');
 
+function getSingleValue(val, def) {
+    if (val && val.length > 0) {
+        return val[0];
+    }
+    return def;
+}
+
 function handleGet(req) {
 
     var component = req.component;
@@ -8,11 +15,11 @@ function handleGet(req) {
     var person;
     var personContent;
 
-    if (content.type.toString() == 'com.enonic.wem.modules.xeon:person') {
+    if (content.type == 'com.enonic.wem.modules.xeon:person') {
         personContent = content;
     } else {
         var personId;
-        var relatedPersonId = component.config.getContentId('person');
+        var relatedPersonId = getSingleValue(component.config['person']);
         if (relatedPersonId) {
             personId = relatedPersonId;
             if (personId) {
@@ -23,7 +30,7 @@ function handleGet(req) {
 
     var imageId = null;
     if (personContent) {
-        imageId = personContent.data.getContentId('image');
+        imageId = getSingleValue(personContent.data['image']);
     }
 
     if (imageId) {
@@ -33,10 +40,10 @@ function handleGet(req) {
         });
 
         person = {
-            name: personContent.data.getString('first-name') + ' ' +
-                  personContent.data.getString('middle-name') + ' ' +
-                  personContent.data.getString('last-name'),
-            title: personContent.data.getString('job-title'),
+            name: getSingleValue(personContent.data['first-name'], '') + ' ' +
+                  getSingleValue(personContent.data['middle-name'], '') + ' ' +
+                  getSingleValue(personContent.data['last-name'], ''),
+            title: getSingleValue(personContent.data['job-title'], ''),
             image: personImageUrl
         };
     } else {

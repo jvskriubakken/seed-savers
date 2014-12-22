@@ -14,9 +14,9 @@ exports.get = function (req) {
         editable: editMode,
         resourcesPath: execute('portal.assetUrl', {}),
         component: component,
-        leftRegion: component.getRegion("left"),
-        centerRegion: component.getRegion("center"),
-        rightRegion: component.getRegion("right")
+        leftRegion: component.regions["left"],
+        centerRegion: component.regions["center"],
+        rightRegion: component.regions["right"]
     });
 
     return {
