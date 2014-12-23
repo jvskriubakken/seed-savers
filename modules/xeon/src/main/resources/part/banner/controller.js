@@ -1,7 +1,7 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
-    var component = req.component;
+    var component = execute('portal.getComponent');
     var slides = component.config["slide"] || [];
 
     var params = {

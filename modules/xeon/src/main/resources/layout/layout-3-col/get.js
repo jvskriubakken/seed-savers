@@ -1,7 +1,7 @@
 var editMode = portal.request.mode == 'edit';
 
-var content = req.content;
-var component = req.component;
+var content = execute('portal.getContent');
+var component = execute('portal.getComponent');
 
 var thymeleaf = require('view/thymeleaf');
 var view = resolve('/view/layout-3-col.html');

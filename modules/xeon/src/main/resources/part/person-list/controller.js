@@ -10,7 +10,7 @@ function getSingleValue(val, def) {
 }
 
 function handleGet(req) {
-    var component = req.component;
+    var component = execute('portal.getComponent');
     var relatedPersonsId = component.config["person"] || [];
     var persons = [];
 

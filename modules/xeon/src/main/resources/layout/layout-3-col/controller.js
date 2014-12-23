@@ -3,8 +3,8 @@ var thymeleaf = require('/lib/view/thymeleaf');
 exports.get = function (req) {
     var editMode = req.mode == 'edit';
 
-    var content = req.content;
-    var component = req.component;
+    var content = execute('portal.getContent');
+    var component = execute('portal.getComponent');
 
     var view = resolve('/view/layout-3-col.html');
     var body = thymeleaf.render(view, {

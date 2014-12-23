@@ -5,7 +5,7 @@ exports.getLogoUrl = function (req, moduleConfig) {
     var logoContent;
     var logo = moduleConfig['logo'];
     if (logo) {
-        logoContent = contentService.getContentById(logo.getString());
+        logoContent = contentService.getContentById(logo);
     }
 
     if (logoContent) {
@@ -21,18 +21,19 @@ exports.getLogoUrl = function (req, moduleConfig) {
 };
 
 exports.defaultParams = function (req) {
-    var content = req.content;
     var editMode = req.mode == 'edit';
 
-    var moduleConfig = req.site.moduleConfigs[req.module];
+    var site = execute('portal.getSite');
+    var moduleConfig = site.moduleConfigs['com.enonic.wem.modules.xeon'];
+    var content = execute('portal.getContent');
 
     return {
         context: req,
-        mainRegion: req.content.page.regions["main"],
-        menuItems: menuService.getSiteMenu(req.site),
+        mainRegion: content.page.regions["main"],
+        menuItems: menuService.getSiteMenu(site),
         editable: editMode,
         banner: false,
-        site: req.site,
+        site: site,
         moduleConfig: moduleConfig,
         content: content,
         logoUrl: this.getLogoUrl(req, moduleConfig)

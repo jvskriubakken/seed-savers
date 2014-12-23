@@ -10,8 +10,8 @@ function getSingleValue(val, def) {
 
 function handleGet(req) {
 
-    var component = req.component;
-    var content = req.content;
+    var component = execute('portal.getComponent');
+    var content = execute('portal.getContent');
     var person;
     var personContent;
 

@@ -1,8 +1,8 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
-    var component = req.component;
-    var site = req.site;
+    var component = execute('portal.getComponent');
+    var site = execute('portal.getSite');
 
     var xeonConfig = site.getModuleConfig(req.module.key);
 

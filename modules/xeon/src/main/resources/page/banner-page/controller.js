@@ -2,8 +2,8 @@ var xeon = require('/lib/xeon');
 var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
-    var page = req.content.page;
-    var slides = page ? page.config && page.config.slides: [];
+    var page = execute('portal.getContent').page;
+    var slides = page ? page.config && page.config.slides : [];
     var pageParams = {
         slides: slides,
         banner: true
