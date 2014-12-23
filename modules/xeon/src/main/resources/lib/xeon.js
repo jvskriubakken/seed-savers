@@ -46,19 +46,9 @@ exports.merge = function (o1, o2) {
     return o1;
 };
 
-exports.ifNull = function (string, defaultString) {
-    if (!string) {
-        return defaultString;
-    }
-    return string;
-};
-
 exports.ifEmpty = function (string, defaultString) {
-    if (!string) {
-        return defaultString;
+    if (Array.isArray(string) && string.length > 0) {
+        return string[0] || defaultString;
     }
-    if (string == "") {
-        return defaultString;
-    }
-    return string;
+    return string || defaultString;
 };

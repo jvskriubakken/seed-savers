@@ -27,7 +27,7 @@ exports.getSiteMenu = function(site) {
             if (menuProps.menuName[0]) {
                 name = menuProps.menuName[0];
             } else {
-                name = contents[i].displayName
+                name = contents[i].displayName;
             }
             menuContent.push({"name": name, "content": contents[i]});
         }

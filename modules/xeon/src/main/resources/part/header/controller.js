@@ -6,7 +6,7 @@ function handleGet(req) {
     var page = req.content.page;
 
     var title = xeon.ifEmpty(component.config.getString("title"), req.content.displayName);
-    var text = xeon.ifNull(component.config.getString("text"), "");
+    var text = xeon.ifEmpty(component.config.getString("text"), "");
 
     var params = {
         context: req,

@@ -14,8 +14,8 @@ function handleGet(req) {
         editable: editMode,
         resourcesPath: execute('portal.assetUrl', {}),
         component: component,
-        leftRegion: component.getRegion("left"),
-        rightRegion: component.getRegion("right")
+        leftRegion: component.regions["left"],
+        rightRegion: component.regions["right"]
     });
 
     return {
