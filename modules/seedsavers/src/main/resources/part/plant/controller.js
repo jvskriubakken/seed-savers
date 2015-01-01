@@ -2,25 +2,25 @@ var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
 
+    var reqContent = execute('portal.getContent');
+    var reqComponent = execute('portal.getComponent');
     var view = resolve('./plant.html');
     var plant;
-    if( req.content.isPageTemplate() ) {
+    if (reqContent.isPageTemplate) {
         plant = {
-            binomialName : "Binomial name",
+            binomialName: "Binomial name",
             norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")
         };
     }
     else {
-        var contentData = req.content.data;
         plant = {
-            binomialName : contentData.binomialName ? contentData.binomialName[0] : "",
-            norwegianNames: contentData.norwegianNames
+            binomialName: reqContent.data.binomialName ? reqContent.data.binomialName[0] : "",
+            norwegianNames: reqContent.data.norwegianNames
         };
     }
     var params = {
-        context: req,
-        component: req.component,
-        content: req.content,
+        component: reqComponent,
+        content: reqContent,
         plant: plant
     };
     var body = thymeleaf.render(view, params);

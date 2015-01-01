@@ -2,7 +2,7 @@
 
     maxCount: <span data-th-text="${maxCount}"></span>
     <ul>
-        <li data-th-each="member,iterStat : ${members}" data-th-text="${member.getDisplayName()}"></li>
+        <li data-th-each="member,iterStat : ${members}" data-th-text="${member.displayName}"></li>
     </ul>
 
 </div>

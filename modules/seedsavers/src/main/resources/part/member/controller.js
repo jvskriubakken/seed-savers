@@ -1,32 +1,35 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 
+var defaultMemberAddress = [
+    {
+        street: ["Street"],
+        postalCode: ["Postal code"],
+        postalPlace: ["Postal place"]
+    }
+];
+
 var defaultMember = {
-    name: "Member name",
-    address: [
-        {
-            street: "Street",
-            postalCode: "Postal code",
-            postalPlace: "Postal place"
-        }
-    ]
+    name: ["Member name"],
+    address: defaultMemberAddress
 };
 
-function handleGet(req) {
 
+function handleGet() {
+
+    var reqContent = execute('portal.getContent');
+    var reqComponent = execute('portal.getComponent');
     var member;
-    if (req.content.isPageTemplate()) {
+    if (reqContent.isPageTemplate) {
         member = defaultMember;
     }
     else {
-        var data = req.content.data;
-        member = data.getTotalSize() > 0 ? dataToMember(data) : defaultMember;
+        member = reqContent.data;
     }
 
     var params = {
-        context: req,
-        component: req.component,
-        config: req.component.config,
-        content: req.content,
+        component: reqComponent,
+        config: reqComponent.config,
+        content: reqContent,
         member: member
     };
 
@@ -36,19 +39,6 @@ function handleGet(req) {
     return {
         contentType: 'text/html',
         body: body
-    };
-}
-
-function dataToMember(data) {
-
-    var address = {
-        street: data.getString("address.street"),
-        postalCode: data.getString("address.postalCode"),
-        postalPlace: data.getString("address.postalPlace")
-    };
-    return {
-        name : data.getString("name"),
-        address : [address]
     };
 }
 

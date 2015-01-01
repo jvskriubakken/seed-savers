@@ -3,8 +3,9 @@ var contentService = require('/lib/contentService');
 
 function handleGet(req) {
 
+    var reqComponent = execute('portal.getComponent');
     var maxCount = 100;
-    var maxCountProperty = req.component.config.getProperty('maxCount');
+    var maxCountProperty = reqComponent.config.getProperty('maxCount');
     if( maxCountProperty && !maxCountProperty.hasNullValue() ) {
         maxCount = maxCountProperty.getLong();
     }
@@ -12,8 +13,7 @@ function handleGet(req) {
     var membersContent = contentService.getChildContent(req.site.getPath() + "/members", maxCount);
 
     var params = {
-        context: req,
-        component: req.component,
+        component: reqComponent,
         maxCount: maxCount,
         members: membersContent
     };

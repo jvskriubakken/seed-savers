@@ -1,19 +1,21 @@
 var thymeleaf = require('/lib/view/thymeleaf');
+var parentPath = './';
+var view = resolve(parentPath + 'member.page.html');
 
 function handleGet(req) {
 
     var editMode = req.mode == 'edit';
-    var view = resolve('./member.page.html');
-
-
+    
+    var site = execute('portal.getSite');
+    var reqContent = execute('portal.getContent');
     var defaultMenu = {
         menu: [false],
-        menuName: [req.content.displayName]
+        menuName: [reqContent.displayName]
     };
 
     var menu;
-    if( req.content.hasMetadata("system:menu-item") ) {
-        menu = req.content.getMetadata("system:menu-item");
+    if( reqContent.metadata["system:menu-item"] ) {
+        menu = reqContent.metadata["system:menu-item"];
     }
     else {
         menu = defaultMenu;
@@ -21,11 +23,10 @@ function handleGet(req) {
 
 
     var params = {
-        context: req,
-        site: req.site,
-        content: req.content,
-        pageConfig: req.content.page.config,
-        mainRegion: req.content.page.getRegion("main"),
+        site: site,
+        content: reqContent,
+        pageConfig: reqContent.page.config,
+        mainRegion: reqContent.page.regions["main"],
         editable: editMode,
         menu: menu
     };

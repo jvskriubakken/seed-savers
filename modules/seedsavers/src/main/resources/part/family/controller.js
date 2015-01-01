@@ -2,26 +2,26 @@ var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
 
+    var reqContent = execute('portal.getContent');
+    var reqComponent = execute('portal.getComponent');
     var view = resolve('./family.html');
     var family;
-    if( req.content.isPageTemplate() ) {
+    if( reqContent.isPageTemplate ) {
         family = {
             scientificName : "Scientific name",
             norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")
         };
     }
     else {
-        var contentData = req.content.data;
         family = {
-            scientificName : req.content.displayName,
-            norwegianNames: contentData.norwegianNames
+            scientificName : reqContent.displayName,
+            norwegianNames: reqContent.data.norwegianNames
         };
     }
 
     var params = {
-        context: req,
-        component: req.component,
-        content: req.content,
+        component: reqComponent,
+        content: reqContent,
         family: family
     };
     var body = thymeleaf.render(view, params);
