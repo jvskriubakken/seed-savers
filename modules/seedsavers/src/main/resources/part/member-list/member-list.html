@@ -1,5 +1,6 @@
 <div data-th-attr="data-live-edit-type=${component.type}">
 
+    total: <span data-th-text="${membersTotal}"></span>
     maxCount: <span data-th-text="${maxCount}"></span>
     <ul>
         <li data-th-each="member,iterStat : ${members}" data-th-text="${member.displayName}"></li>

@@ -14,7 +14,6 @@ exports.getChildContent = function (parentPath, size) {
         start: 0,
         count: size ? size : 500
     });
-
 };
 
 exports.getContentById = function (contentId) {

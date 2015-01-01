@@ -11,7 +11,7 @@ function handleGet(req) {
     var params = {
         context: req,
         site: site,
-        content: reqContent,
+        reqContent: reqContent,
         topRegion: reqContent.page.regions["top"],
         mainRegion: reqContent.page.regions["main"],
         editable: editMode

@@ -7,19 +7,19 @@ exports.getRootContent = function () {
     });
 };
 
-exports.getChildContent = function (parentPath, size) {
+exports.getChildren = function (parentPath, size) {
 
-    return execute('content.findByParent', {
-        from: 0,
-        size: size ? size : 500,
-        parentPath: parentPath
+    return execute('content.getChildren', {
+        key: parentPath,
+        start: 0,
+        count: size ? size : 500
     });
 };
 
 exports.getContentById = function (contentId) {
 
-    return execute('content.getById', {
-        id: contentId
+    return execute('content.get', {
+        key: contentId
     });
 
 };

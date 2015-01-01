@@ -1,21 +1,25 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 var contentService = require('/lib/contentService');
 
-function handleGet(req) {
+function handleGet() {
 
+    var site = execute('portal.getSite');
     var reqComponent = execute('portal.getComponent');
     var maxCount = 100;
-    var maxCountProperty = reqComponent.config.getProperty('maxCount');
+    var maxCountProperty = reqComponent.config.maxCount;
     if( maxCountProperty && !maxCountProperty.hasNullValue() ) {
         maxCount = maxCountProperty.getLong();
     }
 
-    var membersContent = contentService.getChildContent(req.site.getPath() + "/members", maxCount);
+    var membersResult = contentService.getChildren(site._path + "/members", maxCount);
+    var membersContent = membersResult.contents;
+    var membersTotal = membersResult.total;
 
     var params = {
         component: reqComponent,
         maxCount: maxCount,
-        members: membersContent
+        members: membersContent,
+        membersTotal: membersTotal
     };
 
     var view = resolve('./member-list.html');
