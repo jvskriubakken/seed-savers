@@ -6,9 +6,8 @@ function handleGet() {
     var site = execute('portal.getSite');
     var reqComponent = execute('portal.getComponent');
     var maxCount = 100;
-    var maxCountProperty = reqComponent.config.maxCount;
-    if( maxCountProperty && !maxCountProperty.hasNullValue() ) {
-        maxCount = maxCountProperty.getLong();
+    if (reqComponent.config.maxCount) {
+        maxCount = reqComponent.config.maxCount[0];
     }
 
     var membersResult = contentService.getChildren(site._path + "/members", maxCount);
