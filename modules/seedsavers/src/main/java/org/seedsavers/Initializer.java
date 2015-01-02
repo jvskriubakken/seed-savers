@@ -10,12 +10,11 @@ import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
 import com.enonic.wem.api.content.page.CreatePageTemplateParams;
-import com.enonic.wem.api.content.page.PageDescriptorKey;
+import com.enonic.wem.api.content.page.DescriptorKey;
 import com.enonic.wem.api.content.page.PageRegions;
 import com.enonic.wem.api.content.page.PageTemplateService;
 import com.enonic.wem.api.content.page.image.ImageComponent;
 import com.enonic.wem.api.content.page.part.PartComponent;
-import com.enonic.wem.api.content.page.part.PartDescriptorKey;
 import com.enonic.wem.api.content.page.region.Region;
 import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
@@ -212,7 +211,7 @@ public final class Initializer
             site( sitePath ).
             name( "top-main" ).
             displayName( "Top and main" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "top-main" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "top-main" ) ).
             supports( supports ).
             pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
@@ -230,14 +229,14 @@ public final class Initializer
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             displayName( "Family" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "family" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "family" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( ImageComponent.newImageComponent().name( "Image" ).build() ).
                     add( PartComponent.newPartComponent().
-                        name( "Family" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "family" ) ).
+                        name( "Family" ).descriptor( DescriptorKey.from( THIS_MODULE, "family" ) ).
                         build() ).
                     build() ).
                 build() ).
@@ -250,14 +249,14 @@ public final class Initializer
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             displayName( "Genus" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "genus" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "genus" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( ImageComponent.newImageComponent().name( "Image" ).build() ).
                     add( PartComponent.newPartComponent().
-                        name( "Genus" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "genus" ) ).
+                        name( "Genus" ).descriptor( DescriptorKey.from( THIS_MODULE, "genus" ) ).
                         build() ).
                     build() ).
                 build() ).
@@ -270,14 +269,14 @@ public final class Initializer
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             displayName( "Plant" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "plant" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "plant" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( ImageComponent.newImageComponent().name( "Image" ).build() ).
                     add( PartComponent.newPartComponent().
-                        name( "Plant" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "plant" ) ).
+                        name( "Plant" ).descriptor( DescriptorKey.from( THIS_MODULE, "plant" ) ).
                         build() ).
                     build() ).
                 build() ).
@@ -290,13 +289,13 @@ public final class Initializer
         return pageTemplateService.create( new CreatePageTemplateParams().
             site( sitePath ).
             displayName( "Member" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "member" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "member" ) ).
             supports( supports ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( PartComponent.newPartComponent().
-                        name( "Member" ).descriptor( PartDescriptorKey.from( THIS_MODULE, "member" ) ).
+                        name( "Member" ).descriptor( DescriptorKey.from( THIS_MODULE, "member" ) ).
                         build() ).
                     build() ).
                 build() ).

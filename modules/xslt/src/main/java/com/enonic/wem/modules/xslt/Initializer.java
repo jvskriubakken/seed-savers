@@ -7,7 +7,7 @@ import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.page.CreatePageTemplateParams;
-import com.enonic.wem.api.content.page.PageDescriptorKey;
+import com.enonic.wem.api.content.page.DescriptorKey;
 import com.enonic.wem.api.content.page.PageRegions;
 import com.enonic.wem.api.content.page.PageTemplateService;
 import com.enonic.wem.api.content.page.part.PartComponent;
@@ -77,7 +77,7 @@ public final class Initializer
             site( sitePath ).
             name( "xslt-landing-page" ).
             displayName( "XSLT Landing page" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "xslt-landing-page" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "xslt-landing-page" ) ).
             supports( supports ).
             pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().

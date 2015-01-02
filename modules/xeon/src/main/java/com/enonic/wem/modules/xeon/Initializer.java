@@ -7,15 +7,13 @@ import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.page.CreatePageTemplateParams;
-import com.enonic.wem.api.content.page.PageDescriptorKey;
+import com.enonic.wem.api.content.page.DescriptorKey;
 import com.enonic.wem.api.content.page.PageRegions;
 import com.enonic.wem.api.content.page.PageTemplateService;
 import com.enonic.wem.api.content.page.image.ImageComponent;
 import com.enonic.wem.api.content.page.layout.LayoutComponent;
-import com.enonic.wem.api.content.page.layout.LayoutDescriptorKey;
 import com.enonic.wem.api.content.page.layout.LayoutRegions;
 import com.enonic.wem.api.content.page.part.PartComponent;
-import com.enonic.wem.api.content.page.part.PartDescriptorKey;
 import com.enonic.wem.api.content.page.region.Region;
 import com.enonic.wem.api.content.site.CreateSiteParams;
 import com.enonic.wem.api.content.site.ModuleConfig;
@@ -83,7 +81,7 @@ public final class Initializer
             site( sitePath ).
             name( "home-page" ).
             displayName( "Home page" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "apage" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "apage" ) ).
             supports( supports ).
             pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
@@ -102,14 +100,14 @@ public final class Initializer
             site( sitePath ).
             name( "banner-page" ).
             displayName( "Banner" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "banner-page" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "banner-page" ) ).
             supports( supports ).
             pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( LayoutComponent.newLayoutComponent().name( "Layout-3-col" ).
-                        descriptor( LayoutDescriptorKey.from( THIS_MODULE, "layout-3-col" ) ).
+                        descriptor( DescriptorKey.from( THIS_MODULE, "layout-3-col" ) ).
                         regions( LayoutRegions.newLayoutRegions().
                             add( Region.newRegion().name( "left" ).
                                 add( ImageComponent.newImageComponent().name( "Image" ).build() ).
@@ -135,14 +133,14 @@ public final class Initializer
             site( sitePath ).
             name( "person-page" ).
             displayName( "Person" ).
-            controller( PageDescriptorKey.from( THIS_MODULE, "person" ) ).
+            controller( DescriptorKey.from( THIS_MODULE, "person" ) ).
             supports( supports ).
             pageConfig( new PropertyTree() ).
             pageRegions( PageRegions.newPageRegions().
                 add( Region.newRegion().
                     name( "main" ).
                     add( PartComponent.newPartComponent().name( "Person" ).descriptor(
-                        PartDescriptorKey.from( THIS_MODULE, "person" ) ).build() ).
+                        DescriptorKey.from( THIS_MODULE, "person" ) ).build() ).
                     build() ).
                 build() ) );
     }
