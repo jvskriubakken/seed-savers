@@ -5,7 +5,7 @@
     <properties>
         <boolean name="draft">false</boolean>
         <string name="displayName">the-irish-washerwoman.mp3</string>
-        <string name="type">system:unknown</string>
+        <string name="type">system:audio</string>
         <property-set name="data">
             <string name="media">the-irish-washerwoman.mp3</string>
             <string name="mimeType">audio/mp3</string>
