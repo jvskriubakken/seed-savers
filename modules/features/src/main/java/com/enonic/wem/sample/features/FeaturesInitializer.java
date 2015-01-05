@@ -56,7 +56,7 @@ public final class FeaturesInitializer
     {
         LOG.info( "-------------------" );
         LOG.info( "Imported nodes:" );
-        for ( final NodePath nodePath : nodeImportResult.getImportedNodes() )
+        for ( final NodePath nodePath : nodeImportResult.getAddedNodes() )
         {
             LOG.info( nodePath.toString() );
         }
