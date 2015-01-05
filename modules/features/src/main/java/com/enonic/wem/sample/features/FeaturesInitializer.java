@@ -5,6 +5,7 @@ import org.osgi.framework.FrameworkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
@@ -15,7 +16,8 @@ import com.enonic.wem.api.export.NodeImportResult;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.node.NodePath;
 import com.enonic.wem.api.schema.content.ContentTypeName;
-import com.enonic.wem.api.security.RoleKeys;
+import com.enonic.wem.api.schema.content.ContentTypeService;
+import com.enonic.wem.api.security.PrincipalKey;
 import com.enonic.wem.api.vfs.VirtualFile;
 import com.enonic.wem.api.vfs.VirtualFiles;
 
@@ -77,7 +79,7 @@ public final class FeaturesInitializer
     private CreateContentParams makeFolder()
     {
         return new CreateContentParams().
-            owner( RoleKeys.ENTERPRISE_ADMIN ).
+            owner( PrincipalKey.ofEnterpriseAdmin() ).
             contentData( new PropertyTree() ).
             type( ContentTypeName.folder() );
     }
