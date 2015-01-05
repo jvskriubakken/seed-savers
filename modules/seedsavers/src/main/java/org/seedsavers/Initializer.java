@@ -31,6 +31,7 @@ import com.enonic.wem.api.schema.content.ContentTypeNames;
 import com.enonic.wem.api.schema.content.ContentTypeService;
 import com.enonic.wem.api.schema.content.GetContentTypesParams;
 import com.enonic.wem.api.security.PrincipalKey;
+import com.enonic.wem.api.util.Reference;
 
 @SuppressWarnings("UnusedDeclaration")
 public final class Initializer
@@ -194,7 +195,7 @@ public final class Initializer
         data.addString( "norwegianNames", norwegianName );
         if ( family != null )
         {
-            data.addProperty( "family", Value.newContentId( family.getId() ) );
+            data.addReference( "family", Reference.from( family.getId().toString() ) );
         }
 
         return new CreateContentParams().
