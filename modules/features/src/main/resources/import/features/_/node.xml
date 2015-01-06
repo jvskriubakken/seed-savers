@@ -5,9 +5,44 @@
     <properties>
         <boolean name="draft">false</boolean>
         <string name="displayName">Features</string>
-        <string name="type">system:folder</string>
-        <property-set name="data"/>
+        <string name="type">system:site</string>
+        <property-set name="data">
+            <string name="description">The Features Site.</string>
+            <property-set name="moduleConfig">
+                <string name="moduleKey">com.enonic.wem.modules.features</string>
+                <property-set name="config"/>
+            </property-set>
+        </property-set>
         <property-set name="form"/>
+        <!--property-set name="page">
+            <string name="controller"/>
+            <string name="template">c7f04d2b-7891-43c0-adb8-73d507f15107</string>
+            <property-set name="region">
+                <string name="name">top</string>
+                <property-set name="component">
+                    <string name="type">ImageComponent</string>
+                    <property-set name="ImageComponent">
+                        <string name="name">arn-1.jpg</string>
+                        <string name="image">de2dee07-6098-44a8-b547-6457dc3a93fb</string>
+                        <property-set name="config">
+                            <string name="caption"></string>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+            <property-set name="region">
+                <string name="name">main</string>
+                <property-set name="component">
+                    <string name="type">PartComponent</string>
+                    <property-set name="PartComponent">
+                        <string name="name">Member list</string>
+                        <string name="template">com.enonic.wem.modules.seedsavers:member-list</string>
+                        <property-set name="config"/>
+                    </property-set>
+                </property-set>
+            </property-set>
+            <property-set name="config"/>
+        </property-set-->
     </properties>
     <attachedBinaries/>
     <indexConfigs>
