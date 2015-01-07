@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page-component>
-  <display-name>main region</display-name>
+  <display-name>no regions</display-name>
   <config>
   </config>
   <regions>
-    <region name="main"/>
   </regions>
 </page-component>
