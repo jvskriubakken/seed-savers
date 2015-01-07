@@ -16,7 +16,7 @@
         </property-set>
         <property-set name="form"/>
         <property-set name="page">
-            <string name="template">features|_templates|main</string>
+            <string name="template">features:_templates:main</string>
             <property-set name="region">
                 <string name="name">main</string>
                 <property-set name="component">
