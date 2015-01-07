@@ -8,7 +8,6 @@
         <string name="displayName">Templates</string>
         <string name="type">system:template-folder</string>
         <property-set name="data"/>
-        <property-set name="form"/>
     </properties>
     <indexConfigs>
         <analyzer>content_default</analyzer>
@@ -69,16 +68,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>form</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

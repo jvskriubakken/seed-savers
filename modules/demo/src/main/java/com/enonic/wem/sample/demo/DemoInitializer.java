@@ -234,14 +234,7 @@ public final class DemoInitializer
         return new CreateContentParams().
             owner( PrincipalKey.ofAnonymous() ).
             contentData( new PropertyTree() ).
-            form( getContentType( ContentTypeName.folder() ).form() ).
             type( ContentTypeName.folder() );
-    }
-
-    private ContentType getContentType( ContentTypeName name )
-    {
-        final GetContentTypesParams params = new GetContentTypesParams().contentTypeNames( ContentTypeNames.from( name ) );
-        return contentTypeService.getByNames( params ).first();
     }
 
     private void createUserStore()

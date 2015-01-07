@@ -21,14 +21,11 @@ import com.enonic.wem.api.content.site.ModuleConfig;
 import com.enonic.wem.api.content.site.ModuleConfigs;
 import com.enonic.wem.api.content.site.Site;
 import com.enonic.wem.api.data.PropertyTree;
-import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.module.ModuleKey;
-import com.enonic.wem.api.schema.content.ContentType;
 import com.enonic.wem.api.schema.content.ContentTypeName;
 import com.enonic.wem.api.schema.content.ContentTypeNames;
 import com.enonic.wem.api.schema.content.ContentTypeService;
-import com.enonic.wem.api.schema.content.GetContentTypesParams;
 import com.enonic.wem.api.security.PrincipalKey;
 import com.enonic.wem.api.util.Reference;
 
@@ -131,13 +128,11 @@ public final class Initializer
         return new CreateContentParams().
             owner( PrincipalKey.ofAnonymous() ).
             contentData( new PropertyTree() ).
-            form( getContentType( ContentTypeName.folder() ).form() ).
             type( ContentTypeName.folder() );
     }
 
     private CreateContentParams createMember( final String displayName )
     {
-        final Form memberForm = this.getContentType( MEMBER_CONTENT_TYPE_NAME ).form();
         final ContentTypeName contentType = MEMBER_CONTENT_TYPE_NAME;
         final PropertyTree data = new PropertyTree();
         data.setString( "name", displayName );
@@ -145,7 +140,6 @@ public final class Initializer
             displayName( displayName ).
             owner( PrincipalKey.ofAnonymous() ).
             contentData( data ).
-            form( memberForm ).
             type( contentType ).
             parent( this.membersFolder );
     }
@@ -300,13 +294,6 @@ public final class Initializer
                     build() ).
                 build() ).
             pageConfig( new PropertyTree() ) );
-    }
-
-
-    private ContentType getContentType( ContentTypeName name )
-    {
-        final GetContentTypesParams params = new GetContentTypesParams().contentTypeNames( ContentTypeNames.from( name ) );
-        return contentTypeService.getByNames( params ).first();
     }
 
     private boolean hasContent( final ContentPath path )

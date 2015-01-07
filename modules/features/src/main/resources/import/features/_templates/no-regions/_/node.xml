@@ -16,22 +16,6 @@
                 <string name="menuName"></string>
             </property-set>
         </property-set>
-        <property-set name="form">
-            <property-set name="Input">
-                <property-set name="inputType">
-                    <string name="name">ContentTypeFilter</string>
-                </property-set>
-                <string name="name">supports</string>
-                <string name="label">Supports</string>
-                <string name="helpText">Choose which content types this page template supports</string>
-                <boolean name="immutable">false</boolean>
-                <boolean name="indexed">false</boolean>
-                <property-set name="occurrences">
-                    <long name="minimum">0</long>
-                    <long name="maximum">0</long>
-                </property-set>
-            </property-set>
-        </property-set>
         <property-set name="page">
             <string name="controller">com.enonic.wem.modules.features:no-regions</string>
             <property-set name="config"/>
@@ -96,16 +80,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>form</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

@@ -7,7 +7,6 @@
         <string name="displayName">archive</string>
         <string name="type">system:folder</string>
         <property-set name="data"/>
-        <property-set name="form"/>
     </properties>
     <attachedBinaries/>
     <indexConfigs>
@@ -39,16 +38,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>form</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

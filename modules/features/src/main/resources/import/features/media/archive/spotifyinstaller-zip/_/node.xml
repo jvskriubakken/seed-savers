@@ -17,20 +17,6 @@
             <string name="mimeType">application/zip</string>
             <long name="size">116847</long>
         </property-set>
-        <property-set name="form">
-            <property-set name="Input">
-                <property-set name="inputType">
-                    <string name="name">FileUploader</string>
-                </property-set>
-                <string name="name">media</string>
-                <boolean name="immutable">false</boolean>
-                <boolean name="indexed">false</boolean>
-                <property-set name="occurrences">
-                    <long name="minimum">0</long>
-                    <long name="maximum">1</long>
-                </property-set>
-            </property-set>
-        </property-set>
     </properties>
     <attachedBinaries>
         <attachedBinary>
@@ -66,16 +52,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>form</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
