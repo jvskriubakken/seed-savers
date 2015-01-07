@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <node xmlns="urn:enonic:xp:export:1.0">
+    <id>features|_templates</id>
     <childOrder>_modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
     <properties>
