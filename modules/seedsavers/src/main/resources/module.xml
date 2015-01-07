@@ -8,9 +8,9 @@
     <url>http://www.skriubakken.com</url>
   </vendor>
   <dependencies system-min-version="5.0.0" system-max-version="5.0.0"/>
-  <metadata-schemas>
-    <metadata-schema name="system:menu-item"/>
-  </metadata-schemas>
+  <content>
+    <meta-step mixin="system:menu-item"/>
+  </content>
   <config>
     <input type="SingleSelector" name="language">
       <label>Language</label>
