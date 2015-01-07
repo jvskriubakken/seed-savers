@@ -1,3 +1,4 @@
+var menuLib = require('/lib/menu.js');
 var thymeleaf = require('/lib/view/thymeleaf');
 var parentPath = './';
 var view = resolve(parentPath + 'main.page.html');
@@ -13,7 +14,8 @@ function handleGet(req) {
         site: site,
         reqContent: reqContent,
         mainRegion: reqContent.page.regions["main"],
-        editable: editMode
+        editable: editMode,
+        siteMenuItems: menuLib.getSiteMenu(10)
     };
     var body = thymeleaf.render(view, params);
 
