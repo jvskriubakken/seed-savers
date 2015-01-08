@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import com.google.common.io.ByteSource;
 import com.google.common.io.Resources;
 
-import com.enonic.wem.api.blob.BlobService;
 import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
@@ -17,11 +16,8 @@ import com.enonic.wem.api.form.Form;
 import com.enonic.wem.api.form.Input;
 import com.enonic.wem.api.form.inputtype.InputTypes;
 import com.enonic.wem.api.initializer.DataInitializer;
-import com.enonic.wem.api.schema.content.ContentType;
 import com.enonic.wem.api.schema.content.ContentTypeName;
-import com.enonic.wem.api.schema.content.ContentTypeNames;
 import com.enonic.wem.api.schema.content.ContentTypeService;
-import com.enonic.wem.api.schema.content.GetContentTypesParams;
 import com.enonic.wem.api.security.CreateGroupParams;
 import com.enonic.wem.api.security.CreateRoleParams;
 import com.enonic.wem.api.security.CreateUserParams;
@@ -29,6 +25,7 @@ import com.enonic.wem.api.security.CreateUserStoreParams;
 import com.enonic.wem.api.security.Group;
 import com.enonic.wem.api.security.PrincipalKey;
 import com.enonic.wem.api.security.PrincipalRelationship;
+import com.enonic.wem.api.security.RoleKeys;
 import com.enonic.wem.api.security.SecurityService;
 import com.enonic.wem.api.security.User;
 import com.enonic.wem.api.security.UserStore;
@@ -70,8 +67,6 @@ public final class DemoInitializer
     public static final PrincipalKey MINSK = PrincipalKey.ofGroup( USER_STORE_KEY, "belarus" );
 
     public static final PrincipalKey SAN_FRANCISCO = PrincipalKey.ofGroup( USER_STORE_KEY, "usa" );
-
-    private BlobService blobService;
 
     private ContentService contentService;
 
@@ -346,6 +341,7 @@ public final class DemoInitializer
             {
                 addMember( key, user.getKey() );
             }
+            addMember( RoleKeys.ADMIN_LOGIN, user.getKey() );
         }
         return user;
     }
@@ -429,11 +425,6 @@ public final class DemoInitializer
                 build() ).
 
             build();
-    }
-
-    public void setBlobService( final BlobService blobService )
-    {
-        this.blobService = blobService;
     }
 
     public void setContentService( final ContentService contentService )
