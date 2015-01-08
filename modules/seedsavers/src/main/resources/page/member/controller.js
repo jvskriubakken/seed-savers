@@ -14,8 +14,8 @@ function handleGet(req) {
     };
 
     var menu;
-    if( reqContent.metadata["system:menu-item"] ) {
-        menu = reqContent.metadata["system:menu-item"];
+    if( reqContent.meta["system:menu-item"] ) {
+        menu = reqContent.meta["system:menu-item"];
     }
     else {
         menu = defaultMenu;

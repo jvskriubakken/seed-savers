@@ -10,7 +10,7 @@
         <property-set name="data">
             <string name="supports">system:folder</string>
         </property-set>
-        <property-set name="metadata">
+        <property-set name="meta">
             <property-set name="system:menu-item">
                 <boolean name="menuItem">false</boolean>
                 <string name="menuName"></string>
