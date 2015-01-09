@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node xmlns="urn:enonic:xp:export:1.0">
+    <id>b5a605c6-5418-4e67-89ab-edd1dc40c2af</id>
+    <childOrder>_modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <data>
+        <boolean name="draft">false</boolean>
+        <string name="displayName">cat-large.jpg</string>
+        <string name="type">system:image</string>
+        <property-set name="data">
+            <string name="media">cat-large.jpg</string>
+            <string name="mimeType">image/jpeg</string>
+            <property-set name="metadata">
+                <string name="XParsedBy">Proxy1fbfdef6_173a_4fe8_834e_36f1a0b2f410</string>
+                <string name="resolutionUnits">none</string>
+                <string name="compressionType">Baseline</string>
+                <string name="comments">CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 90
+</string>
+                <string name="dataPrecision">8 bits</string>
+                <string name="numberOfComponents">3</string>
+                <string name="tiffImagelength">1600</string>
+                <string name="jpegComment">CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 90</string>
+                <string name="component2">Cb component: Quantization table 1, Sampling factors 1 horiz/1 vert</string>
+                <string name="component1">Y component: Quantization table 0, Sampling factors 2 horiz/2 vert</string>
+                <string name="wComments">CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 90
+</string>
+                <string name="imageHeight">1600 pixels</string>
+                <string name="XResolution">1 dot</string>
+                <string name="imageWidth">2560 pixels</string>
+                <string name="component3">Cr component: Quantization table 1, Sampling factors 1 horiz/1 vert</string>
+                <string name="comment">CREATOR: gd-jpeg v1.0 (using IJG JPEG v62), quality = 90
+</string>
+                <string name="tiffBitspersample">8</string>
+                <string name="tiffImagewidth">2560</string>
+                <string name="contentType">image/jpeg</string>
+                <string name="YResolution">1 dot</string>
+            </property-set>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">cat-large.jpg</string>
+            <string name="label">source</string>
+            <binaryReference name="binary">cat-large.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">663887</long>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">cat-large_small.jpg</string>
+            <string name="label">small</string>
+            <binaryReference name="binary">cat-large_small.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">7005</long>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">cat-large_medium.jpg</string>
+            <string name="label">medium</string>
+            <binaryReference name="binary">cat-large_medium.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">21493</long>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">cat-large_large.jpg</string>
+            <string name="label">large</string>
+            <binaryReference name="binary">cat-large_large.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">210088</long>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">cat-large_extra-large.jpg</string>
+            <string name="label">extra-large</string>
+            <binaryReference name="binary">cat-large_extra-large.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">211765</long>
+        </property-set>
+    </data>
+    <indexConfigs>
+        <analyzer>content_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.metadata.media</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.metadata</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>draft</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>form</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+    </indexConfigs>
+</node>
