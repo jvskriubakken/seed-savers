@@ -1,11 +1,12 @@
 var xeon = require('/lib/xeon');
-var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
     var params = xeon.defaultParams(req);
 
-    var view = resolve('/view/page.html');
-    var body = thymeleaf.render(view, params);
+    var body = execute('thymeleaf.render', {
+        view: resolve('/view/page.html'),
+        model: params
+    });
 
     return {
         body: body,

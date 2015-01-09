@@ -2,8 +2,10 @@ var thymeleaf = require('/lib/view/thymeleaf');
 var contentService = require('/lib/contentService');
 
 function getSingleValue(val, def) {
-    if (val && val.length > 0) {
-        return val[0];
+    if (val && (val.length > 0)) {
+        if (val[0] != null) {
+            return val[0];
+        }
     }
     return def;
 }
@@ -33,32 +35,31 @@ function handleGet(req) {
         imageId = getSingleValue(personContent.data['image']);
     }
 
+    var personImageUrl;
     if (imageId) {
-        personImageUrl = execute('portal.imageUrl', {
-            id: imageId,
-            filter: 'scaleblock(400,400)'
-        });
-
-        person = {
-            name: getSingleValue(personContent.data['first-name'], '') + ' ' +
-                  getSingleValue(personContent.data['middle-name'], '') + ' ' +
-                  getSingleValue(personContent.data['last-name'], ''),
-            title: getSingleValue(personContent.data['job-title'], ''),
-            image: personImageUrl
-        };
+        personImageUrl = execute('portal.imageUrl', {id: imageId, filter: 'scaleblock(400,400)'});
     } else {
-        person = {
-            name: 'Test Testesen',
-            title: 'Sjefen over alle sjefer',
-            image: execute('portal.assetUrl', {path: 'images/team1.jpg'})
-        };
+        personImageUrl = execute('portal.assetUrl', {path: 'images/team1.jpg'});
     }
+    var personName = [
+        getSingleValue(personContent.data['first-name'], ''),
+        getSingleValue(personContent.data['middle-name'], ''),
+        getSingleValue(personContent.data['last-name'], '')
+    ].join(' ').trim();
+    var personTitle = getSingleValue(personContent.data['job-title'], '');
+
+    personName = personName || 'Test Testesen';
+    personTitle = personTitle || 'Sjefen over alle sjefer';
 
     var params = {
         context: req,
         component: component,
         content: content,
-        person: person
+        person: {
+            name: personName,
+            title: personTitle,
+            image: personImageUrl
+        }
     };
 
 

@@ -1,38 +1,48 @@
-var thymeleaf = require('/lib/view/thymeleaf');
-var contentService = require('/lib/contentService');
-var xeon = require('xeon');
-
 function getSingleValue(val, def) {
-    if (val && val.length > 0) {
-        return val[0];
+    if (val && (val.length > 0)) {
+        if (val[0] != null) {
+            return val[0];
+        }
     }
     return def;
 }
 
 function handleGet(req) {
     var component = execute('portal.getComponent');
-    var relatedPersonsId = component.config["person"] || [];
+    var relatedPersonsId = component.config['person'] || [];
     var persons = [];
 
-    relatedPersonsId.forEach(function (relatedPersonId) {
-        var personData = contentService.getContentById(relatedPersonId);
-        var imageContent = contentService.getContentById(personData.data['image'][0]);
-        persons.push({
-            name: getSingleValue(personData.data['first-name'], '') + ' ' +
-                  getSingleValue(personData.data['middle-name'], '') + ' ' +
-                  getSingleValue(personData.data['last-name'], ''),
-            title: getSingleValue(personData.data['job-title']),
+    var defaultPersonImageUrl = execute('portal.assetUrl', {path: 'images/team1.jpg'});
 
-            image: execute('portal.imageUrl', {
-                id: imageContent._id,
-                filter: "scaleblock(400,400)"
-            })
+    relatedPersonsId.forEach(function (relatedPersonId) {
+        var personData = execute('content.get', {key: relatedPersonId});
+
+        var imageContentId = getSingleValue(personData.data['image'], '');
+        var imageContentUrl = imageContentId ?
+                              execute('portal.imageUrl', {
+                                  id: imageContentId,
+                                  filter: 'scaleblock(400,400)'
+                              }) :
+                              defaultPersonImageUrl;
+
+        var personName = [
+            getSingleValue(personData.data['first-name'], ''),
+            getSingleValue(personData.data['middle-name'], ''),
+            getSingleValue(personData.data['last-name'], '')
+        ].join(' ').trim();
+
+        var personTitle = getSingleValue(personData.data['job-title'], '');
+
+        persons.push({
+            name:  personName || 'Test Testesen',
+            title: personTitle || 'Sjefen over alle sjefer',
+            image: imageContentUrl
         });
     });
 
     var data = {
-        title: xeon.ifEmpty(component.config['title'], "Please configure"),
-        text: xeon.ifEmpty(component.config['text'], ""),
+        title: getSingleValue(component.config['title'], 'Please configure'),
+        text: getSingleValue(component.config['text'], ''),
         persons: persons
     };
 
@@ -43,8 +53,10 @@ function handleGet(req) {
     };
 
 
-    var view = resolve('/view/person-list.html');
-    var body = thymeleaf.render(view, params);
+    var body = execute('thymeleaf.render', {
+        view: resolve('/view/person-list.html'),
+        model: params
+    });
 
     return {
         body: body,
