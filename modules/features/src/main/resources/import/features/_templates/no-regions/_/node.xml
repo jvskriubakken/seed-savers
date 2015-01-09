@@ -3,7 +3,7 @@
     <id>features:_templates:no-region</id>
     <childOrder>_modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <properties>
+    <data>
         <boolean name="draft">false</boolean>
         <string name="displayName">No regions</string>
         <string name="type">system:page-template</string>
@@ -20,7 +20,7 @@
             <string name="controller">com.enonic.wem.modules.features:no-regions</string>
             <property-set name="config"/>
         </property-set>
-    </properties>
+    </data>
     <indexConfigs>
         <analyzer>content_default</analyzer>
         <defaultConfig>

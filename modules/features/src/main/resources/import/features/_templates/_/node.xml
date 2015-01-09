@@ -3,12 +3,12 @@
     <id>features:_templates</id>
     <childOrder>_modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <properties>
+    <data>
         <boolean name="draft">false</boolean>
         <string name="displayName">Templates</string>
         <string name="type">system:template-folder</string>
         <property-set name="data"/>
-    </properties>
+    </data>
     <indexConfigs>
         <analyzer>content_default</analyzer>
         <defaultConfig>

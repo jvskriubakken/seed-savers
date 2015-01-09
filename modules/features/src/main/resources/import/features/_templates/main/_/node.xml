@@ -3,7 +3,7 @@
     <id>features:_templates:main</id>
     <childOrder>_modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <properties>
+    <data>
         <boolean name="draft">false</boolean>
         <string name="displayName">'main' region only</string>
         <string name="type">system:page-template</string>
@@ -17,7 +17,7 @@
             </property-set>
             <property-set name="config"/>
         </property-set>
-    </properties>
+    </data>
     <indexConfigs>
         <analyzer>content_default</analyzer>
         <defaultConfig>
