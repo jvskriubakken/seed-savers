@@ -99,4 +99,10 @@ public final class FeaturesInitializer
     {
         this.exportService = exportService;
     }
+
+    @SuppressWarnings("UnusedDeclaration")
+    public void setContentService( final ContentService contentService )
+    {
+        this.contentService = contentService;
+    }
 }

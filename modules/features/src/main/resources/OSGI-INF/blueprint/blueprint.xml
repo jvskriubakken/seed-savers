@@ -3,9 +3,12 @@
 
   <reference id="exportService" interface="com.enonic.wem.api.export.ExportService"/>
 
+  <reference id="contentService" interface="com.enonic.wem.api.content.ContentService"/>
+
   <service auto-export="interfaces">
     <bean class="com.enonic.wem.sample.features.FeaturesInitializer">
       <property name="exportService" ref="exportService"/>
+      <property name="contentService" ref="contentService"/>
     </bean>
   </service>
 
