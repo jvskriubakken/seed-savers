@@ -14,8 +14,11 @@ function handleGet(req) {
 
     var component = execute('portal.getComponent');
     var content = execute('portal.getContent');
-    var person;
-    var personContent;
+    var personContent,
+        personName,
+        personTitle,
+        imageId,
+        personImageUrl;
 
     if (content.type == 'com.enonic.wem.modules.xeon:person') {
         personContent = content;
@@ -30,24 +33,21 @@ function handleGet(req) {
         }
     }
 
-    var imageId = null;
     if (personContent) {
+        personName = [
+            getSingleValue(personContent.data['first-name'], ''),
+            getSingleValue(personContent.data['middle-name'], ''),
+            getSingleValue(personContent.data['last-name'], '')
+        ].join(' ').trim();
+        personTitle = getSingleValue(personContent.data['job-title'], '');
         imageId = getSingleValue(personContent.data['image']);
     }
 
-    var personImageUrl;
     if (imageId) {
         personImageUrl = execute('portal.imageUrl', {id: imageId, filter: 'scaleblock(400,400)'});
     } else {
         personImageUrl = execute('portal.assetUrl', {path: 'images/team1.jpg'});
     }
-    var personName = [
-        getSingleValue(personContent.data['first-name'], ''),
-        getSingleValue(personContent.data['middle-name'], ''),
-        getSingleValue(personContent.data['last-name'], '')
-    ].join(' ').trim();
-    var personTitle = getSingleValue(personContent.data['job-title'], '');
-
     personName = personName || 'Test Testesen';
     personTitle = personTitle || 'Sjefen over alle sjefer';
 
