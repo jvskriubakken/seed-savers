@@ -1,10 +1,13 @@
 var view = resolve('/view/header-component.xsl');
 
 function handleGet(req) {
+
+    var component = execute('portal.getComponent');
+    
     var editMode = req.mode == 'edit';
     var model = {
         title: req.content.displayName,
-        componentType: req.component.type,
+        componentType: component.type,
         editable: editMode
     };
 
