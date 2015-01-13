@@ -1,4 +1,4 @@
-var menuService = require('menuService');
+var menuService = require('menu');
 var contentService = require('contentService');
 
 exports.getLogoUrl = function (req, moduleConfig) {
@@ -30,7 +30,7 @@ exports.defaultParams = function (req) {
     return {
         context: req,
         mainRegion: content.page.regions["main"],
-        menuItems: menuService.getSiteMenu(site),
+        menuItems: menuService.getSiteMenu(3),
         editable: editMode,
         banner: false,
         site: site,
