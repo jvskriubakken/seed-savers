@@ -65,9 +65,11 @@
             <div class="item" data-th-each="slide, iterStat : ${slides}" data-th-class="${iterStat.index == 0}? 'item active' : 'item'">
                 <div class="container">
                     <div class="carousel-content">
-                        <h1 data-th-text="${slide.header[0]}">Free Onepage Theme</h1>
+                        <h1 data-th-text="${slide.header[0]}" data-th-if="${slide.header} ? ${#lists.size(slide.header)} > 0">Free Onepage
+                            Theme</h1>
 
-                        <p class="lead" data-th-text="${slide.subtitle[0]}">Xeon is the best free onepage responsive theme
+                        <p class="lead" data-th-text="${slide.subtitle[0]}" data-th-if="${slide.header} ? ${#lists.size(slide.header)} > 0">
+                            Xeon is the best free onepage responsive theme
                             available around the globe<br/>Download it right now for free</p>
                     </div>
                 </div>

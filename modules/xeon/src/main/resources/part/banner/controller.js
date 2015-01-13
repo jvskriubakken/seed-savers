@@ -2,7 +2,7 @@ var thymeleaf = require('/lib/view/thymeleaf');
 
 function handleGet(req) {
     var component = execute('portal.getComponent');
-    var slides = component.config["slide"] || [];
+    var slides = component.config ? component.config.slide : [];
 
     var params = {
         context: req,
