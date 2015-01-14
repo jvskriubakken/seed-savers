@@ -18,6 +18,7 @@
         </property-set>
         <property-set name="page">
             <string name="controller">com.enonic.wem.modules.features:no-regions</string>
+            <property-set isNull="true" name="region"/>
             <property-set name="config"/>
         </property-set>
     </data>
