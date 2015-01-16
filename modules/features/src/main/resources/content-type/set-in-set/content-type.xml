@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <content-type>
-  <display-name>FormItemSet</display-name>
+  <display-name>Set In Set</display-name>
   <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>
   <is-final>true</is-final>

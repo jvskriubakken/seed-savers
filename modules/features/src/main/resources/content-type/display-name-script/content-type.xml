@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <content-type>
-  <display-name>Content Display name script</display-name>
+  <display-name>Display Name Script</display-name>
   <content-display-name-script>$('firstName', 'middleName', 'lastName')</content-display-name-script>
   <super-type>system:structured</super-type>
   <is-abstract>false</is-abstract>

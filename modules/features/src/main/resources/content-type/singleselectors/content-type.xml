@@ -9,7 +9,6 @@
   <form>
     <input name="ss_radio" type="SingleSelector">
       <label>Single Selector, radio</label>
-      <immutable>false</immutable>
       <indexed>true</indexed>
       <occurrences minimum="0" maximum="0"/>
       <config>
@@ -32,7 +31,6 @@
     </input>
     <input name="ss_dropdown" type="SingleSelector">
       <label>Single Selector, dropdown</label>
-      <immutable>false</immutable>
       <indexed>true</indexed>
       <occurrences minimum="0" maximum="0"/>
       <config>
@@ -55,7 +53,6 @@
     </input>
     <input name="ss_combobox" type="SingleSelector">
       <label>Single Selector, combo-box</label>
-      <immutable>false</immutable>
       <indexed>true</indexed>
       <occurrences minimum="0" maximum="0"/>
       <config>
