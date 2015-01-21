@@ -79,7 +79,6 @@ public final class DemoInitializer
         throws Exception
     {
         createImages();
-        createLargeTree();
         createUserStore();
         createPrincipals();
     }
@@ -93,34 +92,6 @@ public final class DemoInitializer
         catch ( final Exception e )
         {
             return false;
-        }
-    }
-
-    private void createLargeTree()
-    {
-        final ContentPath largeTreePath = ContentPath.from( "/large-tree" );
-        if ( !hasContent( largeTreePath ) )
-        {
-            contentService.create( createFolder().
-                name( "large-tree" ).
-                displayName( "Large tree" ).
-                parent( ContentPath.ROOT ) );
-
-            for ( int i = 1; i <= 2; i++ )
-            {
-                Content parent = contentService.create( createFolder().
-                    displayName( "large-tree-node-" + i ).
-                    displayName( "Large tree node " + i ).
-                    parent( largeTreePath ) );
-
-                for ( int j = 1; j <= 100; j++ )
-                {
-                    contentService.create( createFolder().
-                        displayName( "large-tree-node-" + i + "-" + j ).
-                        displayName( "Large tree node " + i + "-" + j ).
-                        parent( parent.getPath() ) );
-                }
-            }
         }
     }
 

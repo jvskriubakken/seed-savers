@@ -5,6 +5,7 @@ import org.osgi.framework.FrameworkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.enonic.wem.api.content.Content;
 import com.enonic.wem.api.content.ContentPath;
 import com.enonic.wem.api.content.ContentService;
 import com.enonic.wem.api.content.CreateContentParams;
@@ -15,7 +16,7 @@ import com.enonic.wem.api.export.NodeImportResult;
 import com.enonic.wem.api.initializer.DataInitializer;
 import com.enonic.wem.api.node.NodePath;
 import com.enonic.wem.api.schema.content.ContentTypeName;
-import com.enonic.wem.api.security.RoleKeys;
+import com.enonic.wem.api.security.PrincipalKey;
 import com.enonic.wem.api.vfs.VirtualFile;
 import com.enonic.wem.api.vfs.VirtualFiles;
 
@@ -48,6 +49,7 @@ public final class FeaturesInitializer
 
         logImport( nodeImportResult );
 
+        createLargeTree();
     }
 
     private void logImport( final NodeImportResult nodeImportResult )
@@ -77,7 +79,7 @@ public final class FeaturesInitializer
     private CreateContentParams makeFolder()
     {
         return new CreateContentParams().
-            owner( RoleKeys.ENTERPRISE_ADMIN ).
+            owner( PrincipalKey.ofAnonymous() ).
             contentData( new PropertyTree() ).
             type( ContentTypeName.folder() );
     }
@@ -105,4 +107,33 @@ public final class FeaturesInitializer
     {
         this.contentService = contentService;
     }
+
+    private void createLargeTree()
+    {
+        final ContentPath largeTreePath = ContentPath.from( "/large-tree" );
+        if ( !hasContent( largeTreePath ) )
+        {
+            contentService.create( makeFolder().
+                name( "large-tree" ).
+                displayName( "Large tree" ).
+                parent( ContentPath.ROOT ) );
+
+            for ( int i = 1; i <= 2; i++ )
+            {
+                Content parent = contentService.create( makeFolder().
+                    displayName( "large-tree-node-" + i ).
+                    displayName( "Large tree node " + i ).
+                    parent( largeTreePath ) );
+
+                for ( int j = 1; j <= 100; j++ )
+                {
+                    contentService.create( makeFolder().
+                        displayName( "large-tree-node-" + i + "-" + j ).
+                        displayName( "Large tree node " + i + "-" + j ).
+                        parent( parent.getPath() ) );
+                }
+            }
+        }
+    }
+
 }
