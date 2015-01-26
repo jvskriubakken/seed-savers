@@ -1,15 +1,6 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 var contentService = require('/lib/contentService');
 
-function getSingleValue(val, def) {
-    if (val && (val.length > 0)) {
-        if (val[0] != null) {
-            return val[0];
-        }
-    }
-    return def;
-}
-
 function handleGet(req) {
 
     var component = execute('portal.getComponent');
@@ -24,7 +15,7 @@ function handleGet(req) {
         personContent = content;
     } else {
         var personId;
-        var relatedPersonId = getSingleValue(component.config['person']);
+        var relatedPersonId = component.config['person'];
         if (relatedPersonId) {
             personId = relatedPersonId;
             if (personId) {
@@ -35,12 +26,12 @@ function handleGet(req) {
 
     if (personContent) {
         personName = [
-            getSingleValue(personContent.data['first-name'], ''),
-            getSingleValue(personContent.data['middle-name'], ''),
-            getSingleValue(personContent.data['last-name'], '')
+            personContent.data['first-name'],
+            personContent.data['middle-name'],
+            personContent.data['last-name']
         ].join(' ').trim();
-        personTitle = getSingleValue(personContent.data['job-title'], '');
-        imageId = getSingleValue(personContent.data['image']);
+        personTitle = personContent.data['job-title'];
+        imageId = personContent.data['image'];
     }
 
     if (imageId) {
@@ -61,7 +52,6 @@ function handleGet(req) {
             image: personImageUrl
         }
     };
-
 
     var view = resolve('/view/person.html');
     var body = thymeleaf.render(view, params);
