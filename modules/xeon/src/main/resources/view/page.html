@@ -50,7 +50,7 @@
                         <a href="#" data-th-href="${portal.pageUrl({'_path=' + site._path})}"><i class="icon-home"></i></a>
                     </li>
                     <li data-th-class="${menuItem.path == content._path ? 'active' : ''}">
-                        <a data-th-text="${menuItem.menuName}" href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}">Services</a>
+                        <a data-th-text="${menuItem.menuName}" href="#" data-th-href="${portal.pageUrl({'_id=' + menuItem.id})}">Services</a>
                     </li>
                     <li data-th-remove="all"><a href="#portfolio">Portfolio</a></li>
                     <li data-th-remove="all"><a href="#pricing">Pricing</a></li>

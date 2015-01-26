@@ -15,7 +15,7 @@ function isMenuItem(content) {
     }
     var menuItemMetadata = meta['system:menu-item'] || {};
     var menuItemValue = menuItemMetadata['menuItem'];
-    return menuItemValue && menuItemValue[0];
+    return menuItemValue;
 }
 
 /**
@@ -58,7 +58,7 @@ function menuItemToJson(content, levels) {
 
     return {
         displayName: content.displayName,
-        menuName: content.meta['system:menu-item'].menuName[0],
+        menuName: content.meta['system:menu-item'].menuName || '',
         path: content._path,
         name: content._name,
         id: content._id,
