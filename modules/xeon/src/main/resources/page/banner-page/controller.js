@@ -4,6 +4,7 @@ var thymeleaf = require('/lib/view/thymeleaf');
 function handleGet(req) {
     var page = execute('portal.getContent').page;
     var slides = page ? page.config && page.config.slide : [];
+    slides = [].concat(slides); // ensure it's an array, even if single element
 
     var pageParams = {
         slides: slides,
