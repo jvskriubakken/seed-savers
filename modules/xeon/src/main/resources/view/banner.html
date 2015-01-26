@@ -3,8 +3,8 @@
         <div class="item" data-th-each="slide, iterStat : ${slides}" data-th-class="${iterStat.index == 0}? 'item active' : 'item'">
             <div class="container">
                 <div class="carousel-content">
-                    <h1 data-th-text="${#lists.isEmpty(slide.header)? '' : slide.header[0]}">Free Onepage Theme</h1>
-                    <p class="lead" data-th-text="${#lists.isEmpty(slide.subtitle)? '' : slide.subtitle[0]}">Xeon is the best free one-page responsive theme available around the globe<br />Download it right now for free</p>
+                    <h1 data-th-text="${slide.header}">Free Onepage Theme</h1>
+                    <p class="lead" data-th-text="${slide.subtitle}">Xeon is the best free one-page responsive theme available around the globe<br />Download it right now for free</p>
                 </div>
             </div>
         </div><!--/.item-->
