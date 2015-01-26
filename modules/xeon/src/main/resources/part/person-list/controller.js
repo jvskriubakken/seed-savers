@@ -1,15 +1,7 @@
-function getSingleValue(val, def) {
-    if (val && (val.length > 0)) {
-        if (val[0] != null) {
-            return val[0];
-        }
-    }
-    return def;
-}
-
 function handleGet(req) {
     var component = execute('portal.getComponent');
     var relatedPersonsId = component.config['person'] || [];
+    relatedPersonsId = [].concat(relatedPersonsId);
     var persons = [];
 
     var defaultPersonImageUrl = execute('portal.assetUrl', {path: 'images/team1.jpg'});
@@ -17,7 +9,7 @@ function handleGet(req) {
     relatedPersonsId.forEach(function (relatedPersonId) {
         var personData = execute('content.get', {key: relatedPersonId});
 
-        var imageContentId = getSingleValue(personData.data['image'], '');
+        var imageContentId = personData.data['image'];
         var imageContentUrl = imageContentId ?
                               execute('portal.imageUrl', {
                                   id: imageContentId,
@@ -26,12 +18,12 @@ function handleGet(req) {
                               defaultPersonImageUrl;
 
         var personName = [
-            getSingleValue(personData.data['first-name'], ''),
-            getSingleValue(personData.data['middle-name'], ''),
-            getSingleValue(personData.data['last-name'], '')
+            personData.data['first-name'],
+            personData.data['middle-name'],
+            personData.data['last-name']
         ].join(' ').trim();
 
-        var personTitle = getSingleValue(personData.data['job-title'], '');
+        var personTitle = personData.data['job-title'];
 
         persons.push({
             name:  personName || 'Test Testesen',
@@ -41,8 +33,8 @@ function handleGet(req) {
     });
 
     var data = {
-        title: getSingleValue(component.config['title'], 'Please configure'),
-        text: getSingleValue(component.config['text'], ''),
+        title: component.config['title'] || 'Please configure',
+        text:  component.config['text'] || '',
         persons: persons
     };
 
