@@ -5,10 +5,10 @@
     <nodeType>content</nodeType>
     <data>
         <boolean name="draft">false</boolean>
-        <string name="displayName">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan.jpg</string>
+        <string name="displayName">An_Afghan_elder_and_his_cat_sit_outside_his_store.jpg</string>
         <string name="type">system:image</string>
         <property-set name="data">
-            <string name="media">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan.jpg</string>
+            <string name="media">An_Afghan_elder_and_his_cat_sit_outside_his_store.jpg</string>
             <string name="mimeType">image/jpeg</string>
             <property-set name="metadata">
                 <string name="artist">Sgt. Teddy Wade</string>
@@ -170,37 +170,37 @@
             </property-set>
         </property-set>
         <property-set name="attachment">
-            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan.jpg</string>
+            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store.jpg</string>
             <string name="label">source</string>
-            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan.jpg</binaryReference>
+            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store.jpg</binaryReference>
             <string name="mimeType">image/jpeg</string>
             <long name="size">5695589</long>
         </property-set>
         <property-set name="attachment">
-            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_small.jpg</string>
+            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_small.jpg</string>
             <string name="label">small</string>
-            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_small.jpg</binaryReference>
+            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_small.jpg</binaryReference>
             <string name="mimeType">image/jpeg</string>
             <long name="size">20628</long>
         </property-set>
         <property-set name="attachment">
-            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_medium.jpg</string>
+            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_medium.jpg</string>
             <string name="label">medium</string>
-            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_medium.jpg</binaryReference>
+            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_medium.jpg</binaryReference>
             <string name="mimeType">image/jpeg</string>
             <long name="size">63965</long>
         </property-set>
         <property-set name="attachment">
-            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_large.jpg</string>
+            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_large.jpg</string>
             <string name="label">large</string>
-            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_large.jpg</binaryReference>
+            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_large.jpg</binaryReference>
             <string name="mimeType">image/jpeg</string>
             <long name="size">200539</long>
         </property-set>
         <property-set name="attachment">
-            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_extra-large.jpg</string>
+            <string name="name">An_Afghan_elder_and_his_cat_sit_outside_his_store_extra-large.jpg</string>
             <string name="label">extra-large</string>
-            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_at_the_Anaba_bazaar_in_Panjshir_province_Afghanistan_extra-large.jpg</binaryReference>
+            <binaryReference name="binary">An_Afghan_elder_and_his_cat_sit_outside_his_store_extra-large.jpg</binaryReference>
             <string name="mimeType">image/jpeg</string>
             <long name="size">620569</long>
         </property-set>
