@@ -6,7 +6,7 @@ function handleGet(req) {
     var reqComponent = execute('portal.getComponent');
     var view = resolve('./plant.html');
     var plant;
-    if (reqContent.isPageTemplate) {
+    if (reqContent.type == "system:page-template") {
         plant = {
             binomialName: "Binomial name",
             norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")

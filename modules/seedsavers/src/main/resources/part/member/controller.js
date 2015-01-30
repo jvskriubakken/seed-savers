@@ -2,14 +2,14 @@ var thymeleaf = require('/lib/view/thymeleaf');
 
 var defaultMemberAddress = [
     {
-        street: ["Street"],
-        postalCode: ["Postal code"],
-        postalPlace: ["Postal place"]
+        street: "123 Street",
+        postalCode: "Postal code",
+        postalPlace: "Postal place"
     }
 ];
 
 var defaultMember = {
-    name: ["Member name"],
+    name: "Member name",
     address: defaultMemberAddress
 };
 
@@ -19,11 +19,12 @@ function handleGet() {
     var reqContent = execute('portal.getContent');
     var reqComponent = execute('portal.getComponent');
     var member;
-    if (reqContent.isPageTemplate) {
+    if (reqContent.type == "system:page-template") {
         member = defaultMember;
     }
     else {
         member = reqContent.data;
+        member.address = [].concat(member.address);
     }
 
     var params = {

@@ -1,14 +1,19 @@
-<div data-th-attr="data-live-edit-type=${component.type}">
+<article data-th-attr="data-live-edit-type=${component.type}">
+    <h1 data-th-text="${member.name}">displayName</h1>
 
-    <article>
-        <h1 data-th-text="${member.name[0]}" data-th-if="${member.name} ? ${#lists.size(member.name)} > 0">displayName</h1>
+    <p data-th-each="address,iterStat : ${member.address}">
+            
+            <span data-th-each="street,iterStat : ${address.street}" th:inline="text">
+            [[${street}]][[${ not iterStat.last } ? ',' : '']]
+            </span>
 
-        <p data-th-each="address,iterStat : ${member.address}">
-            <p data-th-text="${address.street[0]}" data-th-if="${address.street} ? ${#lists.size(address.street)} > 0"></p>
-            <p data-th-text="${address.postalCode[0]}" data-th-if="${address.street} ? ${#lists.size(address.postalCode)} > 0"></p>
-            <p data-th-text="${address.postalPlace[0]}" data-th-if="${address.street} ? ${#lists.size(address.postalPlace)} > 0"></p>
-        </p>
+    <p data-th-text="${address.postalCode}"></p>
 
-        Config test: <p data-th-if="${config.test}" data-th-text="${config.test}"></p>
-    </article>
-</div>
+    <p data-th-text="${address.postalPlace}"></p>
+    </p>
+
+    Config test:
+        <span data-th-each="value,iterStat : ${config.test}" th:inline="text">
+            [[${value}]][[${ not iterStat.last } ? ',' : '']]
+            </span>
+</article>

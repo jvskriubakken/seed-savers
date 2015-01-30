@@ -1,4 +1,4 @@
-<div data-th-attr="data-live-edit-type=${component.type}">
+<article data-th-attr="data-live-edit-type=${component.type}">
 
     total: <span data-th-text="${membersTotal}"></span>
     maxCount: <span data-th-text="${maxCount}"></span>
@@ -6,4 +6,4 @@
         <li data-th-each="member,iterStat : ${members}" data-th-text="${member.displayName}"></li>
     </ul>
 
-</div>
+</article>

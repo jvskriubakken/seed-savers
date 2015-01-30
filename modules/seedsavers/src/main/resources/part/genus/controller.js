@@ -1,22 +1,23 @@
 var thymeleaf = require('/lib/view/thymeleaf');
 
-function handleGet(req) {
+function handleGet() {
 
     var reqContent = execute('portal.getContent');
     var reqComponent = execute('portal.getComponent');
     var view = resolve('./genus.html');
     var genus;
-    if( reqContent.isPageTemplate ) {
+    if (reqContent.type == "system:page-template") {
         genus = {
-            scientificName : "Scientific name",
-            norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")
+            scientificName: "Scientific name",
+            norwegianNames: ["navn1", "navn2", "navn3"]
         };
     }
     else {
         genus = {
-            scientificName : reqContent.displayName,
-            norwegianNames: reqContent.data.norwegianNames
+            scientificName: reqContent.displayName,
+            norwegianNames: [].concat(reqContent.data.norwegianNames)
         };
+
     }
 
     var params = {

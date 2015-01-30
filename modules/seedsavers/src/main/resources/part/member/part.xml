@@ -6,7 +6,7 @@
       <label>Test input from part descriptor</label>
       <immutable>false</immutable>
       <indexed>false</indexed>
-      <occurrences minimum="0" maximum="1"/>
+      <occurrences minimum="0" maximum="2"/>
     </input>
   </config>
 </part-component>

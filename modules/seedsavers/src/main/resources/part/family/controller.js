@@ -6,16 +6,16 @@ function handleGet(req) {
     var reqComponent = execute('portal.getComponent');
     var view = resolve('./family.html');
     var family;
-    if( reqContent.isPageTemplate ) {
+    if (reqContent.type == "system:page-template") {
         family = {
             scientificName : "Scientific name",
-            norwegianNames: Java.to(["navn1", "navn2", "navn3"], "java.lang.String[]")
+            norwegianNames: ["navn1", "navn2", "navn3"]
         };
     }
     else {
         family = {
             scientificName : reqContent.displayName,
-            norwegianNames: reqContent.data.norwegianNames
+            norwegianNames: [].concat(reqContent.data.norwegianNames)
         };
     }
 
