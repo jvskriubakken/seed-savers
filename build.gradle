@@ -16,31 +16,13 @@ allprojects {
     apply plugin: 'base'
 
     version = '1.0.0'
-    group = 'com.enonic.wem.modules'
+    group = 'skriubakken.modules'
 }
 
 subprojects {
     apply plugin: 'maven'
-    apply plugin: 'maven-publish'
 
     repositories {
-//        mavenLocal()
-        mavenCentral()
-        maven {
-            url 'http://repo.enonic.net/public'
-        }
-    }
-
-    publishing {
-        publications {
-            mavenJava( MavenPublication ) {
-                from components.java
-            }
-        }
-        repositories {
-            maven {
-                url 'http://repo.enonic.net/artifactory/public'
-            }
-        }
+        mavenLocal()
     }
 }
